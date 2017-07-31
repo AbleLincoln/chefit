@@ -1,0 +1,34 @@
+include _formComponents
+
+mixin booker()
+  .booker
+    form(action="/book" method="POST")
+      .tabs
+        li.tab.active(data-tab="reservation") Reservation
+        li.tab(data-tab="info") Booking Info
+        li.tab(data-tab="package") Select Package
+      .booker-card.active#reservation
+        +labelAndInput('Number of people', 'number', 'people', 1)
+        +labelAndInput('Date', 'date', 'date')
+        +labelAndInput('Time', 'time', 'time')
+        .button(data-tab="info") Next >
+        
+      .booker-card#info
+        +labelAndInput('Name', 'text', 'name')
+        +labelAndInput('Phone', 'tel', 'phone')
+        +labelAndInput('Email', 'email', 'email')
+        +labelAndInput('Address', 'text', 'address')
+        .labelAndInput#additional
+          label(for='additional') Additional info (allergies, dietary restrictions, favorite topics of conversation)
+          textarea(rows='10' name='additional')
+        .button(data-tab="package") Next >
+        
+      .booker-card#package
+        +labelAndInput('Premium Package', 'radio', 'package')
+        +labelAndInput('Standard Package', 'radio', 'package')
+        input(type="submit" value="Submit").button
+  
+  script(type="application/javascript", src="javascripts/_booker.js")
+        
+      
+    
