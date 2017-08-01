@@ -414,12 +414,44 @@ template {
 html, body {
   height: 100%; }
 
+li {
+  list-style: none; }
+
 .hero {
   height: 100%;
   background-image: url("../images/chef-bg.jpg");
   background-position: center;
-  background-size: cover; }
-  .hero__logo {
+  background-size: cover;
+  display: flex; }
+  .hero .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 200px; }
+  .hero .booker {
+    flex-basis: 100%;
+    max-width: 800px;
+    margin: auto; }
+
+.booker {
+  background-color: #F3F4F7;
+  position: relative;
+  padding: 15px; }
+  .booker .tabs {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%); }
+    .booker .tabs .tab {
+      flex-basis: 25%;
+      background-color: #247AE4;
+      padding: 15px;
+      border-radius: 5px 5px 0px 0px; }
+      .booker .tabs .tab.active {
+        background-color: #F3F4F7; }
+  .booker .booker-card:not(.active) {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */

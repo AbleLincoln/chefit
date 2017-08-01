@@ -4,7 +4,17 @@
   background-position: center;
   background-size: cover;
 
-  &__logo {
+  display: flex;
+
+  .logo {
+    position: absolute;
+    top: 0; left: 0;
     width: 200px;
+  }
+
+  .booker {
+    flex-basis: 100%;
+    max-width: 800px;
+    margin: auto;
   }
 }

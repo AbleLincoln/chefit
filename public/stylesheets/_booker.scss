@@ -1,0 +1,31 @@
+.booker {
+  background-color: #F3F4F7;
+  position: relative;
+  padding: 15px;
+
+  .tabs {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0; left: 0;
+    transform: translateY(-100%);
+
+    .tab {
+      flex-basis: 25%;
+      background-color: #247AE4;
+      padding: 15px;
+      border-radius: 5px 5px 0px 0px;
+
+      &.active {
+        background-color: #F3F4F7;
+      }
+    }
+  }
+
+  .booker-card {
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
