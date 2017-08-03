@@ -436,7 +436,9 @@ li {
 .booker {
   background-color: #F3F4F7;
   position: relative;
-  padding: 15px; }
+  padding: 15px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.25); }
   .booker .tabs {
     width: 100%;
     display: flex;
@@ -451,7 +453,27 @@ li {
       border-radius: 5px 5px 0px 0px; }
       .booker .tabs .tab.active {
         background-color: #F3F4F7; }
-  .booker .booker-card:not(.active) {
-    display: none; }
+  .booker .booker-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px; }
+    .booker .booker-card:not(.active) {
+      display: none; }
+    .booker .booker-card .labelAndInput {
+      flex-grow: 0;
+      flex-basis: 33%; }
+    .booker .booker-card .button {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      padding: 7px;
+      border: 2px solid #247AE4;
+      border-radius: 5px; }
+
+.labelAndInput {
+  line-height: 1em; }
+  .labelAndInput label::after {
+    content: '\A';
+    white-space: pre; }
 
 /*# sourceMappingURL=style.css.map */

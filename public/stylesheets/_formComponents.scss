@@ -1,0 +1,10 @@
+.labelAndInput {
+  line-height: 1em;
+
+  label {
+    &::after {
+      content: '\A';
+      white-space: pre;
+    }
+  }
+}
