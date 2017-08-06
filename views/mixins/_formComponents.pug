@@ -1,4 +1,19 @@
-mixin labelAndInput(label, type, name, placeholder="")
+mixin labelAndInput(label, type, name, attrs={})
   .labelAndInput
     label(for=name)= label
-    input(type=type name=name placeholder=placeholder)
+    input(type=type name=name id=name)&attributes(attrs)
+      
+mixin checkboxes(label, name, values=[])
+  .checkboxes
+    p= label
+    each value in values
+      div
+        label(for=value)= value
+        input(type='checkbox' name=name id=value value=value)
+
+mixin radios(name, values=[])
+  .radios
+    each value in values
+      div
+        label(for=value)= value
+        input(type='radio' name=name id=value value=value)

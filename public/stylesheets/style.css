@@ -414,6 +414,9 @@ template {
 html, body {
   height: 100%; }
 
+h1, h2, h3, h4 {
+  margin-top: 0; }
+
 li {
   list-style: none; }
 
@@ -450,9 +453,13 @@ li {
       flex-basis: 25%;
       background-color: #247AE4;
       padding: 15px;
-      border-radius: 5px 5px 0px 0px; }
+      border-radius: 5px 5px 0px 0px;
+      cursor: pointer;
+      transition: all 350ms; }
       .booker .tabs .tab.active {
         background-color: #F3F4F7; }
+      .booker .tabs .tab:hover:not(.active) {
+        background-color: #8cb7ee; }
   .booker .booker-card {
     display: flex;
     flex-wrap: wrap;
@@ -462,18 +469,75 @@ li {
     .booker .booker-card .labelAndInput {
       flex-grow: 0;
       flex-basis: 33%; }
-    .booker .booker-card .button {
+    .booker .booker-card#special-requests > * {
+      flex-basis: 50%; }
+    .booker .booker-card#package {
+      justify-content: center; }
+      .booker .booker-card#package .package {
+        flex-grow: 1;
+        max-width: 250px;
+        margin: 15px;
+        padding: 15px 20px;
+        text-align: center;
+        border: 2px solid #247AE4;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 350ms; }
+        .booker .booker-card#package .package p.price {
+          font-size: 1.25rem; }
+        .booker .booker-card#package .package input {
+          display: none; }
+        .booker .booker-card#package .package:hover {
+          background-color: #8cb7ee; }
+        .booker .booker-card#package .package.selected {
+          background-color: #247AE4; }
+    .booker .booker-card .button, .booker .booker-card input[type='submit'] {
       position: absolute;
       bottom: 15px;
       right: 15px;
-      padding: 7px;
+      padding: 8px 10px;
+      background-color: transparent;
       border: 2px solid #247AE4;
-      border-radius: 5px; }
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 350ms; }
+      .booker .booker-card .button:hover, .booker .booker-card input[type='submit']:hover {
+        background-color: #247AE4; }
 
 .labelAndInput {
-  line-height: 1em; }
-  .labelAndInput label::after {
-    content: '\A';
-    white-space: pre; }
+  padding: 10px; }
+  .labelAndInput label {
+    display: block;
+    margin-bottom: 5px; }
+  .labelAndInput input, .labelAndInput textarea {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px; }
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start; }
+  .checkboxes p {
+    flex-basis: 100%; }
+  .checkboxes div {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #247AE4;
+    border-radius: 5px; }
+    .checkboxes div label {
+      margin-right: 10px; }
+
+.radios {
+  display: flex; }
+  .radios div {
+    flex-grow: 1;
+    border: 2px solid #247AE4;
+    border-radius: 5px; }
 
 /*# sourceMappingURL=style.css.map */

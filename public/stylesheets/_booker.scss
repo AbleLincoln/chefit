@@ -1,5 +1,5 @@
 .booker {
-  background-color: #F3F4F7;
+  background-color: $chefit-white;
   position: relative;
 
   padding: 15px;
@@ -19,8 +19,16 @@
       padding: 15px;
       border-radius: 5px 5px 0px 0px;
 
+      cursor: pointer;
+
+      transition: all 350ms;
+
       &.active {
-        background-color: #F3F4F7;
+        background-color: $chefit-white;
+      }
+
+      &:hover:not(.active) {
+        background-color: mix($chefit-blue, $chefit-white);
       }
     }
   }
@@ -40,13 +48,66 @@
       flex-basis: 33%;
     }
 
-    .button {
+    &#special-requests {
+      >* {
+        flex-basis: 50%;
+      }
+    }
+
+    &#package {
+      justify-content: center;
+      .package {
+        flex-grow: 1;
+        // flex-basis: 50%;
+        max-width: 250px;
+        margin: 15px;
+        padding: 15px 20px;
+
+        text-align: center;
+
+        border: 2px solid $chefit-blue;
+        border-radius: 5px;
+
+        cursor: pointer;
+
+        transition: all 350ms;
+
+        p.price {
+          font-size: 1.25rem;
+          // color: darken($chefit-blue, 20);
+        }
+
+        input {
+          display: none;
+        }
+
+        &:hover {
+          background-color: mix($chefit-blue, $chefit-white);
+        }
+
+        &.selected {
+          background-color: $chefit-blue;
+        }
+      }
+    }
+
+
+    .button, input[type='submit'] {
       position: absolute;
       bottom: 15px; right: 15px;
 
-      padding: 7px;
+      padding: 8px 10px;
+      background-color: rgba(0,0,0,0);
       border: 2px solid $chefit-blue;
       border-radius: 5px;
+
+      cursor: pointer;
+
+      transition: all 350ms;
+
+      &:hover {
+        background-color: $chefit-blue;
+      }
     }
   }
 }
