@@ -35,6 +35,5 @@ function setSelection() {
   this.classList.add('selected');
   // check the radio button
   const input = this.getElementsByTagName('input')[0];
-  console.log(input);
   input.checked = true;
 }
