@@ -35,7 +35,7 @@
 
   .booker-card {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
     padding-bottom: 40px;
 
@@ -43,9 +43,9 @@
       display: none;
     }
 
-    .labelAndInput {
-      flex-grow: 0;
-      flex-basis: 33%;
+    .input {
+      flex-grow: 1;
+      // flex-basis: 33%;
     }
 
     &#special-requests {

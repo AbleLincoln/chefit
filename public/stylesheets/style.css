@@ -462,13 +462,11 @@ li {
         background-color: #8cb7ee; }
   .booker .booker-card {
     display: flex;
-    flex-wrap: wrap;
     padding-bottom: 40px; }
     .booker .booker-card:not(.active) {
       display: none; }
-    .booker .booker-card .labelAndInput {
-      flex-grow: 0;
-      flex-basis: 33%; }
+    .booker .booker-card .input {
+      flex-grow: 1; }
     .booker .booker-card#special-requests > * {
       flex-basis: 50%; }
     .booker .booker-card#package {
@@ -504,20 +502,22 @@ li {
       .booker .booker-card .button:hover, .booker .booker-card input[type='submit']:hover {
         background-color: #247AE4; }
 
-.labelAndInput {
+.input {
   padding: 10px; }
-  .labelAndInput label {
-    display: block;
-    margin-bottom: 5px; }
-  .labelAndInput input, .labelAndInput textarea {
-    width: 100%;
-    display: block;
-    padding: 10px;
-    line-height: 1.25;
-    color: #464a4c;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 5px; }
+
+.basicInput label {
+  display: block;
+  margin-bottom: 5px; }
+
+.basicInput input, .basicInput textarea {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px; }
 
 .checkboxes {
   display: flex;
@@ -539,5 +539,25 @@ li {
     flex-grow: 1;
     border: 2px solid #247AE4;
     border-radius: 5px; }
+
+.numberInput input {
+  display: none; }
+
+.numberInput > div {
+  display: flex;
+  justify-content: center; }
+  .numberInput > div .counter {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #247AE4;
+    border-radius: 100%; }
+    .numberInput > div .counter.subtract {
+      order: 0; }
+    .numberInput > div .counter.add {
+      order: 2; }
+  .numberInput > div .number {
+    padding: 0.5rem 1.5rem; }
 
 /*# sourceMappingURL=style.css.map */

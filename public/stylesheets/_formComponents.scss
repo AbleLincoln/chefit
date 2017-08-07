@@ -1,6 +1,8 @@
-.labelAndInput {
+.input {
   padding: 10px;
+}
 
+.basicInput {
   label {
     display: block;
     margin-bottom: 5px;
@@ -51,5 +53,37 @@
   }
   input {
     // display: none;
+  }
+}
+
+.numberInput {
+  input {
+    display: none;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+
+    .counter {
+      width: 2em;
+      height: 2em;
+      text-align: center;
+
+      padding: 5px;
+      border: 2px solid $chefit-blue;
+      border-radius: 100%;
+
+      &.subtract {
+        order: 0;
+      }
+      &.add {
+        order: 2;
+      }
+    }
+
+    .number {
+      padding: 0.5rem 1.5rem;
+    }
   }
 }

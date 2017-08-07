@@ -8,23 +8,26 @@ mixin booker()
         li.tab(data-tab="info") Booking Info
         li.tab(data-tab="special-requests") Special Requests
         li.tab(data-tab="package") Select Package
+        
       .booker-card.active#reservation
-        +labelAndInput('Number of people', 'number', 'people', {'value': 1})
-        +labelAndInput('Date', 'date', 'date')
-        +labelAndInput('Time', 'time', 'time')
+        //- +basicInput('Number of people', 'number', 'people', {'value': 1})
+        +numberInput('Number of people', 'people', 4, 12)
+        +datetimeInput()
+        +basicInput('Date', 'date', 'date')
+        +basicInput('Time', 'time', 'time')
         .button(data-tab="info") Next >
         
       .booker-card#info
-        +labelAndInput('Name', 'text', 'name')
-        +labelAndInput('Phone', 'tel', 'phone')
-        +labelAndInput('Email', 'email', 'email')
-        +labelAndInput('Address', 'text', 'address')
+        +basicInput('Name', 'text', 'name')
+        +basicInput('Phone', 'tel', 'phone')
+        +basicInput('Email', 'email', 'email')
+        +basicInput('Address', 'text', 'address')
         .button(data-tab="special-requests") Next >
       
       .booker-card#special-requests
         - const diets = ['Milk/dairy', 'Eggs', 'Peanuts', 'Soy', 'Fish', 'Shellfish', 'Kosher/Religious', 'Tree nuts, like walnuts, almonds, pine nuts, brazil nuts, and pecans', 'Wheat and other grains with gluten, including barley, rye, and oats']
         +checkboxes('Allergies & dietary restrictions', 'diet', diets)
-        .labelAndInput#additional
+        .basicInput.input#additional
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
           textarea(rows='5' name='additional')
         .button(data-tab="package") Next >

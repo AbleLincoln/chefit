@@ -1,10 +1,19 @@
-mixin labelAndInput(label, type, name, attrs={})
-  .labelAndInput
+mixin basicInput(label, type, name, attrs={})
+  .basicInput.input
     label(for=name)= label
     input(type=type name=name id=name)&attributes(attrs)
       
+mixin numberInput(label, name, min, max)
+  .numberInput.input
+    p= label
+    div
+      .counter.subtract -
+      .counter.add +
+      .number= min
+      input(type="number" name=name id=name value=min min=min max=max)
+      
 mixin checkboxes(label, name, values=[])
-  .checkboxes
+  .checkboxes.input
     p= label
     each value in values
       div
@@ -12,8 +21,10 @@ mixin checkboxes(label, name, values=[])
         input(type='checkbox' name=name id=value value=value)
 
 mixin radios(name, values=[])
-  .radios
+  .radios.input
     each value in values
       div
         label(for=value)= value
         input(type='radio' name=name id=value value=value)
+
+mixin datetimeInput()
