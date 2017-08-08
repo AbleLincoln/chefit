@@ -49,9 +49,7 @@
     }
 
     &#special-requests {
-      >* {
-        flex-basis: 50%;
-      }
+      flex-wrap: wrap;
     }
 
     &#package {

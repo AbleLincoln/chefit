@@ -1,3 +1,5 @@
+
+// Tabbing and Next buttons
 const tabs = document.querySelectorAll('.tabs .tab');
 const cards = document.querySelectorAll('.booker-card');
 const buttons = document.querySelectorAll('.button');
@@ -21,6 +23,7 @@ function setActive() {
   })
 }
 
+// Package selection
 const packages = document.querySelectorAll('.package');
 
 packages.forEach(package => {
@@ -37,3 +40,16 @@ function setSelection() {
   const input = this.getElementsByTagName('input')[0];
   input.checked = true;
 }
+
+// Flatpickr date/time picker
+flatpickr('.dateInput input', {
+  altInput: true,
+  minDate: "today"
+});
+flatpickr('.timeInput input', {
+  enableTime: true,
+  noCalendar: true,
+  altInput: true,
+  defaultHour: 18,
+  defaultDate: "18:00"
+});

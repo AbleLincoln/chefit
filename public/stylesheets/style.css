@@ -467,8 +467,8 @@ li {
       display: none; }
     .booker .booker-card .input {
       flex-grow: 1; }
-    .booker .booker-card#special-requests > * {
-      flex-basis: 50%; }
+    .booker .booker-card#special-requests {
+      flex-wrap: wrap; }
     .booker .booker-card#package {
       justify-content: center; }
       .booker .booker-card#package .package {
@@ -504,26 +504,36 @@ li {
 
 .input {
   padding: 10px; }
+  .input label, .input p.label {
+    margin-top: 0px;
+    margin-bottom: 5px; }
+  .input input, .input textarea {
+    padding: 10px;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px; }
 
 .basicInput label {
-  display: block;
-  margin-bottom: 5px; }
+  display: block; }
 
 .basicInput input, .basicInput textarea {
   width: 100%;
-  display: block;
-  padding: 10px;
-  line-height: 1.25;
-  color: #464a4c;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 5px; }
+  display: block; }
+
+.dateInput label, .timeInput label {
+  display: block; }
+
+.dateInput input, .dateInput textarea, .timeInput input, .timeInput textarea {
+  width: 100%;
+  display: block; }
 
 .checkboxes {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start; }
-  .checkboxes p {
+  .checkboxes p.label {
     flex-basis: 100%; }
   .checkboxes div {
     padding: 10px;

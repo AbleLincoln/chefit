@@ -31,7 +31,8 @@ const outlookTransport = nodemailer.createTransport({
 function book(req, res, next) {
   const data = req.body;
   console.log(data);
-  const diet = data.diet.join(", ");
+  var diet;
+  data.diet ? diet = data.diet.join(", ") : diet = "none";
   const mail = {
     from: 'admin@getchefit.com',
     to: `${data.email}`,
