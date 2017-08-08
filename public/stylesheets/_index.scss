@@ -58,3 +58,55 @@
     }
   }
 }
+
+.content {
+  h2 {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .icons {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    .iconbox {
+    }
+  }
+
+  #whatweneed {
+    width: 50%;
+    margin: auto;
+
+    h3 {
+      text-align: center;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        display: inline-block;
+        margin: 7px;
+        border-bottom: 1px solid $chefit-dark-blue;
+      }
+    }
+  }
+
+  #timing {
+    width: 50%;
+    margin: auto;
+    padding: 15px 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: $med-shadow;
+
+    p {
+      color: $chefit-white;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+  }
+}

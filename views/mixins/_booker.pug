@@ -4,10 +4,10 @@ mixin booker()
   .booker
     form(action="/book" method="POST")
       .tabs
-        li.tab.active(data-tab="reservation") Reservation
-        li.tab(data-tab="info") Booking Info
-        li.tab(data-tab="special-requests") Special Requests
-        li.tab(data-tab="package") Select Package
+        li.tab.active(data-tab="reservation") Reservation #[i.fa.fa-calendar-check-o]
+        li.tab(data-tab="info") Booking Info #[i.fa.fa-pencil-square-o]
+        li.tab(data-tab="special-requests") Special Requests #[i.fa.fa-cutlery]
+        li.tab(data-tab="package") Select Package #[i.fa.fa-star]
         //- .toggle &and;
         
       .booker-card.active#reservation
@@ -32,7 +32,7 @@ mixin booker()
         +checkboxes('Allergies & dietary restrictions', 'diet', diets)
         .basicInput.input#additional
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
-          textarea(rows='5' name='additional')
+          textarea(rows='1' name='additional')
         .button(data-tab="package") Next >
         .button.back(data-tab="info") < Back
         
@@ -40,12 +40,12 @@ mixin booker()
         //- - const packages = ['VIP', 'Executive']
         //- +radios('package', packages)
         .package
-          h3 VIP Package
+          h3 VIP<br>Package
           p.price $60 per person
           p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
           input(type='radio' name='package' id='vip' value='vip')
         .package
-          h3 Executive Package
+          h3 Executive<br>Package
           p.price $100 per person
           p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
           input(type='radio' name='package' id='vip' value='vip')

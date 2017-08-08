@@ -48,6 +48,12 @@
           display: none;
         }
       }
+
+      i {
+        margin-left: 5px;
+        margin-right: 5px;
+        // float: left;
+      }
     }
 
     .toggle {
@@ -85,7 +91,6 @@
       justify-content: center;
       .package {
         flex-grow: 1;
-        // flex-basis: 50%;
         max-width: 250px;
         margin: 15px;
         padding: 15px 20px;
@@ -100,8 +105,11 @@
         transition: all 350ms;
 
         p.price {
-          font-size: 1.25rem;
-          // color: darken($chefit-blue, 20);
+          margin-bottom: 10px;
+        }
+
+        p.description {
+          font-size: 1rem;
         }
 
         input {
