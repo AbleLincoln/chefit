@@ -10,11 +10,21 @@
     position: absolute;
     top: 0; left: 0;
     width: 200px;
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 150px;
+      top: -15px;
+      left: -15px;
+    }
   }
 
   .booker {
     flex-basis: 95%;
     max-width: 800px;
     margin: auto;
+
+    @media screen and (max-width: $breakpoint-small) {
+      max-width: 95%;
+    }
   }
 }

@@ -1,10 +1,19 @@
 .booker {
   background-color: $chefit-white;
-  position: relative;
+  // position: relative;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
 
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.25);
+
+  @media screen and (max-width: $breakpoint-small) {
+    top: 40%;
+    border-top-left-radius: 5px;
+  }
 
   .tabs {
     width: 100%;
@@ -12,6 +21,12 @@
     position: absolute;
     top: 0; left: 0;
     transform: translateY(-100%);
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 33%;
+      left: initial; right: 0;
+      flex-direction: column;
+    }
 
     .tab {
       flex-basis: 25%;
@@ -30,12 +45,22 @@
       &:hover:not(.active) {
         background-color: mix($chefit-blue, $chefit-white);
       }
+
+      @media screen and (max-width: $breakpoint-small) {
+        &:not(:first-child){
+          border-radius: initial;
+        }
+        border-top: 1px solid $chefit-white;
+      }
     }
   }
 
   .booker-card {
     display: flex;
-    // flex-wrap: wrap;
+
+    @media screen and (max-width: $breakpoint-small) {
+      flex-wrap: wrap;
+    }
 
     padding-bottom: 40px;
 

@@ -434,17 +434,32 @@ li {
     top: 0;
     left: 0;
     width: 200px; }
+    @media screen and (max-width: 768px) {
+      .hero .logo {
+        width: 150px;
+        top: -15px;
+        left: -15px; } }
   .hero .booker {
     flex-basis: 95%;
     max-width: 800px;
     margin: auto; }
+    @media screen and (max-width: 768px) {
+      .hero .booker {
+        max-width: 95%; } }
 
 .booker {
   background-color: #F3F4F7;
-  position: relative;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.25); }
+  @media screen and (max-width: 768px) {
+    .booker {
+      top: 40%;
+      border-top-left-radius: 5px; } }
   .booker .tabs {
     width: 100%;
     display: flex;
@@ -452,6 +467,12 @@ li {
     top: 0;
     left: 0;
     transform: translateY(-100%); }
+    @media screen and (max-width: 768px) {
+      .booker .tabs {
+        width: 33%;
+        left: initial;
+        right: 0;
+        flex-direction: column; } }
     .booker .tabs .tab {
       flex-basis: 25%;
       background-color: #247AE4;
@@ -463,9 +484,17 @@ li {
         background-color: #F3F4F7; }
       .booker .tabs .tab:hover:not(.active) {
         background-color: #8cb7ee; }
+      @media screen and (max-width: 768px) {
+        .booker .tabs .tab {
+          border-top: 1px solid #F3F4F7; }
+          .booker .tabs .tab:not(:first-child) {
+            border-radius: initial; } }
   .booker .booker-card {
     display: flex;
     padding-bottom: 40px; }
+    @media screen and (max-width: 768px) {
+      .booker .booker-card {
+        flex-wrap: wrap; } }
     .booker .booker-card:not(.active) {
       display: none; }
     .booker .booker-card .input {
