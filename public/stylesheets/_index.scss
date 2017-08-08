@@ -4,7 +4,7 @@
   background-position: center;
   background-size: cover;
 
-  display: flex;
+  // display: flex;
 
   .logo {
     position: absolute;
@@ -18,10 +18,40 @@
     }
   }
 
-  .booker {
-    flex-basis: 95%;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+  }
+
+  .title {
     max-width: 800px;
     margin: auto;
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 0;
+    padding: 15px;
+
+    @media screen and (max-width: $breakpoint-small) {
+      max-width: 95%;
+    }
+
+    h2, h3 {
+      color: $chefit-white;
+      // color: lighten($chefit-blue, 10);
+      // color: darken($chefit-blue, 10);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.65);
+    }
+  }
+
+  .booker {
+    max-width: 800px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
 
     @media screen and (max-width: $breakpoint-small) {
       max-width: 95%;

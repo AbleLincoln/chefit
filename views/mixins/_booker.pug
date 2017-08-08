@@ -8,6 +8,7 @@ mixin booker()
         li.tab(data-tab="info") Booking Info
         li.tab(data-tab="special-requests") Special Requests
         li.tab(data-tab="package") Select Package
+        //- .toggle &and;
         
       .booker-card.active#reservation
         //- +basicInput('Number of people', 'number', 'people', {'value': 1})
@@ -24,6 +25,7 @@ mixin booker()
         +basicInput('Email', 'email', 'email')
         +basicInput('Address', 'text', 'address')
         .button(data-tab="special-requests") Next >
+        .button.back(data-tab="reservation") < Back
       
       .booker-card#special-requests
         - const diets = ['Milk/dairy', 'Eggs', 'Peanuts', 'Soy', 'Fish', 'Shellfish', 'Kosher/Religious', 'Tree nuts, like walnuts, almonds, pine nuts, brazil nuts, and pecans', 'Wheat and other grains with gluten, including barley, rye, and oats']
@@ -32,6 +34,7 @@ mixin booker()
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
           textarea(rows='5' name='additional')
         .button(data-tab="package") Next >
+        .button.back(data-tab="info") < Back
         
       .booker-card#package
         //- - const packages = ['VIP', 'Executive']
@@ -47,6 +50,7 @@ mixin booker()
           p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
           input(type='radio' name='package' id='vip' value='vip')
         input(type="submit" value="Submit")
+        .button.back(data-tab="special-requests") < Back
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
   script(src="https://unpkg.com/flatpickr")
   script(type="application/javascript", src="javascripts/_booker.js")

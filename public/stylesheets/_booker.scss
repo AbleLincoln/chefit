@@ -1,11 +1,5 @@
 .booker {
   background-color: $chefit-white;
-  // position: relative;
-  position: absolute;
-  top: 35%;
-  left: 0;
-  right: 0;
-
   padding: 15px;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.25);
@@ -23,9 +17,10 @@
     transform: translateY(-100%);
 
     @media screen and (max-width: $breakpoint-small) {
-      width: 33%;
-      left: initial; right: 0;
-      flex-direction: column;
+      flex-direction: row-reverse;
+      // width: 33%;
+      // left: initial; right: 0;
+      // flex-direction: column;
     }
 
     .tab {
@@ -47,11 +42,20 @@
       }
 
       @media screen and (max-width: $breakpoint-small) {
-        &:not(:first-child){
-          border-radius: initial;
+        flex-basis: auto;
+        &:not(.active){
+          // border-radius: initial;
+          display: none;
         }
-        border-top: 1px solid $chefit-white;
       }
+    }
+
+    .toggle {
+      position: absolute;
+      // top: 0.5em;
+      left: -1em;
+      font-size: 2em;
+      color: #333;
     }
   }
 
@@ -133,6 +137,16 @@
       &:hover {
         background-color: $chefit-blue;
         box-shadow: $light-shadow;
+      }
+
+      &.back {
+        left: 15px; right: initial;
+      }
+
+      @media screen and (min-width: $breakpoint-small) {
+        &.back {
+          display: none;
+        }
       }
     }
   }
