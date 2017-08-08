@@ -411,6 +411,9 @@ template {
 [hidden] {
   display: none; }
 
+html {
+  font-size: 16px; }
+
 html, body {
   height: 100%; }
 
@@ -432,7 +435,7 @@ li {
     left: 0;
     width: 200px; }
   .hero .booker {
-    flex-basis: 100%;
+    flex-basis: 95%;
     max-width: 800px;
     margin: auto; }
 
@@ -511,7 +514,7 @@ li {
     margin-bottom: 5px; }
   .input input, .input textarea {
     padding: 10px;
-    line-height: 1.25;
+    line-height: 1.5;
     color: #464a4c;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -570,8 +573,8 @@ li {
   justify-content: center;
   padding: 6px; }
   .numberInput > div .counter {
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     text-align: center;
     padding: 5px;
     border: 2px solid #247AE4;
@@ -587,6 +590,6 @@ li {
     .numberInput > div .counter.add {
       order: 2; }
   .numberInput > div .number {
-    padding: 0.5rem 1.5rem; }
+    padding: 0.5rem 2rem; }
 
 /*# sourceMappingURL=style.css.map */
