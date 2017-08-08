@@ -13,6 +13,11 @@
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 5px;
+
+    &:focus {
+      box-shadow: $ultra-light-shadow;
+      outline: none;
+    }
   }
 }
 
@@ -81,6 +86,7 @@
   > div {
     display: flex;
     justify-content: center;
+    padding: 6px;
 
     .counter {
       width: 2em;
@@ -90,6 +96,16 @@
       padding: 5px;
       border: 2px solid $chefit-blue;
       border-radius: 100%;
+
+      cursor: pointer;
+      user-select: none;
+
+      transition: all 350ms;
+
+      &:hover {
+        background-color: $chefit-blue;
+        box-shadow: $light-shadow;
+      }
 
       &.subtract {
         order: 0;

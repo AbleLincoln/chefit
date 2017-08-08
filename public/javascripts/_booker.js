@@ -41,6 +41,29 @@ function setSelection() {
   input.checked = true;
 }
 
+// Number counter
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+  counter.addEventListener('click', count);
+})
+
+function count() {
+  // get count amount
+  const countAmnt = parseInt(this.dataset.count);
+  // get input (there should only be one)
+  const input = this.parentNode.getElementsByTagName('input')[0];
+  // get number label
+  const label = this.parentNode.getElementsByClassName('number')[0];
+  console.log(label);
+  if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
+    // TODO show error message
+    // console.log(`err numb to high/low ${input.value + countAmnt}`);
+  } else {
+    input.value = parseInt(input.value) + countAmnt;
+    label.innerHTML = input.value;
+  }
+}
+
 // Flatpickr date/time picker
 flatpickr('.dateInput input', {
   altInput: true,

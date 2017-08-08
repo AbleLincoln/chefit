@@ -80,11 +80,13 @@
         }
 
         &:hover {
-          background-color: mix($chefit-blue, $chefit-white);
+          // background-color: mix($chefit-blue, $chefit-white);
+          box-shadow: $med-shadow;
         }
 
         &.selected {
           background-color: $chefit-blue;
+          box-shadow: $med-shadow;
         }
       }
     }
@@ -105,6 +107,7 @@
 
       &:hover {
         background-color: $chefit-blue;
+        box-shadow: $light-shadow;
       }
     }
   }

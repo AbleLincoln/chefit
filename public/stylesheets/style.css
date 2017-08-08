@@ -486,9 +486,10 @@ li {
         .booker .booker-card#package .package input {
           display: none; }
         .booker .booker-card#package .package:hover {
-          background-color: #8cb7ee; }
+          box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25); }
         .booker .booker-card#package .package.selected {
-          background-color: #247AE4; }
+          background-color: #247AE4;
+          box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25); }
     .booker .booker-card .button, .booker .booker-card input[type='submit'] {
       position: absolute;
       bottom: 15px;
@@ -500,7 +501,8 @@ li {
       cursor: pointer;
       transition: all 350ms; }
       .booker .booker-card .button:hover, .booker .booker-card input[type='submit']:hover {
-        background-color: #247AE4; }
+        background-color: #247AE4;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1); }
 
 .input {
   padding: 10px; }
@@ -514,6 +516,9 @@ li {
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 5px; }
+    .input input:focus, .input textarea:focus {
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
+      outline: none; }
 
 .basicInput label {
   display: block; }
@@ -555,14 +560,21 @@ li {
 
 .numberInput > div {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding: 6px; }
   .numberInput > div .counter {
     width: 2em;
     height: 2em;
     text-align: center;
     padding: 5px;
     border: 2px solid #247AE4;
-    border-radius: 100%; }
+    border-radius: 100%;
+    cursor: pointer;
+    user-select: none;
+    transition: all 350ms; }
+    .numberInput > div .counter:hover {
+      background-color: #247AE4;
+      box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1); }
     .numberInput > div .counter.subtract {
       order: 0; }
     .numberInput > div .counter.add {

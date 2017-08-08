@@ -7,8 +7,8 @@ mixin numberInput(label, name, min, max)
   .numberInput.input
     p.label= label
     div
-      .counter.subtract -
-      .counter.add +
+      .counter.subtract(data-count="-1") -
+      .counter.add(data-count="1") +
       .number= min
       input(type="number" name=name id=name value=min min=min max=max)
       
