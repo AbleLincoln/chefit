@@ -25,7 +25,6 @@ function setActive() {
 
 // Package selection
 const packages = document.querySelectorAll('.package');
-
 packages.forEach(package => {
   package.addEventListener('click', setSelection);
 })
@@ -39,6 +38,18 @@ function setSelection() {
   // check the radio button
   const input = this.getElementsByTagName('input')[0];
   input.checked = true;
+}
+
+// checkbox selection
+const checkboxes = document.querySelectorAll('.checkbox');
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('click', check);
+})
+console.log(checkboxes);
+
+function check() {
+  if(this.classList.contains('selected')) this.classList.remove('selected');
+  else this.classList.add('selected');
 }
 
 // Number counter

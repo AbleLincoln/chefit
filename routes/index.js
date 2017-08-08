@@ -33,6 +33,7 @@ function book(req, res, next) {
   console.log(data);
   var diet;
   data.diet ? diet = data.diet.join(", ") : diet = "none";
+  // TODO check if data.diet is a single string
   const mail = {
     from: 'admin@getchefit.com',
     to: `${data.email}`,

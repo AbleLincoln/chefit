@@ -52,15 +52,27 @@
     flex-basis: 100%;
   }
 
-  div {
+  label {
+    display: block;
     padding: 10px;
     margin: 5px;
     border: 2px solid $chefit-blue;
     border-radius: 5px;
 
-    label {
-      margin-right: 10px;
+    transition: all 350ms;
+
+    &:hover {
+      box-shadow: $med-shadow;
     }
+
+    &.selected {
+      background-color: $chefit-blue;
+      box-shadow: $med-shadow;
+    }
+  }
+
+  input {
+    display: none;
   }
 }
 

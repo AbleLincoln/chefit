@@ -16,9 +16,8 @@ mixin checkboxes(label, name, values=[])
   .checkboxes.input
     p.label= label
     each value in values
-      div
-        label(for=value)= value
-        input(type='checkbox' name=name id=value value=value)
+      label.checkbox(for=value)= value
+      input(type='checkbox' name=name id=value value=value)
 
 mixin radios(name, values=[])
   .radios.input
