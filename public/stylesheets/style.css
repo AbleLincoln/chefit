@@ -552,7 +552,9 @@ li {
     .content .icons .iconbox:nth-child(2) {
       background-color: #222; }
     .content .icons .iconbox:nth-child(3) {
-      background-color: #333; }
+      background-color: #fff; }
+      .content .icons .iconbox:nth-child(3) h3 {
+        color: #222; }
     .content .icons .iconbox:nth-child(4) {
       background-color: #1F2746; }
     .content .icons .iconbox .icon {
