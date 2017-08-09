@@ -5,7 +5,7 @@ html, body {
 
 h1, h2, h3, h4 {
   margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -23,11 +23,5 @@ li {
 }
 
 .content {
-  // display: flex;
-  // flex-wrap: wrap;
   padding: 50px 5%;
-
-  >* {
-    padding-bottom: 50px;
-  }
 }

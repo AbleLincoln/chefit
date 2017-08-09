@@ -50,14 +50,12 @@
 
     @media screen and (max-width: $breakpoint-small) {
       max-width: 95%;
-      // top: 30px;
-      // left: 100px;
-      // text-align: right;
     }
 
     h2, h3 {
       color: $chefit-white;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.65);
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -74,20 +72,51 @@
 }
 
 .content {
-  h2 {
-    flex-basis: 100%;
+  #howitworks {
+    margin-bottom: 4rem;
     text-align: center;
+
+    h2 {
+      display: inline-block;
+      border-bottom: 1px solid $chefit-dark-blue;
+      max-width: 100%;
+      padding: 0px 4rem;
+    }
   }
 
   .icons {
     display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (max-width: $breakpoint-small) {
+      flex-wrap: wrap;
+    }
 
     .iconbox {
-      @media screen and (max-width: $breakpoint-small) {
-        // flex-basis: 100%;
+      position: relative;
+      margin: 10px;
+      margin-bottom: 4rem;
+      padding: 4rem 25px 15px;
+      background-color: white;
+      box-shadow: $ultra-light-shadow;
+
+      text-align: center;
+
+      .icon {
+        position: absolute;
+        left: 0; right: 0;
+        top: 0;
+        transform: translateY(-50%);
+
+        i {
+          width: 4rem; // to make it square (font-size=4rem)
+          box-sizing: content-box;
+          background-color: $chefit-blue;
+          color: white;
+          padding: 15px;
+          border-radius: 100%;
+          box-shadow: $light-shadow;
+        }
       }
     }
   }
@@ -95,9 +124,18 @@
   #whatweneed {
     width: 50%;
     margin: auto;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 100%;
+    }
 
     h3 {
       text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -120,6 +158,10 @@
     background-color: #333;
     border-radius: 5px;
     box-shadow: $med-shadow;
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 100%;
+    }
 
     p {
       color: $chefit-white;
