@@ -453,6 +453,17 @@ li {
 .content {
   padding: 50px 5%; }
 
+.footer {
+  margin-top: 4rem;
+  padding: 25px 5%;
+  border-top: 2px solid #1F2746;
+  text-align: center; }
+  .footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; }
+  .footer p {
+    font-size: 1rem; }
+
 .hero {
   position: relative;
   height: 100%;
