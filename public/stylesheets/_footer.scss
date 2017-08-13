@@ -1,16 +1,25 @@
 .footer {
   margin-top: 4rem;
   padding: 25px 5%;
+  background-color: $chefit-black;
   border-top: 2px solid $chefit-dark-blue;
 
   text-align: center;
 
   h2 {
+    color: white;
+    color: $chefit-blue;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
   p {
+    color: white;
     font-size: 1rem;
+    margin-top: 5px;
+
+    i {
+      margin-right: 5px;
+    }
   }
 }

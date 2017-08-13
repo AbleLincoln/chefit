@@ -28,7 +28,7 @@ mixin booker()
         .button.back(data-tab="reservation") < Back
       
       .booker-card#special-requests
-        - const diets = ['Milk/dairy', 'Eggs', 'Peanuts', 'Soy', 'Fish', 'Shellfish', 'Kosher/Religious', 'Tree nuts, like walnuts, almonds, pine nuts, brazil nuts, and pecans', 'Wheat and other grains with gluten, including barley, rye, and oats']
+        - const diets = ['Dairy', 'Peanuts', 'Shellfish', 'Gluten']
         +checkboxes('Allergies & dietary restrictions', 'diet', diets)
         .basicInput.input#additional
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)

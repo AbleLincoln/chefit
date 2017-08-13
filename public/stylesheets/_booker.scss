@@ -84,7 +84,27 @@
     }
 
     &#special-requests {
-      flex-wrap: wrap;
+      @media screen and (min-width: $breakpoint-small) {
+        flex-wrap: nowrap;
+      }
+      
+      .input {
+        flex-grow: 1;
+
+        &.checkboxes {
+          // flex-basis: 50%;
+        }
+
+        &.basicInput {
+          // flex-basis: 50%;
+          display: flex;
+          flex-direction: column;
+
+          textarea {
+            flex-grow: 1;
+          }
+        }
+      }
     }
 
     &#package {
