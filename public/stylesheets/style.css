@@ -547,23 +547,12 @@ li {
     margin: 10px;
     margin-bottom: 4rem;
     padding: 4rem 25px 15px;
-    background-color: white;
-    background-color: #222;
-    background-color: #333;
+    border-radius: 5px;
+    background-color: #000;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
     text-align: center; }
     .content .icons .iconbox h3 {
       color: white; }
-    .content .icons .iconbox:first-child {
-      background-color: #000; }
-    .content .icons .iconbox:nth-child(2) {
-      background-color: #222; }
-    .content .icons .iconbox:nth-child(3) {
-      background-color: #fff; }
-      .content .icons .iconbox:nth-child(3) h3 {
-        color: #222; }
-    .content .icons .iconbox:nth-child(4) {
-      background-color: #1F2746; }
     .content .icons .iconbox .icon {
       position: absolute;
       left: 0;
