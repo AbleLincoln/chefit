@@ -80,14 +80,17 @@
 
     .input {
       flex-grow: 1;
-      // flex-basis: 33%;
+      flex-basis: 25%;
+      @media screen and (max-width: $breakpoint-small) {
+        flex-basis: 100%;
+      }
     }
 
     &#special-requests {
       @media screen and (min-width: $breakpoint-small) {
         flex-wrap: nowrap;
       }
-      
+
       .input {
         flex-grow: 1;
 

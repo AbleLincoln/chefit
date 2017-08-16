@@ -69,6 +69,14 @@
       max-width: 95%;
     }
   }
+
+  .chevron {
+    position: absolute;
+    left: 0; right: 0; bottom: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+  }
 }
 
 .content {
@@ -99,7 +107,7 @@
       padding: 4rem 25px 15px;
       border-radius: 5px;
       background-color: #000;
-      box-shadow: $ultra-light-shadow;
+      box-shadow: $light-shadow;
 
       text-align: center;
 

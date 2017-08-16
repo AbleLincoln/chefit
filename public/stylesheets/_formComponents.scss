@@ -113,7 +113,7 @@
       cursor: pointer;
       user-select: none;
 
-      transition: all 350ms;
+      transition: background-color 350ms, box-shadow 10ms;
 
       &:hover {
         background-color: $chefit-blue;
@@ -125,6 +125,10 @@
       }
       &.add {
         order: 2;
+      }
+
+      &.clicked {
+        box-shadow: inset $light-shadow;
       }
     }
 

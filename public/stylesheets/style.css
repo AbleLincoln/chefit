@@ -431,6 +431,10 @@ p {
 h1, h2, h3, h4 {
   color: #1F2746; }
 
+.error {
+  color: red;
+  font-size: 1rem; }
+
 html, body {
   height: 100%;
   background-color: #F3F4F7; }
@@ -526,6 +530,14 @@ li {
     @media screen and (max-width: 768px) {
       .hero .booker {
         max-width: 95%; } }
+  .hero .chevron {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 6rem; }
 
 .content #howitworks {
   margin-bottom: 4rem;
@@ -549,7 +561,7 @@ li {
     padding: 4rem 25px 15px;
     border-radius: 5px;
     background-color: #000;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
     text-align: center; }
     .content .icons .iconbox h3 {
       color: white; }
@@ -656,7 +668,11 @@ li {
     .booker .booker-card:not(.active) {
       display: none; }
     .booker .booker-card .input {
-      flex-grow: 1; }
+      flex-grow: 1;
+      flex-basis: 25%; }
+      @media screen and (max-width: 768px) {
+        .booker .booker-card .input {
+          flex-basis: 100%; } }
     @media screen and (min-width: 768px) {
       .booker .booker-card#special-requests {
         flex-wrap: nowrap; } }
@@ -785,7 +801,7 @@ li {
     border-radius: 100%;
     cursor: pointer;
     user-select: none;
-    transition: all 350ms; }
+    transition: background-color 350ms, box-shadow 10ms; }
     .numberInput > div .counter:hover {
       background-color: #247AE4;
       box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1); }
@@ -793,6 +809,8 @@ li {
       order: 0; }
     .numberInput > div .counter.add {
       order: 2; }
+    .numberInput > div .counter.clicked {
+      box-shadow: inset 0px 0px 3px 2px rgba(0, 0, 0, 0.1); }
   .numberInput > div .number {
     padding: 0.5rem 2rem; }
 

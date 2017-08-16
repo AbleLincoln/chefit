@@ -11,6 +11,7 @@ mixin numberInput(label, name, min, max)
       .counter.add(data-count="1") +
       .number= min
       input(type="number" name=name id=name value=min min=min max=max)
+    p.error
       
 mixin checkboxes(label, name, values=[])
   .checkboxes.input

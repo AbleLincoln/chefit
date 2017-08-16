@@ -8,15 +8,11 @@ mixin booker()
         li.tab(data-tab="info") Booking Info #[i.fa.fa-pencil-square-o]
         li.tab(data-tab="special-requests") Special Requests #[i.fa.fa-cutlery]
         li.tab(data-tab="package") Select Package #[i.fa.fa-star]
-        //- .toggle &and;
         
       .booker-card.active#reservation
-        //- +basicInput('Number of people', 'number', 'people', {'value': 1})
         +numberInput('Number of people', 'people', 4, 12)
         +dateInput()
         +timeInput()
-        //- +basicInput('Date', 'date', 'date')
-        //- +basicInput('Time', 'time', 'time')
         .button(data-tab="info") Next >
         
       .booker-card#info

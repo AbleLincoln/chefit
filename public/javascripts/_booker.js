@@ -45,7 +45,6 @@ const checkboxes = document.querySelectorAll('.checkbox');
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('click', check);
 })
-console.log(checkboxes);
 
 function check() {
   if(this.classList.contains('selected')) this.classList.remove('selected');
@@ -65,14 +64,29 @@ function count() {
   const input = this.parentNode.getElementsByTagName('input')[0];
   // get number label
   const label = this.parentNode.getElementsByClassName('number')[0];
-  console.log(label);
+  // get error element
+  const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
   if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
-    // TODO show error message
-    // console.log(`err numb to high/low ${input.value + countAmnt}`);
+    // TODO error message
+    // console.log(`err numb too high/low ${input.value + countAmnt}`);
   } else {
     input.value = parseInt(input.value) + countAmnt;
     label.innerHTML = input.value;
+    if(parseInt(input.value) >= 8) {
+      error.innerHTML = 'Parties of 8 or more will be served family style';
+    } else {
+      error.innerHTML = '';
+    }
+    animateClick(this);
   }
+}
+
+// animate counters
+function animateClick(button) {
+  button.classList.add('clicked');
+  setTimeout(function() {
+    button.classList.remove('clicked');
+  }, 150);
 }
 
 // Flatpickr date/time picker
