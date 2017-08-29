@@ -1,3 +1,6 @@
+// errors for all
+const errors = document.querySelector('.errors');
+let errorsList = new Map();
 
 // Tabbing and Next buttons
 const tabs = document.querySelectorAll('.tabs .tab');
@@ -65,7 +68,7 @@ function count() {
   // get number label
   const label = this.parentNode.getElementsByClassName('number')[0];
   // get error element
-  const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
+  // const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
   if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
     // TODO error message
     // console.log(`err numb too high/low ${input.value + countAmnt}`);
@@ -73,9 +76,13 @@ function count() {
     input.value = parseInt(input.value) + countAmnt;
     label.innerHTML = input.value;
     if(parseInt(input.value) >= 8) {
-      error.innerHTML = 'Parties of 8 or more will be served family style';
+      // errors.classList.remove('inactive');
+      // errors.innerHTML = '<p>Parties of 8 or more will be served family style</p>';
+      addError('counter', 'Parties of 8 or more will be served family style');
     } else {
-      error.innerHTML = '';
+      // errors.classList.add('inactive');
+      // errors.innerHTML = '';
+      removeError('counter');
     }
     animateClick(this);
   }
@@ -101,3 +108,25 @@ flatpickr('.timeInput input', {
   defaultHour: 18,
   defaultDate: "18:00"
 });
+
+// errors
+function addError(errorName, errorMessage) {
+  errorsList.set(errorName, `<p>${errorMessage}</p>`);
+  displayErrors();
+}
+
+function removeError(errorName) {
+  errorsList.delete(errorName);
+  displayErrors();
+}
+
+function displayErrors() {
+  let errorMessages = '';
+  errorsList.forEach((value, key) => {
+    errorMessages += value;
+  })
+  // const errorsMessage = errorsList.join();
+  errors.innerHTML = errorMessages;
+  if(errorMessages === '') errors.classList.add('inactive');
+  else errors.classList.remove('inactive');
+}
