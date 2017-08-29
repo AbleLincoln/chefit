@@ -2,7 +2,7 @@ include _formComponents
 
 mixin booker()
   .booker
-    form(action="/book" method="POST")
+    form(id="booker" action="/book" method="POST")
       .tabs
         li.tab.active(data-tab="reservation") Reservation #[i.fa.fa-calendar-check-o]
         li.tab(data-tab="info") Booking Info #[i.fa.fa-pencil-square-o]
@@ -39,13 +39,14 @@ mixin booker()
           h3 VIP<br>Package
           p.price $60 per person
           p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
-          input(type='radio' name='package' id='vip' value='vip')
+          input(type='radio' name='package' id='vip' value='vip' required)
         .package
           h3 Executive<br>Package
           p.price $100 per person
           p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
-          input(type='radio' name='package' id='vip' value='vip')
-        input(type="submit" value="Submit")
+          input(type='radio' name='package' id='vip' value='executive' required)
+        .button(data-tab="package" id="submit") Submit
+        //- input(type="submit" value="Submit")
         .button.back(data-tab="special-requests") < Back
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
   script(src="https://unpkg.com/flatpickr")

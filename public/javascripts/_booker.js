@@ -5,6 +5,7 @@ let errorsList = new Map();
 // Tabbing and Next buttons
 const tabs = document.querySelectorAll('.tabs .tab');
 const cards = document.querySelectorAll('.booker-card');
+var activeCard = cards[0];
 const buttons = document.querySelectorAll('.button');
 
 tabs.forEach(tab => {
@@ -16,14 +17,54 @@ buttons.forEach(button => {
 })
 
 function setActive() {
+  if(!validateCard(activeCard)) return;
   tabs.forEach(tab => {
     if(tab.dataset.tab === this.dataset.tab) tab.classList.add('active');
     else tab.classList.remove('active');
   });
   cards.forEach(card => {
-    if(card.id === this.dataset.tab) card.classList.add(('active'));
+    if(card.id === this.dataset.tab) {
+      card.classList.add(('active'));
+      activeCard = card;
+    }
     else card.classList.remove('active');
+  });
+  clearErrors();
+}
+
+const submitButton = document.querySelector('#submit');
+submitButton.addEventListener('click', validateFinalCard);
+function validateFinalCard() {
+  let anySelected = false;
+  const radios = document.querySelectorAll('input[type="radio"]');
+  console.log(radios);
+  radios.forEach(radio => {
+    if(radio.checked) anySelected = true;
+  });
+  if(anySelected) document.querySelector('#booker').submit();
+  else addError('checkboxes', 'Please select your package');
+};
+
+// validation
+function validateCard(card) {
+  const inputs = card.querySelectorAll('.input input');
+  let invalid = false;
+  inputs.forEach(input => {
+    if(input.value === null || input.value === "") {
+      invalid = true;
+      addError('empty field', 'Please fill out all fields');
+    }
+    if(!input.checkValidity()) {
+      invalid = true;
+      addError(`invalid ${input.name}`, `Please input your ${input.name} in a valid format`);
+    } else {
+      removeError(`invalid ${input.name}`);
+    }
   })
+  if(invalid) {
+    return false;
+  }
+  else return true;
 }
 
 // Package selection
@@ -70,19 +111,23 @@ function count() {
   // get error element
   // const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
   if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
-    // TODO error message
-    // console.log(`err numb too high/low ${input.value + countAmnt}`);
+    if(parseInt(input.value) === 12) {
+      addError('counter oob', 'Parties greater than 12 served on special request. Please email us at admin@GetChefIt.com');
+    } else if(parseInt(input.value) === 4) {
+      addError('counter oob', 'Currrently we do not serve parties of less than 4 people. Please email us at admin@GetChefIt.com for any special requests');
+    }
   } else {
+    removeError('counter oob');
     input.value = parseInt(input.value) + countAmnt;
     label.innerHTML = input.value;
     if(parseInt(input.value) >= 8) {
       // errors.classList.remove('inactive');
       // errors.innerHTML = '<p>Parties of 8 or more will be served family style</p>';
-      addError('counter', 'Parties of 8 or more will be served family style');
+      addError('counter above 8', 'Parties of 8 or more will be served family style');
     } else {
       // errors.classList.add('inactive');
       // errors.innerHTML = '';
-      removeError('counter');
+      removeError('counter above 8');
     }
     animateClick(this);
   }
@@ -117,6 +162,11 @@ function addError(errorName, errorMessage) {
 
 function removeError(errorName) {
   errorsList.delete(errorName);
+  displayErrors();
+}
+
+function clearErrors() {
+  errorsList.clear();
   displayErrors();
 }
 

@@ -6,10 +6,7 @@
   margin: auto;
   left: 0; right: 0;
   bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background-color: red;
-  box-shadow: $light-shadow;
+
 
   transition: opacity 350ms;
 
@@ -19,5 +16,10 @@
 
   p {
     color: $chefit-black;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: red;
+    box-shadow: $light-shadow;
   }
 }
