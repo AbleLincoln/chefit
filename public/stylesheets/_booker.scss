@@ -29,7 +29,7 @@
       padding: 15px;
       border-radius: 5px 5px 0px 0px;
 
-      cursor: pointer;
+      // cursor: pointer;
 
       transition: all 350ms;
 
@@ -38,7 +38,7 @@
       }
 
       &:hover:not(.active) {
-        background-color: mix($chefit-blue, $chefit-white);
+        // background-color: mix($chefit-blue, $chefit-white);
       }
 
       @media screen and (max-width: $breakpoint-small) {
@@ -176,7 +176,7 @@
 
       @media screen and (min-width: $breakpoint-small) {
         &.back {
-          display: none;
+          // display: none;
         }
       }
     }

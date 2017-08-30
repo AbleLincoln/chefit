@@ -7,17 +7,37 @@ const tabs = document.querySelectorAll('.tabs .tab');
 const cards = document.querySelectorAll('.booker-card');
 var activeCard = cards[0];
 const buttons = document.querySelectorAll('.button');
+const backButtons = document.querySelectorAll('.button.back');
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', setActive);
-})
+// tabs.forEach(tab => {
+//   tab.addEventListener('click', setActive);
+// })
 
 buttons.forEach(button => {
   button.addEventListener('click', setActive);
-})
+});
+
+backButtons.forEach(button => {
+  button.addEventListener('click', setActiveBack);
+});
 
 function setActive() {
   if(!validateCard(activeCard)) return;
+  tabs.forEach(tab => {
+    if(tab.dataset.tab === this.dataset.tab) tab.classList.add('active');
+    else tab.classList.remove('active');
+  });
+  cards.forEach(card => {
+    if(card.id === this.dataset.tab) {
+      card.classList.add(('active'));
+      activeCard = card;
+    }
+    else card.classList.remove('active');
+  });
+  clearErrors();
+}
+
+function setActiveBack() {
   tabs.forEach(tab => {
     if(tab.dataset.tab === this.dataset.tab) tab.classList.add('active');
     else tab.classList.remove('active');

@@ -659,12 +659,9 @@ li {
       background-color: #247AE4;
       padding: 15px;
       border-radius: 5px 5px 0px 0px;
-      cursor: pointer;
       transition: all 350ms; }
       .booker .tabs .tab.active {
         background-color: #F3F4F7; }
-      .booker .tabs .tab:hover:not(.active) {
-        background-color: #8cb7ee; }
       @media screen and (max-width: 768px) {
         .booker .tabs .tab {
           flex-basis: auto; }
@@ -741,9 +738,6 @@ li {
       .booker .booker-card .button.back, .booker .booker-card input[type='submit'].back {
         left: 15px;
         right: initial; }
-      @media screen and (min-width: 768px) {
-        .booker .booker-card .button.back, .booker .booker-card input[type='submit'].back {
-          display: none; } }
 
 .input {
   padding: 10px; }
