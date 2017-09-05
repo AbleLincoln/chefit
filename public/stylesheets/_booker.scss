@@ -67,10 +67,11 @@
 
   .booker-card {
     display: flex;
+    flex-wrap: wrap;
 
-    @media screen and (max-width: $breakpoint-small) {
-      flex-wrap: wrap;
-    }
+    // @media screen and (max-width: $breakpoint-small) {
+    //   flex-wrap: wrap;
+    // }
 
     padding-bottom: 40px;
 
@@ -82,6 +83,10 @@
       flex-grow: 1;
       flex-basis: 25%;
       @media screen and (max-width: $breakpoint-small) {
+        flex-basis: 100%;
+      }
+
+      &.address {
         flex-basis: 100%;
       }
     }
@@ -174,10 +179,8 @@
         left: 15px; right: initial;
       }
 
-      @media screen and (min-width: $breakpoint-small) {
-        &.back {
-          // display: none;
-        }
+      &.clicked {
+        box-shadow: inset $light-shadow;
       }
     }
   }

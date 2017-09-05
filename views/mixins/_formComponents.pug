@@ -1,5 +1,5 @@
 mixin basicInput(label, type, name, attrs={})
-  .basicInput.input
+  .basicInput.input(class=name)
     label(for=name)= label
     input(type=type name=name id=name)&attributes(attrs)
       

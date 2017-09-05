@@ -3,6 +3,7 @@ include _formComponents
 mixin booker()
   .booker
     form(id="booker" action="/book" method="POST")
+      .errors.inactive
       .tabs
         li.tab.active(data-tab="reservation") Reservation #[i.fa.fa-calendar-check-o]
         li.tab(data-tab="info") Booking Info #[i.fa.fa-pencil-square-o]
@@ -19,7 +20,8 @@ mixin booker()
         +basicInput('Name', 'text', 'name')
         +basicInput('Phone', 'tel', 'phone')
         +basicInput('Email', 'email', 'email')
-        +basicInput('Address', 'text', 'address')
+        +basicInput('Address', 'text', 'address', {'placeholder': ''})
+        //- input(id="mapsInput" type="text")
         .button(data-tab="special-requests") Next >
         .button.back(data-tab="reservation") < Back
       
@@ -50,7 +52,10 @@ mixin booker()
         .button.back(data-tab="special-requests") < Back
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
   script(src="https://unpkg.com/flatpickr")
+  script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZSWvBF46Su4ueHW0SeDiflUvecxKBpU&libraries=places")
   script(type="application/javascript", src="javascripts/_booker.js")
+  
+
         
       
     

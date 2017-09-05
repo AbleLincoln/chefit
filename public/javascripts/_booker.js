@@ -22,6 +22,7 @@ backButtons.forEach(button => {
 });
 
 function setActive() {
+  animateClick(this);
   if(!validateCard(activeCard)) return;
   tabs.forEach(tab => {
     if(tab.dataset.tab === this.dataset.tab) tab.classList.add('active');
@@ -200,3 +201,7 @@ function displayErrors() {
   if(errorMessages === '') errors.classList.add('inactive');
   else errors.classList.remove('inactive');
 }
+
+// Google Maps api
+const addressInput = document.querySelector('#address');
+var autocompleteAddressInput = new google.maps.places.Autocomplete(addressInput, {});

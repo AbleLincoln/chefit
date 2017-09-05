@@ -1,11 +1,11 @@
 .errors {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   width: 95%;
   max-width: 800px;
   margin: auto;
-  left: 0; right: 0;
-  bottom: 1rem;
+  left: 0; right: 0; bottom: 0;
+  transform: translateY(100%);
 
 
   transition: opacity 350ms;
