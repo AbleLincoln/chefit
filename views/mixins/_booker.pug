@@ -10,7 +10,7 @@ mixin booker()
         li.tab(data-tab="special-requests") Special Requests #[i.fa.fa-cutlery]
         li.tab(data-tab="package") Select Package #[i.fa.fa-star]
         
-      .booker-card.active#reservation
+      .booker-card#reservation
         +numberInput('Number of people', 'people', 4, 12)
         +dateInput()
         +timeInput()
@@ -34,18 +34,22 @@ mixin booker()
         .button(data-tab="package") Next >
         .button.back(data-tab="info") < Back
         
-      .booker-card#package
-        //- - const packages = ['VIP', 'Executive']
-        //- +radios('package', packages)
+      .booker-card.active#package
         .package
-          h3 VIP<br>Package
-          p.price $60 per person
-          p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
+          .type
+            h3 VIP Package
+            //- p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
+          .info
+            p.price $60 per person
+            .menu View menu
           input(type='radio' name='package' id='vip' value='vip' required)
         .package
-          h3 Executive<br>Package
-          p.price $100 per person
-          p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
+          .type
+            h3 Executive Package
+          .info
+            p.price $100 per person
+            .menu View menu
+          //- p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
           input(type='radio' name='package' id='vip' value='executive' required)
         .button(data-tab="package" id="submit") Submit
         //- input(type="submit" value="Submit")

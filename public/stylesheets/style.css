@@ -483,7 +483,7 @@ li {
 .hero {
   position: relative;
   height: 100%;
-  padding-top: 27vh;
+  padding-top: 20vh;
   background-image: url("../images/chef-bg.jpg");
   background-position: center;
   background-size: cover; }
@@ -700,21 +700,42 @@ li {
         .booker .booker-card#special-requests .input.basicInput textarea {
           flex-grow: 1; }
     .booker .booker-card#package {
-      justify-content: center; }
+      justify-content: space-between; }
       .booker .booker-card#package .package {
-        flex-grow: 1;
-        max-width: 250px;
-        margin: 15px;
-        padding: 15px 20px;
-        text-align: center;
-        border: 2px solid #247AE4;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 49%;
+        height: 27vh;
+        margin-top: 1vh;
+        margin-bottom: 2.5vh;
+        border: 1px solid #6f6f6f;
         border-radius: 5px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all 350ms; }
-        .booker .booker-card#package .package p.price {
-          margin-bottom: 10px; }
-        .booker .booker-card#package .package p.description {
-          font-size: 1rem; }
+        .booker .booker-card#package .package .type {
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 0 1rem;
+          border-radius: 3px 3px 0px 0px;
+          background-image: url("../images/casual-bg.jpg");
+          background-size: cover; }
+          .booker .booker-card#package .package .type h3 {
+            margin-bottom: 0.75rem;
+            color: #F3F4F7;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); }
+        .booker .booker-card#package .package .info {
+          flex-grow: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 1rem; }
+          .booker .booker-card#package .package .info .menu {
+            padding: 5px 8px;
+            border: 2px solid #247AE4;
+            border-radius: 5px; }
         .booker .booker-card#package .package input {
           display: none; }
         .booker .booker-card#package .package:hover {
