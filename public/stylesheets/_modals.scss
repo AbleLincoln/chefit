@@ -1,0 +1,39 @@
+.modal {
+  display: none;
+
+  z-index: 100000;
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  padding: 7.5vh 0;
+
+  background-color: rgba(0,0,0,0.75);
+
+  &.open {
+    display: block;
+  }
+
+  .content {
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+
+    background-color: $chefit-white;
+
+    text-align: center;
+
+    h3 {
+      margin-top: 3rem;
+    }
+
+    p {
+      margin: 1.5rem;
+    }
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}

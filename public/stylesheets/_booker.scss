@@ -133,6 +133,10 @@
 
         transition: all 350ms;
 
+        @media screen and (max-width: $breakpoint-small) {
+          flex-basis: 100%;
+        }
+
         .type {
           display: flex;
           justify-content: flex-end;

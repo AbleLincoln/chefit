@@ -41,14 +41,14 @@ mixin booker()
             //- p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
           .info
             p.price $60 per person
-            .menu View menu
+            .menu(data-modal="modal-package-vip") View menu
           input(type='radio' name='package' id='vip' value='vip' required)
         .package
           .type
             h3 Executive Package
           .info
             p.price $100 per person
-            .menu View menu
+            .menu(data-modal="modal-package-vip") View menu
           //- p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
           input(type='radio' name='package' id='vip' value='executive' required)
         .button(data-tab="package" id="submit") Submit

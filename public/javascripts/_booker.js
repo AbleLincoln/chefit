@@ -205,3 +205,16 @@ function displayErrors() {
 // Google Maps api
 const addressInput = document.querySelector('#address');
 var autocompleteAddressInput = new google.maps.places.Autocomplete(addressInput, {});
+
+// modals
+const modals = document.querySelectorAll('.modal');
+const menuButtons = document.querySelectorAll('.menu');
+
+menuButtons.forEach(button => {
+  button.addEventListener('click', openModal);
+})
+
+function openModal() {
+  document.querySelector(`#${this.dataset.modal}`).classList.add('open');
+  document.querySelector('body').classList.add('modal-open');
+}
