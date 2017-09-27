@@ -212,9 +212,20 @@ const menuButtons = document.querySelectorAll('.menu');
 
 menuButtons.forEach(button => {
   button.addEventListener('click', openModal);
-})
+});
 
 function openModal() {
   document.querySelector(`#${this.dataset.modal}`).classList.add('open');
   document.querySelector('body').classList.add('modal-open');
+}
+
+modals.forEach(modal => {
+  modal.addEventListener('click', closeModal);
+})
+
+function closeModal(e) {
+  if(e.target !== this) return; // if we click the actual content, don't close
+  this.classList.remove('open');
+  document.querySelector('body').classList.remove('modal-open');
+
 }
