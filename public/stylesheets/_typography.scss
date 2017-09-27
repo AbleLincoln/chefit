@@ -26,6 +26,11 @@ h3 {
 p {
   font-size: 1.25rem;
   line-height: 1.35;
+
+  &.small {
+    font-size: 1rem;
+    color: lighten($chefit-black, 10%);
+  }
 }
 
 h1, h2, h3, h4 {

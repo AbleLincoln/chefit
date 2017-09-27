@@ -73,6 +73,7 @@ function validateCard(card) {
   inputs.forEach(input => {
     if(input.value === null || input.value === "") {
       invalid = true;
+      input.classList.add('error');
       addError('empty field', 'Please fill out all fields');
     }
     if(!input.checkValidity()) {
