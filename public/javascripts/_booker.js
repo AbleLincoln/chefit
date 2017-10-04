@@ -102,7 +102,7 @@ function setSelection() {
   // add checked class
   this.classList.add('selected');
   // check the radio button
-  const input = this.getElementsByTagName('input')[0];
+  const input = this.getElementsByTagName('input[name="package"]')[0];
   input.checked = true;
 }
 

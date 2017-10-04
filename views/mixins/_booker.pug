@@ -13,11 +13,72 @@ mixin booker()
       .booker-card.active#package
         .package
           .type
-            h3 VIP Package
-            //- p.description A casual dining chef experience including a salad or an appetizer of your choice and a main course
+            h3 Temptation Package
           .info
             p.price $60 per person
             .menu(data-modal="modal-package-vip") View menu
+          .modal#modal-package-vip
+            .content
+              img.logo(src="images/chefit-logo.png", alt="CHEFIT")
+              h2 Temptation Menu
+              p.small.description A casual dining chef experience including a salad or an appetizer of your choice and a main course. Includes grocery cost, the chef's travelling fees, food preparation and execution, and kitchen clean-up.
+              
+              h3 Appetizers
+              hr
+              p.small Choose one:
+              .menu-item
+                input(type="radio" name="appetizer" value="pizzetta" id="pizzetta")
+                label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
+              .menu-item
+                input(type="radio" name="appetizer" value="bruschetta" id="bruschetta")
+                label(for="bruschetta") Bruschetta with tomato confit and fresh basil
+              .menu-item
+                input(type="radio" name="appetizer" value="goats" id="goats")
+                label(for="goats") Goats cheese and pistachio filled endive leaves
+              .menu-item
+                input(type="radio" name="appetizer" value="crudite" id="crudite")
+                label(for="crudite") Crudite platter with ranch dipping sauce
+                
+              h3 Salads
+              hr
+              p.small Choose one:
+              .menu-item
+                input(type="radio" name="salad" value="arugula" id="arugula")
+                label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
+              .menu-item
+                input(type="radio" name="salad" value="spinach" id="spinach")
+                label(for="spinach") Spinach and butter lettuce salad with Italian dressing
+              .menu-item
+                input(type="radio" name="salad" value="cucumber" id="cucumber")
+                label(for="cucumber") Cucumber and tomato salad with fresh herbs
+              .menu-item
+                input(type="radio" name="salad" value="mixedgreens" id="mixedgreens")
+                label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
+              
+              h3 Main course
+              hr
+              p.small Choose one:
+              .menu-item
+                input(type="radio" name="main" value="skirt-steak" id="skirt-steak")
+                label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
+              .menu-item
+                input(type="radio" name="main" value="ribeye" id="ribeye")
+                label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
+              .menu-item
+                input(type="radio" name="main" value="picatta" id="picatta")
+                label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
+              .menu-item
+                input(type="radio" name="main" value="fussili" id="fussili")
+                label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
+              .menu-item
+                input(type="radio" name="main" value="salmon" id="salmon")
+                label(for="salmon") Seared Salmon with a green dragon jasmine rice
+              .menu-item
+                input(type="radio" name="main" value="chipotle-chicken" id="chipotle-chicken")
+                label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
+              .menu-item
+                input(type="radio" name="main" value="herb-salmon" id="herb-salmon")
+                label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
           input(type='radio' name='package' id='vip' value='vip' required)
         .package
           .type
@@ -25,9 +86,31 @@ mixin booker()
           .info
             p.price $100 per person
             .menu(data-modal="modal-package-vip") View menu
+          .modal#modal-package-exec
+            .content
+              h2 Executive Menu
+              
+              h3 Appetizers and Salads
+              hr
+              p Bruschetta with tomato confit and fresh basil
+              p Pizzetta squares with fresh mozzarella and sundried tomatoes
+              p Arugula and romaine salad with apple and radish with a citrus vinaigrette
+              p Spinach and butter lettuce salad with Italian dressing
+              p Poppy lemon crunch salad
+              p Cucumber and tomato salad with fresh herbs
+              p Chunky white bean vegetable soup
+              
+              h3 Main course
+              hr
+              p Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
+              p Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
+              p Chicken Picatta served with rice mixed with peas and wilted spinach
+              p Pasta fussili Alfredo traditional with shrimp scampi
+              p Seared Salmon with a green dragon jasmine rice
+              p Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
+              p Herb roasted salmon with sprouted lentils and a vegetable medley
           //- p.description  A more exclusive fine dining experience using the finest cuts of meat and best produce available
           input(type='radio' name='package' id='vip' value='executive' required)
-        p.small Price includes grocery cost, the chef's travelling fees, food preparation and execution, and kitchen clean-up.
         .button(data-tab="reservation") Next >
         
       .booker-card#reservation

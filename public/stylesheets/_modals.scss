@@ -3,6 +3,7 @@
 
   z-index: 100000;
   position: fixed;
+  top: 0; left: 0;
 
   height: 100%;
   width: 100%;
@@ -16,6 +17,7 @@
   }
 
   .content {
+    position: relative;
     margin: auto;
     width: 90%;
     max-width: 800px;
@@ -24,12 +26,33 @@
 
     text-align: center;
 
+    .logo {
+      top: -15px;
+      left: -15px;
+    }
+
     h3 {
       margin-top: 3rem;
     }
 
-    p {
-      margin: 1.5rem;
+    p.description {
+      margin: 1rem 100px;
+    }
+
+    .menu-item {
+      margin: 1.5rem 0;
+
+      text-align: left;
+
+      label {
+        font-size: 1.25rem;
+        line-height: 1.35;
+        margin-left: 1rem;
+      }
+
+      input {
+        display: inline-block!important;
+      }
     }
   }
 }
