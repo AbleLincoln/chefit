@@ -56,14 +56,7 @@ function setActiveBack() {
 const submitButton = document.querySelector('#submit');
 submitButton.addEventListener('click', validateFinalCard);
 function validateFinalCard() {
-  let anySelected = false;
-  const radios = document.querySelectorAll('input[type="radio"]');
-  console.log(radios);
-  radios.forEach(radio => {
-    if(radio.checked) anySelected = true;
-  });
-  if(anySelected) document.querySelector('#booker').submit();
-  else addError('checkboxes', 'Please select your package');
+  document.querySelector('#booker').submit();
 };
 
 // validation
@@ -83,6 +76,22 @@ function validateCard(card) {
       removeError(`invalid ${input.name}`);
     }
   })
+
+  let appSelected = false;
+  let saladSelected = false;
+  let mainSelected = false;
+  const radios = card.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => {
+    if(radio.name === "appetizer" && radio.checked) appSelected = true;
+    else if(radio.name === "salad" && radio.checked) saladSelected = true;
+    else if(radio.name === "main" && radio.checked) mainSelected = true;
+  });
+  if(appSelected && saladSelected && mainSelected) console.log('all good in this hood');
+  else {
+    console.log('not good');
+    invalid = true;
+  }
+
   if(invalid) {
     return false;
   }
@@ -102,7 +111,7 @@ function setSelection() {
   // add checked class
   this.classList.add('selected');
   // check the radio button
-  const input = this.getElementsByTagName('input[name="package"]')[0];
+  let input = this.querySelectorAll('input[name="package"]');
   input.checked = true;
 }
 

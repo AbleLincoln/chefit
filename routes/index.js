@@ -47,7 +47,7 @@ function book(req, res, next) {
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  res.render('index', { title: 'Express' });
+  res.redirect('index', { title: 'Express' });
 }
 
 module.exports = router;

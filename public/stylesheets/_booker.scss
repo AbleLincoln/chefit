@@ -117,13 +117,14 @@
 
     &#package {
       justify-content: space-between;
+      padding-bottom: 0px;
       .package {
         display: flex;
         flex-direction: column;
         flex-basis: 49%;
         height: 27vh;
         margin-top: 1vh;
-        margin-bottom: 2.5vh;
+        margin-bottom: 1vh;
 
         border: 1px solid $chefit-dark-blue;
         border-radius: 5px;
