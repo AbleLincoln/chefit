@@ -35,4 +35,16 @@ mixin dateInput()
 mixin timeInput()
   .timeInput.input
     label() Time
-    input(type="text" name="time" placeholder="Time")
+    select
+      option(value="5:00") 5:00 PM
+      option(value="5:30") 5:30 PM
+      option(value="6:00") 6:00 PM
+      option(value="6:30") 6:30 PM
+      option(value="7:00") 7:00 PM
+      option(value="7:30") 7:30 PM
+      option(value="8:00") 8:00 PM
+      option(value="8:30") 8:30 PM
+      option(value="9:00") 9:00 PM
+      option(value="9:30") 9:30 PM
+      option(value="10:00") 10:00 PM
+    //- input(type="text" name="time" placeholder="Time")

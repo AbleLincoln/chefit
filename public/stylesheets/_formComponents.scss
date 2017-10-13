@@ -7,7 +7,7 @@
     margin-bottom: 5px;
   }
 
-  input, textarea {
+  input, textarea, select {
     padding: 10px;
     line-height: 1.5;
     color: #464a4c;
@@ -41,6 +41,13 @@
   input, textarea {
     width: 100%;
     display: block;
+  }
+}
+
+.timeInput {
+  select {
+    height: 2.85rem;
+    width: 100%;
   }
 }
 

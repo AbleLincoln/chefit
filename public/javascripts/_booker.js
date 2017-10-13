@@ -86,7 +86,10 @@ function validateCard(card) {
     else if(radio.name === "salad" && radio.checked) saladSelected = true;
     else if(radio.name === "main" && radio.checked) mainSelected = true;
   });
-  if(appSelected && saladSelected && mainSelected) console.log('all good in this hood');
+  if(radios.length === 0 || (appSelected && saladSelected && mainSelected)) {
+    console.log('all good in this hood');
+    document.querySelector('body').classList.remove('modal-open');
+  }
   else {
     console.log('not good');
     invalid = true;

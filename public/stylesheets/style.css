@@ -781,14 +781,14 @@ hr {
     font-size: 1rem;
     margin-top: 0px;
     margin-bottom: 5px; }
-  .input input, .input textarea {
+  .input input, .input textarea, .input select {
     padding: 10px;
     line-height: 1.5;
     color: #464a4c;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 5px; }
-    .input input:focus, .input textarea:focus {
+    .input input:focus, .input textarea:focus, .input select:focus {
       box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
       outline: none; }
 
@@ -805,6 +805,10 @@ hr {
 .dateInput input, .dateInput textarea, .timeInput input, .timeInput textarea {
   width: 100%;
   display: block; }
+
+.timeInput select {
+  height: 2.85rem;
+  width: 100%; }
 
 .checkboxes {
   display: flex;
