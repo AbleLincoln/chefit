@@ -760,7 +760,7 @@ hr {
       position: absolute;
       bottom: 15px;
       right: 15px;
-      padding: 8px 10px;
+      padding: 5px 8px;
       background-color: transparent;
       border: 2px solid #247AE4;
       border-radius: 5px;
@@ -868,11 +868,11 @@ hr {
     padding: 0.5rem 2rem; }
 
 .errors {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   position: absolute;
   z-index: 100;
-  width: 95%;
-  max-width: 800px;
-  margin: auto;
   left: 0;
   right: 0;
   bottom: 0;
