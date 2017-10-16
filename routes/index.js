@@ -23,7 +23,7 @@ const outlookTransport = nodemailer.createTransport({
   port: 587,
   auth: {
     user: "admin@getchefit.com",
-    pass: "Getchefit01!"
+    pass: "Bobbygetchefit1!"
   },
   secureConnection: false,
   tls: { ciphers: 'SSLv3' }
