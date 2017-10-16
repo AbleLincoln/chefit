@@ -79,11 +79,11 @@ mixin booker()
               .menu-item
                 input(type="radio" name="main" value="herb-salmon" id="herb-salmon")
                 label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
-              .button(data-tab="reservation") Next >
+              .button(data-tab="reservation") Next 
           input(type='radio' name='package' id='vip' value='vip' required)
         .package
           .type
-            h3 Executive Package
+            h3 Prestige Package
           .info
             .menu(data-modal="modal-package-prestige") Select menu
             p.price.small $100 per person
@@ -140,16 +140,16 @@ mixin booker()
               .menu-item
                 input(type="radio" name="main" value="stripsteak" id="stripsteak")
                 label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
-              .button(data-tab="reservation") Next >
+              .button(data-tab="reservation") Next
           input(type='radio' name='package' id='vip' value='executive' required)
-        //- .button(data-tab="reservation") Next >
+        //- .button(data-tab="reservation") Next 
         
       .booker-card#reservation
         +numberInput('Number of people', 'people', 4, 12)
         +dateInput()
         +timeInput()
-        .button.back(data-tab="package") < Back
-        .button(data-tab="info") Next >
+        .button.back(data-tab="package")  Back
+        .button(data-tab="info") Next
         
       .booker-card#info
         +basicInput('Name', 'text', 'name')
@@ -157,8 +157,8 @@ mixin booker()
         +basicInput('Email', 'email', 'email')
         +basicInput('Address', 'text', 'address', {'placeholder': ''})
         //- input(id="mapsInput" type="text")
-        .button(data-tab="special-requests") Next >
-        .button.back(data-tab="reservation") < Back
+        .button(data-tab="special-requests") Next 
+        .button.back(data-tab="reservation")  Back
       
       .booker-card#special-requests
         - const diets = ['Dairy', 'Peanuts', 'Shellfish', 'Gluten']
@@ -167,7 +167,7 @@ mixin booker()
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
           textarea(rows='1' name='additional')
         .button(id="submit") Submit
-        .button.back(data-tab="info") < Back
+        .button.back(data-tab="info")  Back
         
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
   script(src="https://unpkg.com/flatpickr")

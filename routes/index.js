@@ -32,22 +32,65 @@ function book(req, res, next) {
   const data = req.body;
   console.log(data);
   var diet;
-  data.diet ? diet = data.diet.join(", ") : diet = "none";
-  // TODO check if data.diet is a single string
-  const mail = {
+  if(data.diet) {
+    diet = "not specified any dietary restrictions";
+  } else {
+    let arr = [].concat(data.diet);
+    let dietString = arr.join(" ");
+    diet = "specified dietary restrictions of " + dietString;
+  }
+
+  // customer email
+  const customerMail = {
     from: 'admin@getchefit.com',
     to: `${data.email}`,
     subject: 'ChefIt Reservation',
-    text: `Hello ${data.name}, <br /> welcome to ChefIt. This is a confirmation that you have a dinner for ${data.people} at ${data.time} on ${data.date}. This dinner will be served at ${data.address}. You will be receiving the ${data.package} package. We will take care to mind your dietary restrictions of ${diet}, as well as your special requests for ${data.additional}. Please reach out to us at Admin@getchefit.com if any of this information is incorrect.`,
-    html: `Hello ${data.name}, <br /> welcome to ChefIt. This is a confirmation that you have a dinner for ${data.people} at ${data.time} on ${data.date}. This dinner will be served at ${data.address}. You will be receiving the ${data.package} package. We will take care to mind your dietary restrictions of ${diet}, as well as your special requests for ${data.additional}. Please reach out to us at Admin@getchefit.com if any of this information is incorrect.`
+    text: `Dear ${data.name}, <br />
+    Thank you for booking your CHEFIT dinner for ${data.people} on ${data.date.getMonth()} ${data.date.getDate()} at ${data.address}. Your dinner will be served at ${data.time}, however, the chef will arrive approximately an hour and a half before this time in order to prepare. You will be served the ${data.package} package with a menu of ${data.appetizer}, ${data.salad}, and ${data.main}. According to our information, you have ${diet}.
+    <br /> Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
+    <br /> Please remember
+    <ul>
+      <li>There is a 48-hour cancellation policy with this reservation.</li>
+      <li>Note that the chef will need to ARRIVE an hour and a half before the selected dinner time.</li>
+      <li>Please take note of our add-on options for desserts and wine.</li>
+      <li>Please allow and plan for an hour of prep time before your first dish is served.</li>
+      <li>The CHEFIT team would greatly appreciate it if you would fill out a quick online survey following the meal.</li>
+    </ul>`,
+    html: `Dear ${data.name}, <br />
+    Thank you for booking your CHEFIT dinner for ${data.people} on ${data.date.getMonth()} ${data.date.getDate()} at ${data.address}. Your dinner will be served at ${data.time}, however, the chef will arrive approximately an hour and a half before this time in order to prepare. You will be served the ${data.package} package with a menu of ${data.appetizer}, ${data.salad}, and ${data.main}. According to our information, you have ${diet}.
+    <br /> Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
+    <br /> Please remember
+    <ul>
+      <li>There is a 48-hour cancellation policy with this reservation.</li>
+      <li>Note that the chef will need to ARRIVE an hour and a half before the selected dinner time.</li>
+      <li>Please take note of our add-on options for desserts and wine.</li>
+      <li>Please allow and plan for an hour of prep time before your first dish is served.</li>
+      <li>The CHEFIT team would greatly appreciate it if you would fill out a quick online survey following the meal.</li>
+    </ul>`
   }
-  outlookTransport.sendMail(mail, (error, info) => {
+  outlookTransport.sendMail(customerMail, (error, info) => {
     if (error) {
         return console.log(error);
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-  res.redirect('index', { title: 'Express' });
+
+  // admin email
+  const adminMail = {
+    from: 'admin@getchefit.com',
+    to: `admin@getchefit.com`,
+    subject: 'New ChefIt Reservation',
+    text: `Hello ChefIt team, <br /> You have a new reservation. ${data.name} made a reservation for ${data.people} at ${data.time} on ${data.date}. This dinner will be served at ${data.address}. They will be receiving the ${data.package} package with a menu of ${data.appetizer}, ${data.salad}, and ${data.main}. They have ${diet}.`,
+    html: `Hello ChefIt team, <br /> You have a new reservation. ${data.name} made a reservation for ${data.people} at ${data.time} on ${data.date}. This dinner will be served at ${data.address}. They will be receiving the ${data.package} package with a menu of ${data.appetizer}, ${data.salad}, and ${data.main}. They have ${diet}.`
+  }
+  outlookTransport.sendMail(adminMail, (error, info) => {
+    if (error) {
+        return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+  });
+
+  res.redirect('/');
 }
 
 module.exports = router;
