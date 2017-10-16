@@ -911,10 +911,16 @@ hr {
     .modal .content .logo {
       top: -15px;
       left: -15px; }
+      @media screen and (max-width: 768px) {
+        .modal .content .logo {
+          display: none; } }
     .modal .content h3 {
       margin-top: 3rem; }
     .modal .content p.description {
-      margin: 1rem 100px; }
+      margin: 1rem 8vw; }
+      @media screen and (max-width: 768px) {
+        .modal .content p.description {
+          margin: 0; } }
     .modal .content .menu-item {
       margin: 1.5rem 0;
       text-align: left; }

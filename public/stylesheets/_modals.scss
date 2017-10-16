@@ -29,6 +29,9 @@
     .logo {
       top: -15px;
       left: -15px;
+      @media screen and (max-width: $breakpoint-small) {
+        display: none;
+      }
     }
 
     h3 {
@@ -36,7 +39,10 @@
     }
 
     p.description {
-      margin: 1rem 100px;
+      margin: 1rem 8vw;
+      @media screen and (max-width: $breakpoint-small) {
+        margin: 0;
+      }
     }
 
     .menu-item {
