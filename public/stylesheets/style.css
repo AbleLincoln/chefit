@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 html {
   box-sizing: border-box; }
 
@@ -413,7 +414,7 @@ template {
   display: none; }
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   color: #222; }
 
@@ -743,10 +744,15 @@ hr {
           justify-content: space-between;
           padding: 0.5rem 1rem; }
           .booker .booker-card#package .package .info .menu {
-            padding: 5px 8px;
-            border: 1px solid #1F2746;
             border-radius: 5px;
-            background-color: #F3F4F7; }
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+            font-weight: 100;
+            text-transform: uppercase;
+            color: #F3F4F7;
+            padding: 8px 10px;
+            background-color: #F66B00;
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07); }
         .booker .booker-card#package .package input {
           display: none; }
         .booker .booker-card#package .package:hover {
@@ -760,10 +766,14 @@ hr {
       position: absolute;
       bottom: 15px;
       right: 15px;
-      padding: 5px 8px;
-      background-color: transparent;
-      border: 2px solid #247AE4;
-      border-radius: 5px;
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      font-weight: 100;
+      text-transform: uppercase;
+      color: #F3F4F7;
+      padding: 10px 18px;
+      background-color: #F66B00;
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
       cursor: pointer;
       transition: all 350ms; }
       .booker .booker-card .button:hover, .booker .booker-card input[type='submit']:hover {
