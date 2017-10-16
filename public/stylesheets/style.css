@@ -716,7 +716,6 @@ hr {
         height: 27vh;
         margin-top: 1vh;
         margin-bottom: 1vh;
-        border: 1px solid #1F2746;
         border-radius: 5px;
         box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
         cursor: pointer;
@@ -742,7 +741,11 @@ hr {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0.5rem 1rem; }
+          padding: 0.5rem 1rem;
+          border: 1px solid #1F2746;
+          border-top: 0;
+          border-radius: 0px 0px 5px 5px;
+          transition: border 350ms; }
           .booker .booker-card#package .package .info .menu {
             border-radius: 5px;
             font-size: 0.9rem;
@@ -760,6 +763,10 @@ hr {
         .booker .booker-card#package .package.selected {
           background-color: #247AE4;
           box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25); }
+          .booker .booker-card#package .package.selected .info {
+            border-color: #247AE4; }
+          .booker .booker-card#package .package.selected p.small {
+            color: #222; }
       .booker .booker-card#package p.small {
         text-align: left; }
     .booker .booker-card .button, .booker .booker-card input[type='submit'] {

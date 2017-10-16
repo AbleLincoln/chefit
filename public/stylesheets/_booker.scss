@@ -126,7 +126,7 @@
         margin-top: 1vh;
         margin-bottom: 1vh;
 
-        border: 1px solid $chefit-dark-blue;
+        // border: 1px solid $chefit-dark-blue;
         border-radius: 5px;
         box-shadow: $light-shadow;
 
@@ -161,6 +161,11 @@
           align-items: center;
           justify-content: space-between;
           padding: 0.5rem 1rem;
+          border: 1px solid $chefit-dark-blue;
+          border-top: 0;
+          border-radius: 0px 0px 5px 5px;
+
+          transition: border 350ms;
 
           .menu {
             // padding: 5px 8px;
@@ -191,6 +196,13 @@
         &.selected {
           background-color: $chefit-blue;
           box-shadow: $med-shadow;
+          .info {
+            border-color: $chefit-blue;
+          }
+
+          p.small {
+            color: $chefit-black;
+          }
         }
       }
 
