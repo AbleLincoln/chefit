@@ -142,19 +142,37 @@
           flex-basis: 100%;
         }
 
+        &#temptation {
+          .type {
+            background-image: url('../images/packages/temptation/landing.jpg');
+            background-position: center;
+          }
+        }
+
+        &#prestige {
+          .type {
+            background-image: url('../images/packages/prestige/landing.jpg');
+            background-position: center;
+          }
+        }
+
         .type {
           display: flex;
           justify-content: flex-end;
           flex-direction: column;
           flex-grow: 1;
-          padding: 0 1rem;
+          // padding: 0 1rem;
           border-radius: 3px 3px 0px 0px;
           background-image: url('../images/casual-bg.jpg');
           background-size: cover;
 
+          overflow: hidden;
+
           h3 {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0rem;
+            padding: 5rem 1rem 1rem;
             color: $chefit-white;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
           }
         }

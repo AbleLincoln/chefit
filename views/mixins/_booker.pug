@@ -11,7 +11,7 @@ mixin booker()
         li.tab(data-tab="special-requests") #[i.fa.fa-cutlery] Special Requests
         
       .booker-card.active#package
-        .package
+        .package#temptation
           .type
             h3 Temptation Package
           .info
@@ -82,7 +82,8 @@ mixin booker()
                 label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
               .button(data-tab="reservation") Next 
           input(type='radio' name='package' id='vip' value='vip' required)
-        .package
+            
+        .package#prestige
           .type
             h3 Prestige Package
           .info
