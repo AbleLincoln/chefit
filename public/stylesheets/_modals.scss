@@ -1,7 +1,7 @@
 .modal {
   display: none;
 
-  z-index: 100000;
+  z-index: 10;
   position: fixed;
   top: 0; left: 0;
 
@@ -25,6 +25,16 @@
     background-color: $chefit-white;
 
     text-align: center;
+
+    .button--clear {
+      position: absolute;
+      z-index: 11;
+      right: 1.5rem;
+      top: 1rem;
+
+      color: $chefit-black;
+      font-size: 2rem;
+    }
 
     .logo {
       top: -15px;

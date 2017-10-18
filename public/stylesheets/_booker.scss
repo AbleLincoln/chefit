@@ -29,12 +29,16 @@
       padding: 15px;
       border-radius: 5px 5px 0px 0px;
 
-      // cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
 
       transition: all 350ms;
 
       &.active {
         background-color: $chefit-white;
+        color: $chefit-blue;
       }
 
       &:hover:not(.active) {
@@ -168,19 +172,9 @@
           transition: border 350ms;
 
           .menu {
-            // padding: 5px 8px;
-            // border: 1px solid $chefit-dark-blue;
+            position: relative;
             border-radius: 5px;
-            // background-color: $chefit-white;
-
-            font-size: 0.9rem;
-            letter-spacing: 0.05rem;
-            font-weight: 100;
-            text-transform: uppercase;
-            color: $chefit-white;
             padding: 8px 10px;
-            background-color: #F66B00;
-            box-shadow: $ultra-light-shadow;
           }
         }
 
@@ -212,27 +206,10 @@
     }
 
 
-    .button, input[type='submit'] {
+    > .button, input[type='submit'] {
       position: absolute;
       bottom: 15px; right: 15px;
 
-      font-size: 0.9rem;
-      letter-spacing: 0.05rem;
-      font-weight: 100;
-      text-transform: uppercase;
-      color: $chefit-white;
-      padding: 10px 18px;
-      background-color: #F66B00;
-      box-shadow: $ultra-light-shadow;
-
-      cursor: pointer;
-
-      transition: all 350ms;
-
-      &:hover {
-        background-color: $chefit-blue;
-        box-shadow: $light-shadow;
-      }
 
       &.back {
         left: 15px; right: initial;

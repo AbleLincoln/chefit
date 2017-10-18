@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ChefIt' });
+  res.render('index', { title: 'ChefIt', submitted: req.query.submitted });
   console.log(req.query.submitted);
 });
 /* POST book */
@@ -93,7 +93,7 @@ function book(req, res, next) {
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
 
-  res.redirect('/?submitted=true');
+  res.redirect('/?submitted=submitted');
 }
 
 module.exports = router;

@@ -1,24 +1,25 @@
 include _formComponents
-
+  
 mixin booker()
   .booker
     form(id="booker" action="/book" method="POST")
       .errors.inactive
       .tabs
-        li.tab.active(data-tab="package") Select Package #[i.fa.fa-star]
-        li.tab(data-tab="reservation") Reservation #[i.fa.fa-calendar-check-o]
-        li.tab(data-tab="info") Booking Info #[i.fa.fa-pencil-square-o]
-        li.tab(data-tab="special-requests") Special Requests #[i.fa.fa-cutlery]
+        li.tab.active(data-tab="package") #[i.fa.fa-star] Select Package
+        li.tab(data-tab="reservation") #[i.fa.fa-calendar-check-o] Reservation 
+        li.tab(data-tab="info") #[i.fa.fa-pencil-square-o] Booking Info 
+        li.tab(data-tab="special-requests") #[i.fa.fa-cutlery] Special Requests
         
       .booker-card.active#package
         .package
           .type
             h3 Temptation Package
           .info
-            .menu(data-modal="modal-package-vip") Select menu
+            .menu.button(data-modal="modal-package-vip") Select menu
             p.price.small $60 per person
           .modal#modal-package-vip
             .content
+              .button--clear X
               img.logo(src="images/chefit-logo.png", alt="CHEFIT")
               h2 Temptation Menu
               p.small.description A casual dining chef experience including a salad or an appetizer of your choice and a main course. Includes grocery cost, the chef's travelling fees, food preparation and execution, and kitchen clean-up.
@@ -85,10 +86,11 @@ mixin booker()
           .type
             h3 Prestige Package
           .info
-            .menu(data-modal="modal-package-prestige") Select menu
+            .menu.button(data-modal="modal-package-prestige") Select menu
             p.price.small $100 per person
           .modal#modal-package-prestige
             .content
+              .button--clear X
               img.logo(src="images/chefit-logo.png", alt="CHEFIT")
               h2 Prestige Menu
               p.small.description A more exclusive fine dining experience using the finest cuts of meat and best produce available
