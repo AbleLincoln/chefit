@@ -87,11 +87,9 @@ function validateCard(card) {
     else if(radio.name === "main" && radio.checked) mainSelected = true;
   });
   if(radios.length === 0 || (appSelected && saladSelected && mainSelected)) {
-    console.log('all good in this hood');
     document.querySelector('body').classList.remove('modal-open');
   }
   else {
-    console.log('not good');
     invalid = true;
   }
 
@@ -240,5 +238,32 @@ function closeModal(e) {
   if(e.target !== this) return; // if we click the actual content, don't close
   this.classList.remove('open');
   document.querySelector('body').classList.remove('modal-open');
+}
 
+const modalButtons = document.querySelectorAll('.modal .button');
+
+modalButtons.forEach(button => {
+  button.addEventListener('click', validateMenu);
+});
+
+function validateMenu() {
+  let appSelected = false;
+  let saladSelected = false;
+  let mainSelected = false;
+  const radios = activeCard.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => {
+    if(radio.name === "appetizer" && radio.checked) appSelected = true;
+    else if(radio.name === "salad" && radio.checked) saladSelected = true;
+    else if(radio.name === "main" && radio.checked) mainSelected = true;
+  });
+  activeCard.querySelector('.modal .menu-errors').innerHTML = "";
+  if(!appSelected) {
+    activeCard.querySelector('.modal .menu-errors').innerHTML += '<p>Please select an appetizer</p>';
+  }
+  if(!saladSelected) {
+    activeCard.querySelector('.modal .menu-errors').innerHTML += '<p>Please select a salad</p>';
+  }
+  if(!mainSelected) {
+    activeCard.querySelector('.modal .menu-errors').innerHTML += '<p>Please select a main course</p>';
+  }
 }

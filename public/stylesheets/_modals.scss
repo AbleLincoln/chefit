@@ -16,6 +16,18 @@
     display: block;
   }
 
+  &#modal-package-vip {
+    h2 {
+      background-image: url(../images/packages/temptation/landing.jpg);
+    }
+  }
+
+  &#modal-package-prestige {
+    h2 {
+      background-image: url(../images/packages/prestige/menu2.jpg);
+    }
+  }
+
   .content {
     position: relative;
     margin: auto;
@@ -26,6 +38,11 @@
     background-color: $chefit-white;
 
     text-align: center;
+
+    .content-inner {
+      padding: 0px 10%;
+      padding-bottom: 2rem;
+    }
 
     .button--clear {
       position: absolute;
@@ -40,6 +57,7 @@
     .logo {
       top: -15px;
       left: -15px;
+      width: 150px;
       @media screen and (max-width: $breakpoint-small) {
         display: none;
       }
@@ -47,7 +65,7 @@
 
     h2 {
       padding: 15vh 0px;
-      background-image: url(../images/packages/temptation/landing.jpg);
+      // background-image: url(../images/packages/prestige/menu2.jpg);
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -79,6 +97,10 @@
       input {
         display: inline-block!important;
       }
+    }
+
+    .menu-errors {
+      margin-top: 1rem;
     }
   }
 }

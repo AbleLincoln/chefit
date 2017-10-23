@@ -24,63 +24,65 @@ mixin booker()
               h2 Temptation Menu
               p.small.description A casual dining chef experience including a salad or an appetizer of your choice and a main course. Includes grocery cost, the chef's travelling fees, food preparation and execution, and kitchen clean-up.
               
-              h3 Appetizers
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="appetizer" value="pizzetta" id="pizzetta")
-                label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
-              .menu-item
-                input(type="radio" name="appetizer" value="bruschetta" id="bruschetta")
-                label(for="bruschetta") Bruschetta with tomato confit and fresh basil
-              .menu-item
-                input(type="radio" name="appetizer" value="goats" id="goats")
-                label(for="goats") Goats cheese and pistachio filled endive leaves
-              .menu-item
-                input(type="radio" name="appetizer" value="crudite" id="crudite")
-                label(for="crudite") Crudite platter with ranch dipping sauce
+              .content-inner
+                h3 Appetizers
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="appetizer" value="pizzetta" id="pizzetta")
+                  label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
+                .menu-item
+                  input(type="radio" name="appetizer" value="bruschetta" id="bruschetta")
+                  label(for="bruschetta") Bruschetta with tomato confit and fresh basil
+                .menu-item
+                  input(type="radio" name="appetizer" value="goats" id="goats")
+                  label(for="goats") Goats cheese and pistachio filled endive leaves
+                .menu-item
+                  input(type="radio" name="appetizer" value="crudite" id="crudite")
+                  label(for="crudite") Crudite platter with ranch dipping sauce
+                  
+                h3 Salads
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="salad" value="arugula" id="arugula")
+                  label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
+                .menu-item
+                  input(type="radio" name="salad" value="spinach" id="spinach")
+                  label(for="spinach") Spinach and butter lettuce salad with Italian dressing
+                .menu-item
+                  input(type="radio" name="salad" value="cucumber" id="cucumber")
+                  label(for="cucumber") Cucumber and tomato salad with fresh herbs
+                .menu-item
+                  input(type="radio" name="salad" value="mixedgreens" id="mixedgreens")
+                  label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
                 
-              h3 Salads
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="salad" value="arugula" id="arugula")
-                label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
-              .menu-item
-                input(type="radio" name="salad" value="spinach" id="spinach")
-                label(for="spinach") Spinach and butter lettuce salad with Italian dressing
-              .menu-item
-                input(type="radio" name="salad" value="cucumber" id="cucumber")
-                label(for="cucumber") Cucumber and tomato salad with fresh herbs
-              .menu-item
-                input(type="radio" name="salad" value="mixedgreens" id="mixedgreens")
-                label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
-              
-              h3 Main course
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="main" value="skirt-steak" id="skirt-steak")
-                label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
-              .menu-item
-                input(type="radio" name="main" value="ribeye" id="ribeye")
-                label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
-              .menu-item
-                input(type="radio" name="main" value="picatta" id="picatta")
-                label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
-              .menu-item
-                input(type="radio" name="main" value="fussili" id="fussili")
-                label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
-              .menu-item
-                input(type="radio" name="main" value="salmon" id="salmon")
-                label(for="salmon") Seared Salmon with a green dragon jasmine rice
-              .menu-item
-                input(type="radio" name="main" value="chipotle-chicken" id="chipotle-chicken")
-                label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
-              .menu-item
-                input(type="radio" name="main" value="herb-salmon" id="herb-salmon")
-                label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
-              .button(data-tab="reservation") Next 
+                h3 Main course
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="main" value="skirt-steak" id="skirt-steak")
+                  label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
+                .menu-item
+                  input(type="radio" name="main" value="ribeye" id="ribeye")
+                  label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
+                .menu-item
+                  input(type="radio" name="main" value="picatta" id="picatta")
+                  label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
+                .menu-item
+                  input(type="radio" name="main" value="fussili" id="fussili")
+                  label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
+                .menu-item
+                  input(type="radio" name="main" value="salmon" id="salmon")
+                  label(for="salmon") Seared Salmon with a green dragon jasmine rice
+                .menu-item
+                  input(type="radio" name="main" value="chipotle-chicken" id="chipotle-chicken")
+                  label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
+                .menu-item
+                  input(type="radio" name="main" value="herb-salmon" id="herb-salmon")
+                  label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+                .button(data-tab="reservation") Next
+                .menu-errors
           input(type='radio' name='package' id='vip' value='vip' required)
             
         .package#prestige
@@ -96,54 +98,55 @@ mixin booker()
               h2 Prestige Menu
               p.small.description A more exclusive fine dining experience using the finest cuts of meat and best produce available
               
-              h3 Appetizers
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="appetizer" value="bacondates" id="bacondates")
-                label(for="bacondates") Bacon Wrapped Dates and asparagus stuffed with a drizzle of balsamic reduction topped with chopped marcona almonds
-              .menu-item
-                input(type="radio" name="appetizer" value="ricottafigs" id="ricottafigs")
-                label(for="ricottafigs") Ricotta stuffed figs with candied walnuts, mint chips and raw honey drizzle
-              .menu-item
-                input(type="radio" name="appetizer" value="scallop" id="scallop")
-                label(for="scallop") Diver scallop with Julienne vegetables and Beurre Blanc
-              .menu-item
-                input(type="radio" name="appetizer" value="spicytuna" id="spicytuna")
-                label(for="spicytuna") Spicy tuna tartar in cucumber cups or crispy won tons
+              .content-inner
+                h3 Appetizers
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="appetizer" value="bacondates" id="bacondates")
+                  label(for="bacondates") Bacon Wrapped Dates and asparagus stuffed with a drizzle of balsamic reduction topped with chopped marcona almonds
+                .menu-item
+                  input(type="radio" name="appetizer" value="ricottafigs" id="ricottafigs")
+                  label(for="ricottafigs") Ricotta stuffed figs with candied walnuts, mint chips and raw honey drizzle
+                .menu-item
+                  input(type="radio" name="appetizer" value="scallop" id="scallop")
+                  label(for="scallop") Diver scallop with Julienne vegetables and Beurre Blanc
+                .menu-item
+                  input(type="radio" name="appetizer" value="spicytuna" id="spicytuna")
+                  label(for="spicytuna") Spicy tuna tartar in cucumber cups or crispy won tons
+                  
+                h3 Salads
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="salad" value="roastedbeet" id="roastedbeet")
+                  label(for="roastedbeet") Roasted beet salad with crumbled goats cheese and toasted hazelnuts
+                .menu-item
+                  input(type="radio" name="salad" value="avosalad" id="avosalad")
+                  label(for="avosalad") Corn, cherry tomato and avocado salad with cilantro dressing atop of escarole lea
+                .menu-item
+                  input(type="radio" name="salad" value="tabbouleh" id="tabbouleh")
+                  label(for="tabbouleh") Classic tabbouleh with garbanzo beans and feta cheese
+                .menu-item
+                  input(type="radio" name="salad" value="asianchicken" id="asianchicken")
+                  label(for="asianchicken") Asian chicken crunch salad with a ginger sesame dressing topped with slivered almonds
                 
-              h3 Salads
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="salad" value="roastedbeet" id="roastedbeet")
-                label(for="roastedbeet") Roasted beet salad with crumbled goats cheese and toasted hazelnuts
-              .menu-item
-                input(type="radio" name="salad" value="avosalad" id="avosalad")
-                label(for="avosalad") Corn, cherry tomato and avocado salad with cilantro dressing atop of escarole lea
-              .menu-item
-                input(type="radio" name="salad" value="tabbouleh" id="tabbouleh")
-                label(for="tabbouleh") Classic tabbouleh with garbanzo beans and feta cheese
-              .menu-item
-                input(type="radio" name="salad" value="asianchicken" id="asianchicken")
-                label(for="asianchicken") Asian chicken crunch salad with a ginger sesame dressing topped with slivered almonds
-              
-              h3 Main course
-              hr
-              p.small Choose one:
-              .menu-item
-                input(type="radio" name="main" value="branzino" id="branzino")
-                label(for="branzino") Branzino atop a bed of confetti corn served with potato puree and herb garnish
-              .menu-item
-                input(type="radio" name="main" value="cornishhen" id="cornishhen")
-                label(for="cornishhen") Roasted game Cornish hen with citrus sage stuffing, served au jus with forbidden rice and roasted root vegetables
-              .menu-item
-                input(type="radio" name="main" value="lambchops" id="lambchops")
-                label(for="lambchops") Lamb chops with thyme and garlic marinade over creamy polenta and charred broccolini
-              .menu-item
-                input(type="radio" name="main" value="stripsteak" id="stripsteak")
-                label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
-              .button(data-tab="reservation") Next
+                h3 Main course
+                hr
+                p.small Choose one:
+                .menu-item
+                  input(type="radio" name="main" value="branzino" id="branzino")
+                  label(for="branzino") Branzino atop a bed of confetti corn served with potato puree and herb garnish
+                .menu-item
+                  input(type="radio" name="main" value="cornishhen" id="cornishhen")
+                  label(for="cornishhen") Roasted game Cornish hen with citrus sage stuffing, served au jus with forbidden rice and roasted root vegetables
+                .menu-item
+                  input(type="radio" name="main" value="lambchops" id="lambchops")
+                  label(for="lambchops") Lamb chops with thyme and garlic marinade over creamy polenta and charred broccolini
+                .menu-item
+                  input(type="radio" name="main" value="stripsteak" id="stripsteak")
+                  label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
+                .button(data-tab="reservation") Next
           input(type='radio' name='package' id='vip' value='executive' required)
         //- .button(data-tab="reservation") Next 
         

@@ -966,6 +966,10 @@ hr {
   background-color: rgba(0, 0, 0, 0.75); }
   .modal.open {
     display: block; }
+  .modal#modal-package-vip h2 {
+    background-image: url(../images/packages/temptation/landing.jpg); }
+  .modal#modal-package-prestige h2 {
+    background-image: url(../images/packages/prestige/menu2.jpg); }
   .modal .content {
     position: relative;
     margin: auto;
@@ -974,6 +978,9 @@ hr {
     padding: 0;
     background-color: #F3F4F7;
     text-align: center; }
+    .modal .content .content-inner {
+      padding: 0px 10%;
+      padding-bottom: 2rem; }
     .modal .content .button--clear {
       position: absolute;
       z-index: 11;
@@ -983,13 +990,13 @@ hr {
       font-size: 2rem; }
     .modal .content .logo {
       top: -15px;
-      left: -15px; }
+      left: -15px;
+      width: 150px; }
       @media screen and (max-width: 768px) {
         .modal .content .logo {
           display: none; } }
     .modal .content h2 {
       padding: 15vh 0px;
-      background-image: url(../images/packages/temptation/landing.jpg);
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -1010,6 +1017,8 @@ hr {
         margin-left: 1rem; }
       .modal .content .menu-item input {
         display: inline-block !important; }
+    .modal .content .menu-errors {
+      margin-top: 1rem; }
 
 body.modal-open {
   overflow: hidden; }
