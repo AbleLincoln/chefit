@@ -856,6 +856,8 @@ hr {
     .input input:focus, .input textarea:focus, .input select:focus {
       box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.07);
       outline: none; }
+    .input input.invalid, .input textarea.invalid, .input select.invalid {
+      border-color: red; }
 
 .basicInput label {
   display: block; }
@@ -889,7 +891,7 @@ hr {
     border-radius: 5px;
     transition: all 350ms; }
     .checkboxes label:hover {
-      box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25); }
+      box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1); }
     .checkboxes label.selected {
       background-color: #247AE4;
       box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.25); }

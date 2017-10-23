@@ -19,6 +19,10 @@
       box-shadow: $ultra-light-shadow;
       outline: none;
     }
+
+    &.invalid {
+      border-color: red;
+    }
   }
 }
 
@@ -70,7 +74,7 @@
     transition: all 350ms;
 
     &:hover {
-      box-shadow: $med-shadow;
+      box-shadow: $light-shadow;
     }
 
     &.selected {

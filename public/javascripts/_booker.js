@@ -65,14 +65,16 @@ function validateCard(card) {
   let invalid = false;
   inputs.forEach(input => {
     if(input.value === null || input.value === "") {
+      input.classList.add('invalid');
       invalid = true;
-      input.classList.add('error');
-      addError('empty field', 'Please fill out all fields');
-    }
-    if(!input.checkValidity()) {
+      // input.classList.add('error');
+      // addError('empty field', 'Please fill out all fields');
+    } else if(!input.checkValidity()) {
+      input.classList.add('invalid');
       invalid = true;
-      addError(`invalid ${input.name}`, `Please input your ${input.name} in a valid format`);
+      // addError(`invalid ${input.name}`, `Please input your ${input.name} in a valid format`);
     } else {
+      input.classList.remove('invalid');
       removeError(`invalid ${input.name}`);
     }
   })
