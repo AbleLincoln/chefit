@@ -235,9 +235,11 @@ modals.forEach(modal => {
 })
 
 function closeModal(e) {
-  if(e.target !== this) return; // if we click the actual content, don't close
-  this.classList.remove('open');
-  document.querySelector('body').classList.remove('modal-open');
+  // if(e.target !== this) return; // if we click the actual content, don't close
+  if(e.target === this || e.target === this.querySelector('.button--clear')) {
+    this.classList.remove('open');
+    document.querySelector('body').classList.remove('modal-open');
+  }
 }
 
 const modalButtons = document.querySelectorAll('.modal .button');
