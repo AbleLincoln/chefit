@@ -785,10 +785,10 @@ hr {
           .booker .booker-card#package .package {
             flex-basis: 100%; } }
         .booker .booker-card#package .package#temptation .type {
-          background-image: url("../images/packages/temptation/landing.jpg");
+          background-image: url("../images/packages/temptation/menu.jpg");
           background-position: center; }
         .booker .booker-card#package .package#prestige .type {
-          background-image: url("../images/packages/prestige/landing.jpg");
+          background-image: url("../images/packages/prestige/menu.jpg");
           background-position: center; }
         .booker .booker-card#package .package .type {
           display: flex;
@@ -796,14 +796,12 @@ hr {
           flex-direction: column;
           flex-grow: 1;
           border-radius: 3px 3px 0px 0px;
-          background-image: url("../images/casual-bg.jpg");
           background-size: cover;
           overflow: hidden; }
           .booker .booker-card#package .package .type h3 {
             margin-bottom: 0rem;
             padding: 5rem 1rem 1rem;
             color: #F3F4F7;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); }
         .booker .booker-card#package .package .info {
           flex-grow: 0;
@@ -973,6 +971,7 @@ hr {
     margin: auto;
     width: 90%;
     max-width: 800px;
+    padding: 0;
     background-color: #F3F4F7;
     text-align: center; }
     .modal .content .button--clear {
@@ -988,6 +987,13 @@ hr {
       @media screen and (max-width: 768px) {
         .modal .content .logo {
           display: none; } }
+    .modal .content h2 {
+      padding: 15vh 0px;
+      background-image: url(../images/packages/temptation/landing.jpg);
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px black; }
     .modal .content h3 {
       margin-top: 3rem; }
     .modal .content p.description {
