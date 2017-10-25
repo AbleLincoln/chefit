@@ -22,8 +22,9 @@ const outlookTransport = nodemailer.createTransport({
   host: "smtp.office365.com",
   port: 587,
   auth: {
-    user: "admin@getchefit.com",
-    pass: "Bobbygetchefit1!"
+    // user: "admin@getchefit.com",
+    user: process.env.OUTLOOK_USER,
+    pass: process.env.OUTLOOK_PASS
   },
   secureConnection: false,
   tls: { ciphers: 'SSLv3' }

@@ -18,13 +18,13 @@
 
   &#modal-package-vip {
     h2 {
-      background-image: url(../images/packages/temptation/landing.jpg);
+      background-image: url(../images/packages/temptation/menu.jpg);
     }
   }
 
   &#modal-package-prestige {
     h2 {
-      background-image: url(../images/packages/prestige/menu2.jpg);
+      background-image: url(../images/packages/prestige/menu.jpg);
     }
   }
 
@@ -74,13 +74,6 @@
 
     h3 {
       margin-top: 3rem;
-    }
-
-    p.description {
-      margin: 1rem 8vw;
-      @media screen and (max-width: $breakpoint-small) {
-        margin: 0;
-      }
     }
 
     .menu-item {

@@ -144,14 +144,14 @@
 
         &#temptation {
           .type {
-            background-image: url('../images/packages/temptation/menu.jpg');
+            background-image: url('../images/packages/temptation/landing.jpg');
             background-position: center;
           }
         }
 
         &#prestige {
           .type {
-            background-image: url('../images/packages/prestige/menu.jpg');
+            background-image: url('../images/packages/prestige/landing.jpg');
             background-position: center;
           }
         }
@@ -172,7 +172,7 @@
             margin-bottom: 0rem;
             padding: 5rem 1rem 1rem;
             color: $chefit-white;
-            // background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
           }
         }

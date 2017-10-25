@@ -419,15 +419,12 @@ html {
   color: #222; }
 
 h1 {
-  font-family: "Roboto Slab", serif;
   font-size: 3rem; }
 
 h2 {
-  font-family: "Roboto Slab", serif;
   font-size: 2.5em; }
 
 h3 {
-  font-family: "Roboto Slab", serif;
   font-size: 2rem; }
 
 p {
@@ -475,7 +472,7 @@ hr {
 .button {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
-  font-weight: 100;
+  font-weight: 900;
   text-transform: uppercase;
   color: #F3F4F7;
   padding: 10px 18px;
@@ -785,10 +782,10 @@ hr {
           .booker .booker-card#package .package {
             flex-basis: 100%; } }
         .booker .booker-card#package .package#temptation .type {
-          background-image: url("../images/packages/temptation/menu.jpg");
+          background-image: url("../images/packages/temptation/landing.jpg");
           background-position: center; }
         .booker .booker-card#package .package#prestige .type {
-          background-image: url("../images/packages/prestige/menu.jpg");
+          background-image: url("../images/packages/prestige/landing.jpg");
           background-position: center; }
         .booker .booker-card#package .package .type {
           display: flex;
@@ -802,6 +799,7 @@ hr {
             margin-bottom: 0rem;
             padding: 5rem 1rem 1rem;
             color: #F3F4F7;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65); }
         .booker .booker-card#package .package .info {
           flex-grow: 0;
@@ -969,9 +967,9 @@ hr {
   .modal.open {
     display: block; }
   .modal#modal-package-vip h2 {
-    background-image: url(../images/packages/temptation/landing.jpg); }
+    background-image: url(../images/packages/temptation/menu.jpg); }
   .modal#modal-package-prestige h2 {
-    background-image: url(../images/packages/prestige/menu2.jpg); }
+    background-image: url(../images/packages/prestige/menu.jpg); }
   .modal .content {
     position: relative;
     margin: auto;
@@ -1005,11 +1003,6 @@ hr {
       text-shadow: 1px 1px 3px black; }
     .modal .content h3 {
       margin-top: 3rem; }
-    .modal .content p.description {
-      margin: 1rem 8vw; }
-      @media screen and (max-width: 768px) {
-        .modal .content p.description {
-          margin: 0; } }
     .modal .content .menu-item {
       margin: 1.5rem 0;
       text-align: left; }
