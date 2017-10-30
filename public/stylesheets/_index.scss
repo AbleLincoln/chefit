@@ -186,8 +186,10 @@
         top: 0;
         transform: translateY(-50%);
 
-        i {
+        i, .image {
+          margin: auto;
           width: 4rem; // to make it square (font-size=4rem)
+          height: 4rem;
           box-sizing: content-box;
           background-color: $chefit-blue;
           color: white;

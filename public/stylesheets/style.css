@@ -650,8 +650,10 @@ hr {
       right: 0;
       top: 0;
       transform: translateY(-50%); }
-      .content #icons .iconbox .icon i {
+      .content #icons .iconbox .icon i, .content #icons .iconbox .icon .image {
+        margin: auto;
         width: 4rem;
+        height: 4rem;
         box-sizing: content-box;
         background-color: #247AE4;
         color: white;
