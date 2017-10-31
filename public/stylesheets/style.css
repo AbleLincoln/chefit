@@ -616,12 +616,11 @@ hr {
 .content #icons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem; }
+  flex-wrap: wrap; }
   .content #icons .iconbox {
     flex: 1 1 25%;
     position: relative;
-    margin-bottom: 0.75rem;
+    margin-bottom: 5rem;
     padding: 0 0.75rem;
     text-align: center; }
     @media screen and (max-width: 768px) {
@@ -979,7 +978,7 @@ hr {
       z-index: 11;
       right: 1.5rem;
       top: 1rem;
-      color: #222;
+      color: white;
       font-size: 2rem; }
     .modal .content .logo {
       top: -15px;
@@ -997,6 +996,8 @@ hr {
     .modal .content h3 {
       margin-top: 3rem; }
     .modal .content .menu-item {
+      display: flex;
+      align-items: baseline;
       margin: 1.5rem 0;
       text-align: left; }
       .modal .content .menu-item label {

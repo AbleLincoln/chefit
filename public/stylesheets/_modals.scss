@@ -50,7 +50,7 @@
       right: 1.5rem;
       top: 1rem;
 
-      color: $chefit-black;
+      color: white;
       font-size: 2rem;
     }
 
@@ -77,6 +77,9 @@
     }
 
     .menu-item {
+      display: flex;
+      align-items: baseline;
+
       margin: 1.5rem 0;
 
       text-align: left;
