@@ -154,13 +154,13 @@
 
     &:nth-child(even) {
       @media screen and (min-width: $breakpoint-small) {
-        order: 1;
+        // order: 1;
       }
     }
 
       .blackbox {
         height: 100%;
-        padding: 4rem 1rem 0.5rem;
+        padding: 4rem 1rem 1rem;
         border-radius: 5px;
         background-color: #fff;
         box-shadow: $light-shadow;
@@ -170,15 +170,15 @@
         }
       }
 
-      &.text {
-        @media screen and (max-width: $breakpoint-small) {
-          margin-bottom: 4rem;
-        }
-        p {
-          font-size: 1rem;
-          padding: 0px 0.5rem;
-        }
-      }
+      // &.text {
+      //   @media screen and (max-width: $breakpoint-small) {
+      //     margin-bottom: 4rem;
+      //   }
+      //   p {
+      //     font-size: 1rem;
+      //     padding: 0px 0.5rem;
+      //   }
+      // }
 
       .icon {
         position: absolute;
