@@ -998,7 +998,8 @@ hr {
         line-height: 1.35;
         margin-left: 1rem; }
       .modal .content .menu-item input {
-        display: inline-block !important; }
+        display: inline-block !important;
+        flex-shrink: 0; }
     .modal .content .menu-errors {
       margin-top: 1rem; }
 
