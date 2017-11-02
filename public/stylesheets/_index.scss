@@ -159,9 +159,9 @@
       .blackbox {
         height: 100%;
         padding: 4rem 1rem 1rem;
-        border-radius: 5px;
-        background-color: #fff;
-        box-shadow: $light-shadow;
+        // border-radius: 5px;
+        // background-color: #fff;
+        // box-shadow: $light-shadow;
 
         h3 {
           color: $chefit-dark-blue;
@@ -189,11 +189,11 @@
           width: 4rem; // to make it square (font-size=4rem)
           height: 4rem;
           box-sizing: content-box;
-          background-color: $chefit-blue;
-          color: white;
+          // background-color: $chefit-blue;
+          // color: white;
           padding: 15px;
-          border-radius: 100%;
-          box-shadow: $light-shadow;
+          // border-radius: 100%;
+          // box-shadow: $light-shadow;
         }
       }
     }
