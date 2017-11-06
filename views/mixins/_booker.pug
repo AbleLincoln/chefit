@@ -15,9 +15,9 @@ mixin booker()
           .type
             h3 Temptation Package
           .info
-            .menu.button(data-modal="modal-package-vip") Select menu
+            .menu.button(data-modal="modal-package-temptation") Select menu
             p.price.small $60 per person
-          .modal#modal-package-vip
+          .modal#modal-package-temptation
             .content
               .button--clear X
               img.logo(src="images/chefit-logo.png", alt="CHEFIT")
@@ -29,61 +29,61 @@ mixin booker()
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="appetizer" value="pizzetta" id="pizzetta")
+                  input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
                   label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
                 .menu-item
-                  input(type="radio" name="appetizer" value="bruschetta" id="bruschetta")
+                  input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
                   label(for="bruschetta") Bruschetta with tomato confit and fresh basil
                 .menu-item
-                  input(type="radio" name="appetizer" value="goats" id="goats")
+                  input(type="radio" name="appetizer" value="goats cheese and pistachio filled endive leaves" id="goats")
                   label(for="goats") Goats cheese and pistachio filled endive leaves
                 .menu-item
-                  input(type="radio" name="appetizer" value="crudite" id="crudite")
+                  input(type="radio" name="appetizer" value="crudite platter with ranch dipping sauce" id="crudite")
                   label(for="crudite") Crudite platter with ranch dipping sauce
                   
                 h3 Salads
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="salad" value="arugula" id="arugula")
+                  input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
                   label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
                 .menu-item
-                  input(type="radio" name="salad" value="spinach" id="spinach")
+                  input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
                   label(for="spinach") Spinach and butter lettuce salad with Italian dressing
                 .menu-item
-                  input(type="radio" name="salad" value="cucumber" id="cucumber")
+                  input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
                   label(for="cucumber") Cucumber and tomato salad with fresh herbs
                 .menu-item
-                  input(type="radio" name="salad" value="mixedgreens" id="mixedgreens")
+                  input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
                   label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
                 
                 h3 Main course
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="main" value="skirt-steak" id="skirt-steak")
+                  input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
                   label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
                 .menu-item
-                  input(type="radio" name="main" value="ribeye" id="ribeye")
+                  input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
                   label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
                 .menu-item
-                  input(type="radio" name="main" value="picatta" id="picatta")
+                  input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
                   label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
                 .menu-item
-                  input(type="radio" name="main" value="fussili" id="fussili")
+                  input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
                   label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
                 .menu-item
-                  input(type="radio" name="main" value="salmon" id="salmon")
+                  input(type="radio" name="main" value="Seared Salmon with a green dragon jasmine rice" id="salmon")
                   label(for="salmon") Seared Salmon with a green dragon jasmine rice
                 .menu-item
-                  input(type="radio" name="main" value="chipotle-chicken" id="chipotle-chicken")
+                  input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
                   label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
                 .menu-item
-                  input(type="radio" name="main" value="herb-salmon" id="herb-salmon")
+                  input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
                   label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
                 .button(data-tab="reservation") Next
                 .menu-errors
-          input(type='radio' name='package' id='vip' value='vip' required)
+          input(type='radio' name='package' value='Temptation' required)
             
         .package#prestige
           .type
@@ -103,51 +103,51 @@ mixin booker()
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="appetizer" value="bacondates" id="bacondates")
+                  input(type="radio" name="appetizer" value="Bacon Wrapped Dates and asparagus stuffed with a drizzle of balsamic reduction topped with chopped marcona almonds" id="bacondates")
                   label(for="bacondates") Bacon Wrapped Dates and asparagus stuffed with a drizzle of balsamic reduction topped with chopped marcona almonds
                 .menu-item
-                  input(type="radio" name="appetizer" value="ricottafigs" id="ricottafigs")
+                  input(type="radio" name="appetizer" value="Ricotta stuffed figs with candied walnuts, mint chips and raw honey drizzle" id="ricottafigs")
                   label(for="ricottafigs") Ricotta stuffed figs with candied walnuts, mint chips and raw honey drizzle
                 .menu-item
-                  input(type="radio" name="appetizer" value="scallop" id="scallop")
+                  input(type="radio" name="appetizer" value="Diver scallop with Julienne vegetables and Beurre Blanc" id="scallop")
                   label(for="scallop") Diver scallop with Julienne vegetables and Beurre Blanc
                 .menu-item
-                  input(type="radio" name="appetizer" value="spicytuna" id="spicytuna")
+                  input(type="radio" name="appetizer" value="Spicy tuna tartar in cucumber cups or crispy won tons" id="spicytuna")
                   label(for="spicytuna") Spicy tuna tartar in cucumber cups or crispy won tons
                   
                 h3 Salads
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="salad" value="roastedbeet" id="roastedbeet")
+                  input(type="radio" name="salad" value="Roasted beet salad with crumbled goats cheese and toasted hazelnuts" id="roastedbeet")
                   label(for="roastedbeet") Roasted beet salad with crumbled goats cheese and toasted hazelnuts
                 .menu-item
-                  input(type="radio" name="salad" value="avosalad" id="avosalad")
+                  input(type="radio" name="salad" value="Corn, cherry tomato and avocado salad with cilantro dressing atop of escarole lea" id="avosalad")
                   label(for="avosalad") Corn, cherry tomato and avocado salad with cilantro dressing atop of escarole lea
                 .menu-item
-                  input(type="radio" name="salad" value="tabbouleh" id="tabbouleh")
+                  input(type="radio" name="salad" value="Classic tabbouleh with garbanzo beans and feta cheese" id="tabbouleh")
                   label(for="tabbouleh") Classic tabbouleh with garbanzo beans and feta cheese
                 .menu-item
-                  input(type="radio" name="salad" value="asianchicken" id="asianchicken")
+                  input(type="radio" name="salad" value="Asian chicken crunch salad with a ginger sesame dressing topped with slivered almonds" id="asianchicken")
                   label(for="asianchicken") Asian chicken crunch salad with a ginger sesame dressing topped with slivered almonds
                 
                 h3 Main course
                 hr
                 p.small Choose one:
                 .menu-item
-                  input(type="radio" name="main" value="branzino" id="branzino")
+                  input(type="radio" name="main" value="Branzino atop a bed of confetti corn served with potato puree and herb garnish" id="branzino")
                   label(for="branzino") Branzino atop a bed of confetti corn served with potato puree and herb garnish
                 .menu-item
-                  input(type="radio" name="main" value="cornishhen" id="cornishhen")
+                  input(type="radio" name="main" value="Roasted game Cornish hen with citrus sage stuffing, served au jus with forbidden rice and roasted root vegetables" id="cornishhen")
                   label(for="cornishhen") Roasted game Cornish hen with citrus sage stuffing, served au jus with forbidden rice and roasted root vegetables
                 .menu-item
-                  input(type="radio" name="main" value="lambchops" id="lambchops")
+                  input(type="radio" name="main" value="Lamb chops with thyme and garlic marinade over creamy polenta and charred broccolini" id="lambchops")
                   label(for="lambchops") Lamb chops with thyme and garlic marinade over creamy polenta and charred broccolini
                 .menu-item
-                  input(type="radio" name="main" value="stripsteak" id="stripsteak")
+                  input(type="radio" name="main" value="New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts" id="stripsteak")
                   label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
                 .button(data-tab="reservation") Next
-          input(type='radio' name='package' id='vip' value='executive' required)
+          input(type='radio' name='package' value='Prestige' required)
         //- .button(data-tab="reservation") Next 
         
       .booker-card#reservation

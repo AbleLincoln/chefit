@@ -114,7 +114,7 @@ function setSelection() {
   // add checked class
   this.classList.add('selected');
   // check the radio button
-  let input = this.querySelectorAll('input[name="package"]');
+  let input = this.querySelector('input[name="package"]');
   input.checked = true;
 }
 
