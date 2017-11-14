@@ -15,8 +15,8 @@ mixin booker()
           .type
             h3 Temptation Package
           .info
-            .menu.button(data-modal="modal-package-temptation") Select menu
             p.price.small $60 per person
+            .menu.button(data-modal="modal-package-temptation") View menu
           .modal#modal-package-temptation
             .content
               .button--clear X
@@ -89,8 +89,8 @@ mixin booker()
           .type
             h3 Prestige Package
           .info
-            .menu.button(data-modal="modal-package-prestige") Select menu
             p.price.small $100 per person
+            .menu.button(data-modal="modal-package-prestige") View menu
           .modal#modal-package-prestige
             .content
               .button--clear X
@@ -172,7 +172,7 @@ mixin booker()
         .basicInput.input#additional
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
           textarea(rows='1' name='additional')
-        .button(id="submit") Submit
+        .button(id="submit" data-tab="special-requests") Submit
         .button.back(data-tab="info")  Back
         
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")

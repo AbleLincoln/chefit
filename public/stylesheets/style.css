@@ -951,7 +951,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.75); }
   .modal.open {
     display: block; }
-  .modal#modal-package-vip h2 {
+  .modal#modal-package-temptation h2 {
     background-image: url(../images/packages/temptation/menu.jpg); }
   .modal#modal-package-prestige h2 {
     background-image: url(../images/packages/prestige/menu.jpg); }

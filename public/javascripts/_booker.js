@@ -148,7 +148,7 @@ function count() {
     if(parseInt(input.value) === 12) {
       addError('counter oob', 'Parties greater than 12 served on special request. Please email us at admin@GetChefIt.com');
     } else if(parseInt(input.value) === 4) {
-      addError('counter oob', 'Currrently we do not serve parties of less than 4 people. Please email us at admin@GetChefIt.com for any special requests');
+      addError('counter oob', 'Currently we do not serve parties of less than 4 people. Please email us at admin@GetChefIt.com for any special requests');
     }
   } else {
     removeError('counter oob');
@@ -178,7 +178,7 @@ function animateClick(button) {
 // Flatpickr date/time picker
 flatpickr('.dateInput input', {
   altInput: true,
-  minDate: "today"
+  minDate: new Date().fp_incr(2)
 });
 flatpickr('.timeInput input', {
   enableTime: true,
