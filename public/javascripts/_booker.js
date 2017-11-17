@@ -180,13 +180,13 @@ flatpickr('.dateInput input', {
   altInput: true,
   minDate: new Date().fp_incr(2)
 });
-flatpickr('.timeInput input', {
-  enableTime: true,
-  noCalendar: true,
-  altInput: true,
-  defaultHour: 18,
-  defaultDate: "18:00"
-});
+// flatpickr('.timeInput input', {
+//   enableTime: true,
+//   noCalendar: true,
+//   altInput: true,
+//   defaultHour: 18,
+//   defaultDate: "18:00"
+// });
 
 // errors
 function addError(errorName, errorMessage) {

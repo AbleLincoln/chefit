@@ -537,6 +537,11 @@ hr {
         width: 150px;
         top: -10px;
         left: -10px; } }
+  .hero .beta {
+    position: absolute;
+    left: 180px;
+    color: white;
+    font-size: 1rem; }
   .hero .overlay {
     position: absolute;
     top: 0;
