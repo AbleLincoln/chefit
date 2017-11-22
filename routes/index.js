@@ -40,11 +40,11 @@ function book(req, res, next) {
   console.log(date.getDate());
   var diet;
   if(data.diet) {
-    diet = "not specified any dietary restrictions";
-  } else {
     let arr = [].concat(data.diet);
-    let dietString = arr.join(" ");
-    diet = "specified dietary restrictions of " + dietString;
+    diet = arr.join(" ");
+    // diet = "specified dietary restrictions of " + dietString;
+  } else {
+    diet = "none";
   }
 
   // customer email
