@@ -18,7 +18,8 @@
     "nodemailer": "^4.0.1",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2",
-    "smooth-scroll": "^12.1.5"
+    "smooth-scroll": "^12.1.5",
+    "unirest": "^0.5.1"
   },
   "engines": {
     "node": "7.10.0"

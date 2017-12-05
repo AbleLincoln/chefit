@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const unirest = require('unirest');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,6 +10,48 @@ router.get('/', function(req, res, next) {
 });
 /* POST book */
 router.post('/book', book); // TODO put book in controller
+router.post('/square', square);
+
+function square(req, res, next) {
+  var token = require('crypto').randomBytes(64).toString('hex');
+  purchaseParams = {
+    "redirect_url": "https://chefit.herokuapp.com/?submitted=submitted",
+    "idempotency_key": token,
+    "ask_for_shipping_address": false,
+    "merchant_support_email": "admin@getchefit.com",
+
+    "order": {
+      "reference_id": "1",
+      "line_items": [
+        {
+          "name": "package",
+          "quantity": "1",
+          "base_price_money": {
+            "amount": 6000,
+            "currency": "USD"
+          }
+        }
+      ]
+    },
+    "pre_populate_buyer_email": "example@example.com"
+  };
+
+  unirest.post("https://connect.squareup.com/v2/locations/CBASEIxRbg7g-Aqkv1UU3nEuHjQgAQ/checkouts")
+  .headers({
+		'Authorization': 'Bearer sandbox-sq0atb-xKIDuP2ShOCu_XvvU7HdWg',
+		'Accept': 'application/json',
+		'Content-Type': 'application/json'
+	})
+	.send(purchaseParams)
+  .end(response => {
+    if (response.body.errors){
+			res.json({status: 400, errors: response.body.errors})
+		}else{
+			res.redirect(response.body.checkout.checkout_page_url);
+		};
+  })
+}
+
 // Mailer transport
 const mailtrapTransport = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
