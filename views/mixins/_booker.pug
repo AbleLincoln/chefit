@@ -24,7 +24,7 @@ mixin booker()
               h2 Temptation Menu
               
               .content-inner
-                p.small.description A casual dining chef experience including a salad or an appetizer of your choice and a main course. Includes grocery cost, the chef's travelling fees, food preparation and execution, and kitchen clean-up.
+                p.small.description A casual dining experience prepared by one of our certified chefs including a salad and appetizer of your choice and a main course. The total price includes grocery cost, the chef’s travelling fees, food preparation and execution, and kitchen clean-up.
                 h3 Appetizers
                 hr
                 p.small Choose one:
@@ -81,7 +81,7 @@ mixin booker()
                 .menu-item
                   input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
                   label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
-                .button(data-tab="reservation") Next
+                .button.next(data-tab="reservation") Next
                 .menu-errors
           input(type='radio' name='package' value='Temptation' required)
             
@@ -146,7 +146,7 @@ mixin booker()
                 .menu-item
                   input(type="radio" name="main" value="New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts" id="stripsteak")
                   label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
-                .button(data-tab="reservation") Next
+                .button.next(data-tab="reservation") Next
           input(type='radio' name='package' value='Prestige' required)
         //- .button(data-tab="reservation") Next 
         
@@ -155,7 +155,7 @@ mixin booker()
         +dateInput()
         +timeInput()
         .button.back(data-tab="package")  Back
-        .button(data-tab="info") Next
+        .button.next(data-tab="info") Next
         
       .booker-card#info
         +basicInput('Name', 'text', 'name')
@@ -164,7 +164,7 @@ mixin booker()
         +basicInput('Address', 'text', 'address', {'placeholder': ''})
         //- input(id="mapsInput" type="text")
         .button(data-tab="special-requests") Next 
-        .button.back(data-tab="reservation")  Back
+        .button.back.next(data-tab="reservation")  Back
       
       .booker-card#special-requests
         - const diets = ['Dairy', 'Peanuts', 'Shellfish', 'Gluten']
@@ -173,7 +173,7 @@ mixin booker()
           label(for='additional') Additional info (dietary restrictions, favorite topics of conversation)
           textarea(rows='1' name='additional')
         .button(id="submit" data-tab="special-requests") Submit
-        .button.back(data-tab="info")  Back
+        .button.back.next(data-tab="info")  Back
         
   link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
   script(src="https://unpkg.com/flatpickr")

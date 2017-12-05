@@ -6,14 +6,14 @@ let errorsList = new Map();
 const tabs = document.querySelectorAll('.tabs .tab');
 const cards = document.querySelectorAll('.booker-card');
 var activeCard = cards[0];
-const buttons = document.querySelectorAll('.button');
+const nextButtons = document.querySelectorAll('.button.next');
 const backButtons = document.querySelectorAll('.button.back');
 
 // tabs.forEach(tab => {
 //   tab.addEventListener('click', setActive);
 // })
 
-buttons.forEach(button => {
+nextButtons.forEach(button => {
   button.addEventListener('click', setActive);
 });
 

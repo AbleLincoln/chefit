@@ -18,7 +18,7 @@ function square(req, res, next) {
     "redirect_url": "https://chefit.herokuapp.com/?submitted=submitted",
     "idempotency_key": token,
     "ask_for_shipping_address": false,
-    "merchant_support_email": "admin@getchefit.com",
+    "merchant_support_email": process.env.OUTLOOK_USER,
 
     "order": {
       "reference_id": "1",
@@ -65,7 +65,6 @@ const outlookTransport = nodemailer.createTransport({
   host: "smtp.office365.com",
   port: 587,
   auth: {
-    // user: "admin@getchefit.com",
     user: process.env.OUTLOOK_USER,
     pass: process.env.OUTLOOK_PASS
   },
