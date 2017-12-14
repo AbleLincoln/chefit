@@ -13,6 +13,9 @@ router.post('/square', square);
 
 function square(req, res, next) {
   console.log(req.body);
+  const data = req.body;
+  var price;
+  data.package === "Temptation" ? price = 6000 : price = 10000;
   var token = require('crypto').randomBytes(64).toString('hex');
   purchaseParams = {
     "idempotency_key": token,
@@ -24,7 +27,7 @@ function square(req, res, next) {
       "line_items": [
         {
           "name": "package",
-          "quantity": "1",
+          "quantity": data.people,
           "base_price_money": {
             "amount": 6000,
             "currency": "USD"
