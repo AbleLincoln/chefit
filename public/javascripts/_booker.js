@@ -61,7 +61,7 @@ function validateFinalCard() {
 
 // validation
 function validateCard(card) {
-  const inputs = card.querySelectorAll('.input input');
+  const inputs = card.querySelectorAll('.input input, .input select');
   let invalid = false;
   inputs.forEach(input => {
     if(input.value === null || input.value === "") {

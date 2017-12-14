@@ -163,8 +163,8 @@ mixin booker()
         +basicInput('Email', 'email', 'email')
         +basicInput('Address', 'text', 'address', {'placeholder': ''})
         //- input(id="mapsInput" type="text")
-        .button(data-tab="special-requests") Next 
-        .button.back.next(data-tab="reservation")  Back
+        .button.next(data-tab="special-requests") Next 
+        .button.back(data-tab="reservation")  Back
       
       .booker-card#special-requests
         - const diets = ['Dairy', 'Peanuts', 'Shellfish', 'Gluten']

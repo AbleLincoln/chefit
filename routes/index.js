@@ -6,16 +6,15 @@ const unirest = require('unirest');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ChefIt', submitted: req.query.submitted });
-  console.log(req.query.submitted);
 });
 /* POST book */
 router.post('/book', book); // TODO put book in controller
 router.post('/square', square);
 
 function square(req, res, next) {
+  console.log(req.body);
   var token = require('crypto').randomBytes(64).toString('hex');
   purchaseParams = {
-    "redirect_url": "https://chefit.herokuapp.com/?submitted=submitted",
     "idempotency_key": token,
     "ask_for_shipping_address": false,
     "merchant_support_email": process.env.OUTLOOK_USER,
@@ -52,39 +51,38 @@ function square(req, res, next) {
   })
 }
 
-// Mailer transport
-const mailtrapTransport = nodemailer.createTransport({
-  host: "smtp.mailtrap.io",
-  port: 2525,
-  auth: {
-    user: "7ea456eb37d853",
-    pass: "9c83b6ca143f0d"
-  }
-});
-const outlookTransport = nodemailer.createTransport({
-  host: "smtp.office365.com",
-  port: 587,
-  auth: {
-    user: process.env.OUTLOOK_USER,
-    pass: process.env.OUTLOOK_PASS
-  },
-  secureConnection: false,
-  tls: { ciphers: 'SSLv3' }
-});
-
 function book(req, res, next) {
+  // Mailer transport
+  const mailtrapTransport = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
+    auth: {
+      user: process.env.OUTLOOK_USER,
+      pass: process.env.OUTLOOK_PASS
+    }
+  });
+  const outlookTransport = nodemailer.createTransport({
+    host: "smtp.office365.com",
+    port: 587,
+    auth: {
+      user: 'admin@getchefit.com',
+      pass: 'Kgetchefit01!'
+    },
+    secureConnection: false,
+    tls: { ciphers: 'SSLv3' }
+  });
+
   const data = req.body;
   console.log(data);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const date = new Date(data.date);
-  // const date = new Date(Date.parse(data.date));
-  console.log(date);
-  console.log(date.getMonth());
-  console.log(date.getDate());
+  const dateString = `${days[date.getUTCDay()]}, ${months[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
+
   var diet;
   if(data.diet) {
-    let arr = [].concat(data.diet);
-    diet = arr.join(" ");
-    // diet = "specified dietary restrictions of " + dietString;
+    // let arr = [].concat(data.diet);
+    diet = data.diet.join(", ");
   } else {
     diet = "none";
   }
@@ -95,31 +93,10 @@ function book(req, res, next) {
     to: `${data.email}`,
     subject: 'ChefIt Reservation',
     // text: `Data.date: ${data.date} UTCDate: ${date.getUTCMonth() + 1}/${date.getUTCDate()}`
-    text: `Dear ${data.name}, <br />
-    This email is to confirm your CHEFIT reservation with the following details: <br />
-    Date: ${date.getUTCMonth() + 1}/${date.getUTCDate()} <br />
-    Time of first course: ${data.time} (your chef will arrive an hour and a half before to begin preparations)<br />
-    Guests: ${data.people} <br />
-    Address: ${data.address} <br />
-    Number: ${data.phone} <br />
-    Package: ${data.package} <br />
-    Appetizer: ${data.appetizer} <br />
-    Salad: ${data.salad} <br />
-    Main: ${data.main} <br />
-    Diet: ${diet} <br />
-    <br /> Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
-    <br /> Please remember
-    <ul>
-      <li>There is a 48-hour cancellation policy with this reservation.</li>
-      <li>Note that the chef will need to ARRIVE an hour and a half before the selected dinner time.</li>
-      <li>Please take note of our add-on options for desserts and wine.</li>
-      <li>Please allow and plan for an hour of prep time before your first dish is served.</li>
-      <li>The CHEFIT team would greatly appreciate it if you would fill out a quick online survey following the meal.</li>
-    </ul>`,
     html: `Dear ${data.name}, <br />
     This email is to confirm your CHEFIT reservation with the following details: <br />
-    Date: ${date.getUTCMonth() + 1}/${date.getUTCDate()} <br />
-    Time of first course: ${data.time} (your chef will arrive an hour and a half before to begin preparations)<br />
+    Date: ${dateString} <br />
+    Time of first course: ${data.time}<br />
     Guests: ${data.people} <br />
     Address: ${data.address} <br />
     Number: ${data.phone} <br />
@@ -128,7 +105,8 @@ function book(req, res, next) {
     Salad: ${data.salad} <br />
     Main: ${data.main} <br />
     Diet: ${diet} <br />
-    <br /> Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
+    Additional comments: ${data.additional} <br />
+    Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
     <br /> Please remember
     <ul>
       <li>There is a 48-hour cancellation policy with this reservation.</li>
@@ -162,7 +140,8 @@ function book(req, res, next) {
     Appetizer: ${data.appetizer} <br />
     Salad: ${data.salad} <br />
     Main: ${data.main}
-    Diet: ${diet} <br />`,
+    Diet: ${diet} <br />
+    Additional comments: ${data.additional} <br />`,
     html: `Hello ChefIt team, you have a new reservation. <br />
     Name: ${data.name} <br />
     Email: ${data.email} <br />
@@ -175,7 +154,8 @@ function book(req, res, next) {
     Appetizer: ${data.appetizer} <br />
     Salad: ${data.salad} <br />
     Main: ${data.main}
-    Diet: ${diet} <br />`
+    Diet: ${diet} <br />
+    Additional comments: ${data.additional} <br />`
   }
   outlookTransport.sendMail(adminMail, (error, info) => {
     if (error) {
