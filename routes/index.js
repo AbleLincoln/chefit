@@ -29,13 +29,13 @@ function square(req, res, next) {
           "name": "package",
           "quantity": data.people,
           "base_price_money": {
-            "amount": 6000,
+            "amount": price,
             "currency": "USD"
           }
         }
       ]
     },
-    "pre_populate_buyer_email": "example@example.com"
+    "pre_populate_buyer_email": data.email
   };
 
   unirest.post("https://connect.squareup.com/v2/locations/CBASEIxRbg7g-Aqkv1UU3nEuHjQgAQ/checkouts")

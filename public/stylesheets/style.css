@@ -518,7 +518,7 @@ hr {
   position: relative;
   height: 100%;
   padding-top: 20vh;
-  background-image: url("../images/chef-bg.jpg");
+  background-image: url("../images/dinner-bg.jpg");
   background-position: center;
   background-size: cover; }
   @media screen and (max-width: 768px) {
