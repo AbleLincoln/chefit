@@ -26,12 +26,18 @@ function square(req, res, next) {
       "reference_id": "1",
       "line_items": [
         {
-          "name": "package",
+          "name": `${data.package} package`,
           "quantity": data.people,
           "base_price_money": {
             "amount": price,
             "currency": "USD"
-          }
+          },
+          "taxes": [
+            {
+              "name": "Taxes and fees",
+              "percentage": "15"
+            }
+          ]
         }
       ]
     },

@@ -647,7 +647,8 @@ hr {
         width: 4rem;
         height: 4rem;
         box-sizing: content-box;
-        padding: 15px; }
+        padding: 15px;
+        border-bottom: 2px solid #F66B00; }
 
 .content #whatweneed {
   width: 100%;

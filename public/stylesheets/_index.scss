@@ -197,11 +197,8 @@
           width: 4rem; // to make it square (font-size=4rem)
           height: 4rem;
           box-sizing: content-box;
-          // background-color: $chefit-blue;
-          // color: white;
           padding: 15px;
-          // border-radius: 100%;
-          // box-shadow: $light-shadow;
+          border-bottom: 2px solid $chefit-orange;
         }
       }
     }
