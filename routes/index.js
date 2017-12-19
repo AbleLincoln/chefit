@@ -3,10 +3,18 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const unirest = require('unirest');
 
+const baseURL = "https://chefit.herokuapp.com/"
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ChefIt', submitted: req.query.submitted });
 });
+router.get('/submitted', (req, res, next) => {
+
+
+  res.render('index', { title: 'ChefIt', submitted: 'submitted' })
+});
+
 /* POST book */
 router.post('/book', book); // TODO put book in controller
 router.post('/square', square);
@@ -18,6 +26,7 @@ function square(req, res, next) {
   data.package === "Temptation" ? price = 6000 : price = 10000;
   var token = require('crypto').randomBytes(64).toString('hex');
   purchaseParams = {
+    "redirect_url": `${baseURL}`,
     "idempotency_key": token,
     "ask_for_shipping_address": false,
     "merchant_support_email": process.env.OUTLOOK_USER,
