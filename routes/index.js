@@ -98,7 +98,7 @@ function book(req, res, next) {
   var diet;
   if(data.diet) {
     // let arr = [].concat(data.diet);
-    diet = data.diet.join(", ");
+    diet = data.diet;
   } else {
     diet = "none";
   }
@@ -204,6 +204,7 @@ function book(req, res, next) {
         return console.log(error);
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
+    
   });
 
   // res.redirect('/?submitted=submitted');
