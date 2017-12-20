@@ -173,7 +173,7 @@ exports.square = (req, res) => {
 
   unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION}/checkouts`)
   .headers({
-		'Authorization': `Bearer ${SQUARE_ACCESS_TOKEN}`,
+		'Authorization': `Bearer ${process.env.SQUARE_ACCESS_TOKEN}`,
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
 	})
