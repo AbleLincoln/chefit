@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'ChefIt', submitted: req.query.submitted });
 });
 router.get('/submitted', (req, res, next) => {
-  res.render('index', { title: 'ChefIt', submitted: 'submitted', params: req.params})
+  book(req);
+  res.render('index', { title: 'ChefIt', submitted: 'submitted', params: req.query})
 });
 
 /* POST book */
@@ -24,7 +25,7 @@ function square(req, res, next) {
   data.package === "Temptation" ? price = 6000 : price = 10000;
   var token = require('crypto').randomBytes(64).toString('hex');
   purchaseParams = {
-    "redirect_url": `${baseURL}/submitted?appetizer=${data.appetizer}&salad=${data.salad}&main=${data.main}&package=${data.package}`,
+    "redirect_url": `${baseURL}/submitted?appetizer=${data.appetizer}&salad=${data.salad}&main=${data.main}&package=${data.package}&people=${data.people}&date=${data.date}&time=${data.time}&name=${data.name}&phone=${data.phone}&email=${data.email}&address=${data.address}&diet=${data.diet || data.diet.join(' ')}`,
     "idempotency_key": token,
     "ask_for_shipping_address": false,
     "merchant_support_email": process.env.OUTLOOK_USER,
@@ -81,15 +82,14 @@ function book(req, res, next) {
     host: "smtp.office365.com",
     port: 587,
     auth: {
-      user: 'admin@getchefit.com',
-      pass: 'Kgetchefit01!'
+      user: process.env.OUTLOOK_USER,
+      pass: process.env.OUTLOOK_PASS
     },
     secureConnection: false,
     tls: { ciphers: 'SSLv3' }
   });
 
-  const data = req.body;
-  console.log(data);
+  const data = req.query;
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const date = new Date(data.date);
@@ -105,7 +105,7 @@ function book(req, res, next) {
 
   // customer email
   const customerMail = {
-    from: 'admin@getchefit.com',
+    from: process.env.OUTLOOK_USER,
     to: `${data.email}`,
     subject: 'ChefIt Reservation',
     // text: `Data.date: ${data.date} UTCDate: ${date.getUTCMonth() + 1}/${date.getUTCDate()}`
@@ -141,8 +141,8 @@ function book(req, res, next) {
 
   // admin email
   const adminMail = {
-    from: 'admin@getchefit.com',
-    to: `admin@getchefit.com`,
+    from: process.env.OUTLOOK_USER,
+    to: process.env.OUTLOOK_USER,
     subject: 'New ChefIt Reservation',
     text: `Hello ChefIt team, You have a new reservation. <br />
     Name: ${data.name} <br />
@@ -182,7 +182,7 @@ function book(req, res, next) {
 
   // Zapier parser email
   const zapierMail = {
-    from: 'admin@getchefit.com',
+    from: process.env.OUTLOOK_USER,
     to: `v5x2lxdd@robot.zapier.com`,
     subject: 'New ChefIt Reservation',
     text: `Hello ChefIt team, You have a new reservation.
@@ -206,7 +206,7 @@ function book(req, res, next) {
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
 
-  res.redirect('/?submitted=submitted');
+  // res.redirect('/?submitted=submitted');
 }
 
 module.exports = router;
