@@ -20,7 +20,8 @@
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2",
     "smooth-scroll": "^12.1.5",
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "uuid": "^3.1.0"
   },
   "engines": {
     "node": "7.10.0"

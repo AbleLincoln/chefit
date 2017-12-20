@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const unirest = require('unirest');
+const uuidv1 = require('uuid/v1');
 
 const baseURL = "https://chefit.herokuapp.com"
 
@@ -149,7 +150,7 @@ exports.square = (req, res) => {
     "merchant_support_email": process.env.OUTLOOK_USER,
 
     "order": {
-      "reference_id": "1",
+      "reference_id": uuidv1(),
       "line_items": [
         {
           "name": `${data.package} package`,
@@ -170,9 +171,9 @@ exports.square = (req, res) => {
     "pre_populate_buyer_email": data.email
   };
 
-  unirest.post("https://connect.squareup.com/v2/locations/CBASEIxRbg7g-Aqkv1UU3nEuHjQgAQ/checkouts")
+  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION}/checkouts`)
   .headers({
-		'Authorization': 'Bearer sandbox-sq0atb-xKIDuP2ShOCu_XvvU7HdWg',
+		'Authorization': `Bearer ${SQUARE_ACCESS_TOKEN}`,
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
 	})
