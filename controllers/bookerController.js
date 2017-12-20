@@ -171,7 +171,7 @@ exports.square = (req, res) => {
     "pre_populate_buyer_email": data.email
   };
 
-  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION}/checkouts`)
+  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION_ID}/checkouts`)
   .headers({
 		'Authorization': `Bearer ${process.env.SQUARE_ACCESS_TOKEN}`,
 		'Accept': 'application/json',
