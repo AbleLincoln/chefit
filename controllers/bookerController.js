@@ -140,11 +140,12 @@ exports.submitted = (req, res) => {
 
 exports.square = (req, res) => {
   const data = req.body;
+  // console.log('diet: ' + (data.diet && [].concat(data.diet).join(' ')));
   var price;
   data.package === "Temptation" ? price = 6000 : price = 10000;
   var token = require('crypto').randomBytes(64).toString('hex');
   purchaseParams = {
-    "redirect_url": `${baseURL}/submitted?appetizer=${data.appetizer}&salad=${data.salad}&main=${data.main}&package=${data.package}&people=${data.people}&date=${data.date}&time=${data.time}&name=${data.name}&phone=${data.phone}&email=${data.email}&address=${data.address}&diet=${data.diet && data.diet.join(' ')}`,
+    "redirect_url": `${baseURL}/submitted?appetizer=${data.appetizer}&salad=${data.salad}&main=${data.main}&package=${data.package}&people=${data.people}&date=${data.date}&time=${data.time}&name=${data.name}&phone=${data.phone}&email=${data.email}&address=${data.address}&diet=${data.diet && [].concat(data.diet).join(' ')}`,
     "idempotency_key": token,
     "ask_for_shipping_address": false,
     "merchant_support_email": process.env.OUTLOOK_USER,
