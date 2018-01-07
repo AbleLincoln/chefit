@@ -26,7 +26,7 @@ function sendMail(mail) {
 }
 
 exports.homePage = (req, res) => {
-    res.render('index');
+  res.render('index');
 }
 
 exports.submitted = (req, res) => {
@@ -48,7 +48,7 @@ exports.submitted = (req, res) => {
   const dateString = `${days[date.getUTCDay()]}, ${months[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
 
   // set diet & additional comments to pleasant format
-  const diet = (data.diet ? data.diet : "none");
+  const diet = (data.diet == "undefined" ? "none" : data.diet);
   const additionalComments = (data.additional ? data.additional : "none");
 
   // send customer email
@@ -140,7 +140,6 @@ exports.submitted = (req, res) => {
 
 exports.square = (req, res) => {
   const data = req.body;
-  // console.log('diet: ' + (data.diet && [].concat(data.diet).join(' ')));
   var price;
   data.package === "Temptation" ? price = 6000 : price = 10000;
   var token = require('crypto').randomBytes(64).toString('hex');
