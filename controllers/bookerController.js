@@ -159,7 +159,7 @@ exports.square = (req, res) => {
           "name": `${data.package} package`,
           "quantity": data.people,
           "base_price_money": {
-            "amount": price,
+            "amount": 1,
             "currency": "USD"
           },
           "taxes": [
@@ -174,9 +174,9 @@ exports.square = (req, res) => {
     "pre_populate_buyer_email": data.email
   };
 
-  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_SANDBOX_LOCATION_ID}/checkouts`)
+  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION_ID}/checkouts`)
   .headers({
-		'Authorization': `Bearer ${process.env.SQUARE_SANDBOX_ACCESS_TOKEN}`,
+		'Authorization': `Bearer ${process.env.SQUARE_ACCESS_TOKEN}`,
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
 	})
