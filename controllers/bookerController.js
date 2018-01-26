@@ -56,7 +56,9 @@ exports.submitted = (req, res) => {
     from: process.env.OUTLOOK_USER,
     to: `${data.email}`,
     subject: 'ChefIt Reservation',
-    html: `Dear ${data.name}, <br />
+    html: `
+    <img src='http://www.getchefit.com/images/chefit-logo.png' <br />
+    Dear ${data.name}, <br />
     This email is to confirm your CHEFIT reservation with the following details: <br />
     Date: ${dateString} <br />
     Time of first course: ${data.time}<br />
@@ -171,9 +173,9 @@ exports.square = (req, res) => {
     "pre_populate_buyer_email": data.email
   };
 
-  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_LOCATION_ID}/checkouts`)
+  unirest.post(`https://connect.squareup.com/v2/locations/${process.env.SQUARE_SANDBOX_LOCATION_ID}/checkouts`)
   .headers({
-		'Authorization': `Bearer ${process.env.SQUARE_ACCESS_TOKEN}`,
+		'Authorization': `Bearer ${process.env.SQUARE_SANDBOX_ACCESS_TOKEN}`,
 		'Accept': 'application/json',
 		'Content-Type': 'application/json'
 	})
