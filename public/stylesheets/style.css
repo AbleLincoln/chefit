@@ -468,6 +468,8 @@ li {
 
 hr {
   border-color: #1F2746; }
+  hr.orange {
+    border-color: #F66B00; }
 
 .button {
   font-size: 0.9rem;
@@ -513,6 +515,8 @@ hr {
     margin-top: 5px; }
     .footer p i {
       margin-right: 5px; }
+  .footer hr {
+    max-width: 250px; }
 
 .hero {
   position: relative;

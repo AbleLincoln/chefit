@@ -32,6 +32,10 @@ li {
 
 hr {
   border-color: $chefit-dark-blue;
+
+  &.orange {
+    border-color: $chefit-orange;
+  }
 }
 
 .button {
