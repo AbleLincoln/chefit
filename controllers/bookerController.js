@@ -57,7 +57,7 @@ exports.submitted = (req, res) => {
     to: `${data.email}`,
     subject: 'ChefIt Reservation',
     html: `
-    <img src='http://www.getchefit.com/images/chefit-logo.png' <br />
+    <img src='http://www.getchefit.com/images/chefit-logo.png' width="100px"> <br />
     Dear ${data.name}, <br />
     This email is to confirm your CHEFIT reservation with the following details: <br />
     Date: ${dateString} <br />
