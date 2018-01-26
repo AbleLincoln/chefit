@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const unirest = require('unirest');
 const uuidv1 = require('uuid/v1');
 
-const baseURL = "https://chefit.herokuapp.com"
+const baseURL = "http://www.getchefit.com"
 
 // Mailer transport
 const outlookTransport = nodemailer.createTransport({
@@ -71,7 +71,8 @@ exports.submitted = (req, res) => {
     Main: ${data.main} <br />
     Diet: ${diet} <br />
     Additional comments: ${additionalComments} <br />
-    Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
+    Please have the dishwasher emptied prior to the meal to make the process easier for our chef and have the kitchen clean and ready for our chef to execute the meal. This process requires a functioning kitchen with a working stovetop and oven. Also, please notify us of any specific parking issues that our chef should be made aware of. <br />
+    If you have any further questions or if any of the information on our end is incorrect, please contact us at admin@getchefit.com. You will be receiving an email of your receipt from Square shortly. Thank you for booking through CHEFIT and we hope you enjoy this one of a kind home dining experience.
     <br /> Please remember
     <ul>
       <li>There is a 48-hour cancellation policy with this reservation.</li>

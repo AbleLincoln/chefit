@@ -608,6 +608,10 @@ hr {
     display: none; }
   .hero.submitted .success {
     display: block; }
+    .hero.submitted .success p {
+      margin: auto;
+      margin-bottom: 1rem;
+      width: 80%; }
 
 .content #howitworks {
   margin-bottom: 4rem;

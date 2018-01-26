@@ -123,6 +123,12 @@
     }
     .success {
       display: block;
+
+      p {
+        margin: auto;
+        margin-bottom: 1rem;
+        width: 80%;
+      }
     }
   }
 }
