@@ -154,14 +154,14 @@ function count() {
     removeError('counter oob');
     input.value = parseInt(input.value) + countAmnt;
     label.innerHTML = input.value;
-    if(parseInt(input.value) >= 8) {
+    if(parseInt(input.value) >= 9) {
       // errors.classList.remove('inactive');
-      // errors.innerHTML = '<p>Parties of 8 or more will be served family style</p>';
-      addError('counter above 8', 'Parties of 8 or more will be served family style');
+      // errors.innerHTML = '<p>Parties of 9 or more will be served family style</p>';
+      addError('counter above 9', 'Parties of 9 or more will be served family style');
     } else {
       // errors.classList.add('inactive');
       // errors.innerHTML = '';
-      removeError('counter above 8');
+      removeError('counter above 9');
     }
     animateClick(this);
   }

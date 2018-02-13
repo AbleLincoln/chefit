@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   position: absolute;
   z-index: 100;
-  left: 0; right: 0; bottom: 0;
+  left: 15%; right: 15%; bottom: 0;
   transform: translateY(100%);
 
 
@@ -19,7 +19,11 @@
     margin: 0.5rem 0;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: red;
     box-shadow: $light-shadow;
+    text-align: center;
+
+    color: $error-red;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
   }
 }
