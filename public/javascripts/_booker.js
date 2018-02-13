@@ -107,7 +107,7 @@ packages.forEach(package => {
   package.addEventListener('click', setSelection);
 })
 
-function setSelection() {
+function setSelection(e) {
   packages.forEach(package => {
     package.classList.remove('selected');
   })
@@ -116,6 +116,14 @@ function setSelection() {
   // check the radio button
   let input = this.querySelector('input[name="package"]');
   input.checked = true;
+
+  //open modal
+  if(e.target === this.querySelector('.modal') || e.target === this.querySelector('.button--clear')) {
+    // allow us to close the modal
+  } else {
+    this.querySelector('.modal').classList.add('open');
+    document.querySelector('body').classList.add('modal-open');
+  }
 }
 
 // checkbox selection
