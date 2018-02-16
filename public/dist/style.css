@@ -750,7 +750,7 @@ hr {
         .booker .booker-card .input {
           flex-basis: 100%; } }
       .booker .booker-card .input.address {
-        flex-basis: 100%; }
+        flex-basis: 70%; }
     @media screen and (min-width: 768px) {
       .booker .booker-card#special-requests {
         flex-wrap: nowrap; } }

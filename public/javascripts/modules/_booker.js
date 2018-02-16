@@ -1,4 +1,4 @@
-import { isMobilePhone } from "validator";
+import { isMobilePhone, isPostalCode } from "validator";
 import { log } from "util";
 
 // errors for all
@@ -76,8 +76,13 @@ function validateCard(card) {
       input.classList.add('invalid');
       invalid = true;
       // addError(`invalid ${input.name}`, `Please input your ${input.name} in a valid format`);
-    } else if (input.type == "tel") {
+    } else if (input.type == "tel") { // phone input
       if(!isMobilePhone(input.value, 'en-US')) {
+        input.classList.add('invalid');
+        invalid = true;
+      }
+    } else if (input.name == "zip") {
+      if(!isPostalCode(input.value, 'US')) {
         input.classList.add('invalid');
         invalid = true;
       }
@@ -234,6 +239,14 @@ function displayErrors() {
 // Google Maps api
 const addressInput = document.querySelector('#address');
 var autocompleteAddressInput = new google.maps.places.Autocomplete(addressInput, {});
+autocompleteAddressInput.addListener('place_changed', fillInZip);
+
+const zipInput = document.querySelector('#zip');
+function fillInZip() {
+  var zip = autocompleteAddressInput.getPlace().address_components[7].long_name;
+  zipInput.value = zip;
+  // console.log(zip);
+}
 
 // modals
 const modals = document.querySelectorAll('.modal');

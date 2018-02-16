@@ -159,6 +159,7 @@ mixin booker()
         +basicInput('Phone', 'tel', 'phone')
         +basicInput('Email', 'email', 'email')
         +basicInput('Address', 'text', 'address', {'placeholder': ''})
+        +basicInput('Zip', 'text', 'zip')
         //- input(id="mapsInput" type="text")
         .button.next(data-tab="special-requests") Next 
         .button.back(data-tab="reservation")  Back
@@ -172,7 +173,4 @@ mixin booker()
         .button(id="submit" data-tab="special-requests") Submit
         .button.back.next(data-tab="info")  Back
         
-  //- link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
-  //- script(src="https://unpkg.com/flatpickr")
   script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZSWvBF46Su4ueHW0SeDiflUvecxKBpU&libraries=places")
-  //- script(type="application/javascript", src="javascripts/_booker.js")
