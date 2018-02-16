@@ -3,7 +3,7 @@ html
   head
     title= CHEFIT
     meta(name="viewport" content="width=device-width, initial-scale=1, height=device-height")
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/dist/style.css')
     script(src="https://use.fontawesome.com/95c4cfa9e4.js")
   body
     
@@ -19,3 +19,7 @@ html
         hr.orange
         p Interested in being one of our chefs?
         p Email us at Chefs@GetCHEFIT.com
+
+    block scripts
+      script(src="/dist/app.bundle.js")
+      //- script(src="/dist/flatpickr.bundle.js")

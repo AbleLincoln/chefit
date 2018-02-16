@@ -1,3 +1,6 @@
+import { isMobilePhone } from "validator";
+import { log } from "util";
+
 // errors for all
 const errors = document.querySelector('.errors');
 let errorsList = new Map();
@@ -73,6 +76,11 @@ function validateCard(card) {
       input.classList.add('invalid');
       invalid = true;
       // addError(`invalid ${input.name}`, `Please input your ${input.name} in a valid format`);
+    } else if (input.type == "tel") {
+      if(!isMobilePhone(input.value, 'en-US')) {
+        input.classList.add('invalid');
+        invalid = true;
+      }
     } else {
       input.classList.remove('invalid');
       removeError(`invalid ${input.name}`);
@@ -103,13 +111,13 @@ function validateCard(card) {
 
 // Package selection
 const packages = document.querySelectorAll('.package');
-packages.forEach(package => {
-  package.addEventListener('click', setSelection);
+packages.forEach(aPackage => {
+  aPackage.addEventListener('click', setSelection);
 })
 
 function setSelection(e) {
-  packages.forEach(package => {
-    package.classList.remove('selected');
+  packages.forEach(aPackage => {
+    aPackage.classList.remove('selected');
   })
   // add checked class
   this.classList.add('selected');
@@ -184,10 +192,10 @@ function animateClick(button) {
 }
 
 // Flatpickr date/time picker
-flatpickr('.dateInput input', {
-  altInput: true,
-  minDate: new Date().fp_incr(2)
-});
+// flatpickr('.dateInput input', {
+//   altInput: true,
+//   minDate: new Date().fp_incr(2)
+// });
 // flatpickr('.timeInput input', {
 //   enableTime: true,
 //   noCalendar: true,
