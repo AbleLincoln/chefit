@@ -1003,6 +1003,15 @@ hr {
       text-shadow: 1px 1px 3px black; }
     .modal .content h3 {
       margin-top: 3rem; }
+    .modal .content .dropdown {
+      padding: 5px 10px;
+      border: 2px solid #222;
+      border-radius: 5px; }
+      .modal .content .dropdown span {
+        float: right; }
+      .modal .content .dropdown .menu-items {
+        overflow: hidden;
+        transition: height 0.3s ease-out; }
     .modal .content .menu-item {
       display: flex;
       align-items: baseline;

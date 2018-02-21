@@ -76,6 +76,23 @@
       margin-top: 3rem;
     }
 
+    .dropdown {
+      padding: 5px 10px;
+
+      border: 2px solid $chefit-black;
+      border-radius: 5px;
+
+      span {
+        float: right;
+      }
+
+      .menu-items {
+        overflow: hidden;
+        transition:height 0.3s ease-out;
+        // height:0;
+      }
+    }
+
     .menu-item {
       display: flex;
       align-items: baseline;

@@ -25,21 +25,26 @@ mixin booker()
               
               .content-inner
                 p.small.description A casual dining experience prepared by one of our certified chefs including a salad and appetizer of your choice and a main course. The total price includes grocery cost, the chef’s travelling fees, food preparation and execution, and kitchen clean-up.
+
                 h3 Appetizers
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
-                  label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
-                .menu-item
-                  input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
-                  label(for="bruschetta") Bruschetta with tomato confit and fresh basil
-                .menu-item
-                  input(type="radio" name="appetizer" value="goat cheese and pistachio filled endive leaves" id="goat")
-                  label(for="goat") Goat cheese and pistachio filled endive leaves
-                .menu-item
-                  input(type="radio" name="appetizer" value="baked artichoke dip with chips" id="crudite")
-                  label(for="crudite") Baked artichoke dip with chips
+                //- hr
+                .dropdown
+                  p.small Choose one
+                    span &or;
+
+                  .menu-items(data-collapsed="true")
+                    .menu-item
+                      input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
+                      label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
+                    .menu-item
+                      input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
+                      label(for="bruschetta") Bruschetta with tomato confit and fresh basil
+                    .menu-item
+                      input(type="radio" name="appetizer" value="goat cheese and pistachio filled endive leaves" id="goat")
+                      label(for="goat") Goat cheese and pistachio filled endive leaves
+                    .menu-item
+                      input(type="radio" name="appetizer" value="baked artichoke dip with chips" id="crudite")
+                      label(for="crudite") Baked artichoke dip with chips
                   
                 h3 Salads
                 hr
@@ -144,6 +149,7 @@ mixin booker()
                   input(type="radio" name="main" value="New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts" id="stripsteak")
                   label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
                 .button.next(data-tab="reservation") Next
+                .menu-errors
           input(type='radio' name='package' value='Prestige' required)
         //- .button(data-tab="reservation") Next 
         
