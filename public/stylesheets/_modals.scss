@@ -82,14 +82,15 @@
       border: 2px solid $chefit-black;
       border-radius: 5px;
 
-      span {
+      span.arrow {
         float: right;
       }
 
       .menu-items {
         overflow: hidden;
-        transition:height 0.3s ease-out;
-        // height:0;
+        height:0;
+
+        padding: 0px 5px;
       }
     }
 
@@ -116,6 +117,10 @@
     .menu-errors {
       margin-top: 1rem;
       color: $error-red;
+    }
+
+    .button {
+      margin-top: 3rem;
     }
   }
 }

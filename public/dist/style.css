@@ -1007,11 +1007,12 @@ hr {
       padding: 5px 10px;
       border: 2px solid #222;
       border-radius: 5px; }
-      .modal .content .dropdown span {
+      .modal .content .dropdown span.arrow {
         float: right; }
       .modal .content .dropdown .menu-items {
         overflow: hidden;
-        transition: height 0.3s ease-out; }
+        height: 0;
+        padding: 0px 5px; }
     .modal .content .menu-item {
       display: flex;
       align-items: baseline;
@@ -1027,6 +1028,8 @@ hr {
     .modal .content .menu-errors {
       margin-top: 1rem;
       color: #721c24; }
+    .modal .content .button {
+      margin-top: 3rem; }
 
 body.modal-open {
   overflow: hidden; }

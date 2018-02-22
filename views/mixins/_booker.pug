@@ -27,12 +27,11 @@ mixin booker()
                 p.small.description A casual dining experience prepared by one of our certified chefs including a salad and appetizer of your choice and a main course. The total price includes grocery cost, the chef’s travelling fees, food preparation and execution, and kitchen clean-up.
 
                 h3 Appetizers
-                //- hr
                 .dropdown
                   p.small Choose one
-                    span &or;
+                    span.arrow &#9660;
 
-                  .menu-items(data-collapsed="true")
+                  .menu-items
                     .menu-item
                       input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
                       label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
@@ -47,42 +46,49 @@ mixin booker()
                       label(for="crudite") Baked artichoke dip with chips
                   
                 h3 Salads
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
-                  label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
-                .menu-item
-                  input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
-                  label(for="spinach") Spinach and butter lettuce salad with Italian dressing
-                .menu-item
-                  input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
-                  label(for="cucumber") Cucumber and tomato salad with fresh herbs
-                .menu-item
-                  input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
-                  label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
+                .dropdown
+                  p.small Choose one:
+                    span.arrow &#9660;
+
+                  .menu-items
+                    .menu-item
+                      input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
+                      label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
+                    .menu-item
+                      input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
+                      label(for="spinach") Spinach and butter lettuce salad with Italian dressing
+                    .menu-item
+                      input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
+                      label(for="cucumber") Cucumber and tomato salad with fresh herbs
+                    .menu-item
+                      input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
+                      label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
                 
                 h3 Main course
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
-                  label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
-                .menu-item
-                  input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
-                  label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
-                .menu-item
-                  input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
-                  label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
-                .menu-item
-                  input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
-                  label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
-                .menu-item
-                  input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
-                  label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
-                .menu-item
-                  input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
-                  label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+                .dropdown
+                  p.small Choose one:
+                    span.arrow &#9660;
+                  
+                  .menu-items
+                    .menu-item
+                      input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
+                      label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
+                    .menu-item
+                      input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
+                      label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
+                    .menu-item
+                      input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
+                      label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
+                    .menu-item
+                      input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
+                      label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
+                    .menu-item
+                      input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
+                      label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
+                    .menu-item
+                      input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
+                      label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+
                 .button.next(data-tab="reservation") Next
                 .menu-errors
           input(type='radio' name='package' value='Temptation' required)
