@@ -759,14 +759,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__packages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__packages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__flatpickr__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__flatpickr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__flatpickr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkboxes__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkboxes__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__checkboxes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__checkboxes__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__number_counter__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__maps__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__number_counter__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__maps__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__maps__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modals__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modals__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modals___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__modals__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown__ = __webpack_require__(86);
 
 
 
@@ -3498,7 +3498,7 @@ function setSelection(e) {
 /***/ (function(module, exports, __webpack_require__) {
 
 const flatpickr = __webpack_require__(80);
-const flatpickrcss = __webpack_require__(82);
+const flatpickrcss = __webpack_require__(81);
 
 flatpickr('.dateInput input', {
   altInput: true,
@@ -3509,7 +3509,7 @@ flatpickr('.dateInput input', {
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(jQuery) {var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -5834,10 +5834,185 @@ Date.prototype.fp_incr = function (days) {
 };
 
 if (true) module.exports = flatpickr;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(81)))
 
 /***/ }),
 /* 81 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports) {
+
+// checkbox selections
+const checkboxes = document.querySelectorAll('.checkbox');
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('click', check);
+})
+
+function check() {
+  if(this.classList.contains('selected')) this.classList.remove('selected');
+  else this.classList.add('selected');
+}
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_click__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors__ = __webpack_require__(6);
+
+
+
+
+// Number counter
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+  counter.addEventListener('click', count);
+})
+
+function count() {
+  // get count amount
+  const countAmnt = parseInt(this.dataset.count);
+  // get input (there should only be one)
+  const input = this.parentNode.getElementsByTagName('input')[0];
+  // get number label
+  const label = this.parentNode.getElementsByClassName('number')[0];
+  // get error element
+  // const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
+  if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
+    if(parseInt(input.value) === 12) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter oob', 'Parties greater than 12 served on special request. Please email us at admin@GetChefIt.com');
+    } else if(parseInt(input.value) === 4) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter oob', 'Currently we do not serve parties of less than 4 people. Please email us at admin@GetChefIt.com for any special requests');
+    }
+  } else {
+    Object(__WEBPACK_IMPORTED_MODULE_1__errors__["c" /* removeError */])('counter oob');
+    input.value = parseInt(input.value) + countAmnt;
+    label.innerHTML = input.value;
+    if(parseInt(input.value) >= 9) {
+      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter above 9', 'Parties of 9 or more will be served family style');
+    } else {
+      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["c" /* removeError */])('counter above 9');
+    }
+    Object(__WEBPACK_IMPORTED_MODULE_0__animate_click__["a" /* default */])(this);
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+// Google Maps api
+const addressInput = document.querySelector('#address');
+var autocompleteAddressInput = new google.maps.places.Autocomplete(addressInput, {});
+autocompleteAddressInput.addListener('place_changed', fillInZip);
+
+const zipInput = document.querySelector('#zip');
+function fillInZip() {
+  var zip = autocompleteAddressInput.getPlace().address_components[7].long_name;
+  zipInput.value = zip;
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports) {
+
+// modals
+const modals = document.querySelectorAll('.modal');
+const menuButtons = document.querySelectorAll('.menu');
+
+menuButtons.forEach(button => {
+  button.addEventListener('click', openModal);
+});
+
+function openModal() {
+  document.querySelector(`#${this.dataset.modal}`).classList.add('open');
+  document.querySelector('body').classList.add('modal-open');
+}
+
+modals.forEach(modal => {
+  modal.addEventListener('click', closeModal);
+})
+
+function closeModal(e) {
+  // if(e.target !== this) return; // if we click the actual content, don't close
+  if(e.target === this || e.target === this.querySelector('.button--clear')) {
+    this.classList.remove('open');
+    document.querySelector('body').classList.remove('modal-open');
+  }
+}
+
+const modalButtons = document.querySelectorAll('.modal .button');
+
+modalButtons.forEach(button => {
+  button.addEventListener('click', validateMenu);
+});
+
+function validateMenu() {
+  let appSelected = false;
+  let saladSelected = false;
+  let mainSelected = false;
+  const radios = document.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => {
+    if(radio.name === "appetizer" && radio.checked) appSelected = true;
+    else if(radio.name === "salad" && radio.checked) saladSelected = true;
+    else if(radio.name === "main" && radio.checked) mainSelected = true;
+  });
+  this.parentElement.querySelector('.menu-errors').innerHTML = "";
+  if(!appSelected) {
+    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select an appetizer</p>';
+  }
+  if(!saladSelected) {
+    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select a salad</p>';
+  }
+  if(!mainSelected) {
+    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select a main course</p>';
+  }
+}
+
+/***/ }),
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+// dropdown
+const dropdownButtons = document.querySelectorAll('.dropdown');
+dropdownButtons.forEach(button => {
+  button.addEventListener('click', dropdown);
+})
+
+function dropdown(e) {
+  if(e.target !== this && e.target !== this.querySelector('.small') && e.target !== this.querySelector('.arrow')) return;
+  
+  var animateTime = 500;
+
+  const menuItems = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.menu-items');
+  
+  if(menuItems.height() === 0) {
+    autoHeightAnimate(menuItems, animateTime);
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.arrow').html('&#9650;');
+  } else {
+    menuItems.animate({ height: '0' }, animateTime);
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.arrow').html('&#9660;');
+  }
+}
+
+function autoHeightAnimate(element, time){
+  var curHeight = element.height(), // Get Default Height
+      autoHeight = element.css({height: 'auto'}).height(); // Get Auto Height
+  element.height(curHeight); // Reset to Default Height
+  element.animate({ height: autoHeight }, time); // Animate to Auto Height;
+}
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -16206,183 +16381,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports) {
-
-// checkbox selections
-const checkboxes = document.querySelectorAll('.checkbox');
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('click', check);
-})
-
-function check() {
-  if(this.classList.contains('selected')) this.classList.remove('selected');
-  else this.classList.add('selected');
-}
-
-/***/ }),
-/* 84 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__animate_click__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors__ = __webpack_require__(6);
-
-
-
-
-// Number counter
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-  counter.addEventListener('click', count);
-})
-
-function count() {
-  // get count amount
-  const countAmnt = parseInt(this.dataset.count);
-  // get input (there should only be one)
-  const input = this.parentNode.getElementsByTagName('input')[0];
-  // get number label
-  const label = this.parentNode.getElementsByClassName('number')[0];
-  // get error element
-  // const error = this.parentNode.parentNode.getElementsByClassName('error')[0];
-  if(parseInt(input.value) + countAmnt > input.max || parseInt(input.value) + countAmnt < input.min) {
-    if(parseInt(input.value) === 12) {
-      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter oob', 'Parties greater than 12 served on special request. Please email us at admin@GetChefIt.com');
-    } else if(parseInt(input.value) === 4) {
-      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter oob', 'Currently we do not serve parties of less than 4 people. Please email us at admin@GetChefIt.com for any special requests');
-    }
-  } else {
-    Object(__WEBPACK_IMPORTED_MODULE_1__errors__["c" /* removeError */])('counter oob');
-    input.value = parseInt(input.value) + countAmnt;
-    label.innerHTML = input.value;
-    if(parseInt(input.value) >= 9) {
-      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["a" /* addError */])('counter above 9', 'Parties of 9 or more will be served family style');
-    } else {
-      Object(__WEBPACK_IMPORTED_MODULE_1__errors__["c" /* removeError */])('counter above 9');
-    }
-    Object(__WEBPACK_IMPORTED_MODULE_0__animate_click__["a" /* default */])(this);
-  }
-}
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports) {
-
-// Google Maps api
-const addressInput = document.querySelector('#address');
-var autocompleteAddressInput = new google.maps.places.Autocomplete(addressInput, {});
-autocompleteAddressInput.addListener('place_changed', fillInZip);
-
-const zipInput = document.querySelector('#zip');
-function fillInZip() {
-  var zip = autocompleteAddressInput.getPlace().address_components[7].long_name;
-  zipInput.value = zip;
-}
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports) {
-
-// modals
-const modals = document.querySelectorAll('.modal');
-const menuButtons = document.querySelectorAll('.menu');
-
-menuButtons.forEach(button => {
-  button.addEventListener('click', openModal);
-});
-
-function openModal() {
-  document.querySelector(`#${this.dataset.modal}`).classList.add('open');
-  document.querySelector('body').classList.add('modal-open');
-}
-
-modals.forEach(modal => {
-  modal.addEventListener('click', closeModal);
-})
-
-function closeModal(e) {
-  // if(e.target !== this) return; // if we click the actual content, don't close
-  if(e.target === this || e.target === this.querySelector('.button--clear')) {
-    this.classList.remove('open');
-    document.querySelector('body').classList.remove('modal-open');
-  }
-}
-
-const modalButtons = document.querySelectorAll('.modal .button');
-
-modalButtons.forEach(button => {
-  button.addEventListener('click', validateMenu);
-});
-
-function validateMenu() {
-  let appSelected = false;
-  let saladSelected = false;
-  let mainSelected = false;
-  const radios = document.querySelectorAll('input[type="radio"]');
-  radios.forEach(radio => {
-    if(radio.name === "appetizer" && radio.checked) appSelected = true;
-    else if(radio.name === "salad" && radio.checked) saladSelected = true;
-    else if(radio.name === "main" && radio.checked) mainSelected = true;
-  });
-  this.parentElement.querySelector('.menu-errors').innerHTML = "";
-  if(!appSelected) {
-    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select an appetizer</p>';
-  }
-  if(!saladSelected) {
-    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select a salad</p>';
-  }
-  if(!mainSelected) {
-    this.parentElement.querySelector('.menu-errors').innerHTML += '<p>Please select a main course</p>';
-  }
-}
-
-/***/ }),
-/* 87 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-// dropdown
-const dropdownButtons = document.querySelectorAll('.dropdown');
-dropdownButtons.forEach(button => {
-  button.addEventListener('click', dropdown);
-})
-
-function dropdown(e) {
-  if(e.target !== this && e.target !== this.querySelector('.small') && e.target !== this.querySelector('.arrow')) return;
-  
-  var animateTime = 500;
-
-  const menuItems = $(this).find('.menu-items');
-  
-  if(menuItems.height() === 0) {
-    autoHeightAnimate(menuItems, animateTime);
-    $(this).find('.arrow').html('&#9650;');
-  } else {
-    menuItems.animate({ height: '0' }, animateTime);
-    $(this).find('.arrow').html('&#9660;');
-  }
-}
-
-function autoHeightAnimate(element, time){
-  var curHeight = element.height(), // Get Default Height
-      autoHeight = element.css({height: 'auto'}).height(); // Get Auto Height
-  element.height(curHeight); // Reset to Default Height
-  element.animate({ height: autoHeight }, time); // Animate to Auto Height;
-}
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(81)))
 
 /***/ })
 /******/ ]);

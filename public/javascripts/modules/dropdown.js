@@ -1,4 +1,4 @@
-import { height } from "jquery";
+import $ from "jquery";
 
 // dropdown
 const dropdownButtons = document.querySelectorAll('.dropdown');
