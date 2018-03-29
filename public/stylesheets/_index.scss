@@ -109,12 +109,24 @@
     }
   }
 
-  .chevron {
+  .learnmore {
     position: absolute;
     left: 0; right: 0; bottom: 1rem;
-    text-align: center;
-    color: white;
-    font-size: 6rem;
+
+
+    p {
+      text-align: center;
+      color: $chefit-white;
+      font-size: 2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
+    }
+
+    .chevron {
+      display: block;
+      margin-top: -1rem;
+      font-size: 3rem;
+    }
+    
   }
 
   &.submitted {
@@ -133,7 +145,7 @@
   }
 }
 
-.content {
+#content {
   #howitworks {
     margin-bottom: 4rem;
     text-align: center;

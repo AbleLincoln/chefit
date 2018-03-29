@@ -15,10 +15,14 @@ block content
       h3 Congratulations, you've successfully booked your CHEFIT dinner
       p Check your email for a confirmation letter (it may be in your spam folder!)
       div
-        a.button(data-scroll href="#howitworks") Learn More
+        a.button(data-scroll="#content") Learn More
         .button.button--boring(onclick="bookAnother()") Book another
-    //- .chevron &or;
-  .content
+    .learnmore 
+      p 
+        span.clickable(data-scroll="#content") Learn More 
+      p.chevron 
+        span.clickable(data-scroll="#content") &or;
+  #content
     #howitworks
       h2 How It Works
     #icons
@@ -61,6 +65,6 @@ block content
       //-     li= need
       img(src="images/kitchen-tools.jpg", alt="Pots and pans, baking dishes, mixing bowls, cutting board, dinnerware (plates, cutlery, glassware, napkins)")
     
-  script(type="application/javascript", src="javascripts/smooth-scroll.polyfills.min.js")
-  script(type="application/javascript", src="javascripts/_index.js")
+  //- script(type="application/javascript", src="javascripts/smooth-scroll.polyfills.min.js")
+  //- script(type="application/javascript", src="javascripts/_index.js")
     

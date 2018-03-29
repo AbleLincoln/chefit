@@ -1,4 +1,5 @@
-const flatpickr = require('flatpickr');
+// const flatpickr = require('flatpickr');
+import flatpickr from 'flatpickr';
 const flatpickrcss = require('flatpickr/dist/flatpickr.min.css');
 
 flatpickr('.dateInput input', {
