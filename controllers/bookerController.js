@@ -159,7 +159,7 @@ exports.square = (req, res) => {
           "name": `${data.package} package`,
           "quantity": data.people,
           "base_price_money": {
-            "amount": price,
+            "amount": 100,
             "currency": "USD"
           },
           "taxes": [

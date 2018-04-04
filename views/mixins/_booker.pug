@@ -25,59 +25,70 @@ mixin booker()
               
               .content-inner
                 p.small.description A casual dining experience prepared by one of our certified chefs including a salad and appetizer of your choice and a main course. The total price includes grocery cost, the chef’s travelling fees, food preparation and execution, and kitchen clean-up.
+
                 h3 Appetizers
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
-                  label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
-                .menu-item
-                  input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
-                  label(for="bruschetta") Bruschetta with tomato confit and fresh basil
-                .menu-item
-                  input(type="radio" name="appetizer" value="goat cheese and pistachio filled endive leaves" id="goat")
-                  label(for="goat") Goat cheese and pistachio filled endive leaves
-                .menu-item
-                  input(type="radio" name="appetizer" value="baked artichoke dip with chips" id="crudite")
-                  label(for="crudite") Baked artichoke dip with chips
+                .dropdown
+                  p.small Choose one
+                    span.arrow &#9660;
+
+                  .menu-items
+                    .menu-item
+                      input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
+                      label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
+                    .menu-item
+                      input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
+                      label(for="bruschetta") Bruschetta with tomato confit and fresh basil
+                    .menu-item
+                      input(type="radio" name="appetizer" value="goat cheese and pistachio filled endive leaves" id="goat")
+                      label(for="goat") Goat cheese and pistachio filled endive leaves
+                    .menu-item
+                      input(type="radio" name="appetizer" value="baked artichoke dip with chips" id="crudite")
+                      label(for="crudite") Baked artichoke dip with chips
                   
                 h3 Salads
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
-                  label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
-                .menu-item
-                  input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
-                  label(for="spinach") Spinach and butter lettuce salad with Italian dressing
-                .menu-item
-                  input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
-                  label(for="cucumber") Cucumber and tomato salad with fresh herbs
-                .menu-item
-                  input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
-                  label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
+                .dropdown
+                  p.small Choose one:
+                    span.arrow &#9660;
+
+                  .menu-items
+                    .menu-item
+                      input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
+                      label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
+                    .menu-item
+                      input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
+                      label(for="spinach") Spinach and butter lettuce salad with Italian dressing
+                    .menu-item
+                      input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
+                      label(for="cucumber") Cucumber and tomato salad with fresh herbs
+                    .menu-item
+                      input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
+                      label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
                 
                 h3 Main course
-                hr
-                p.small Choose one:
-                .menu-item
-                  input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
-                  label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
-                .menu-item
-                  input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
-                  label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
-                .menu-item
-                  input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
-                  label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
-                .menu-item
-                  input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
-                  label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
-                .menu-item
-                  input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
-                  label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
-                .menu-item
-                  input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
-                  label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+                .dropdown
+                  p.small Choose one:
+                    span.arrow &#9660;
+                  
+                  .menu-items
+                    .menu-item
+                      input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
+                      label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
+                    .menu-item
+                      input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
+                      label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
+                    .menu-item
+                      input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
+                      label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
+                    .menu-item
+                      input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
+                      label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
+                    .menu-item
+                      input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
+                      label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
+                    .menu-item
+                      input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
+                      label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+
                 .button.next(data-tab="reservation") Next
                 .menu-errors
           input(type='radio' name='package' value='Temptation' required)
@@ -144,6 +155,7 @@ mixin booker()
                   input(type="radio" name="main" value="New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts" id="stripsteak")
                   label(for="stripsteak") New York strip steak with cremini mushrooms served with scalloped potatoes with toasted breadcrumb and haricot verts
                 .button.next(data-tab="reservation") Next
+                .menu-errors
           input(type='radio' name='package' value='Prestige' required)
         //- .button(data-tab="reservation") Next 
         
@@ -159,6 +171,7 @@ mixin booker()
         +basicInput('Phone', 'tel', 'phone')
         +basicInput('Email', 'email', 'email')
         +basicInput('Address', 'text', 'address', {'placeholder': ''})
+        +basicInput('Zip', 'text', 'zip')
         //- input(id="mapsInput" type="text")
         .button.next(data-tab="special-requests") Next 
         .button.back(data-tab="reservation")  Back
@@ -172,7 +185,4 @@ mixin booker()
         .button(id="submit" data-tab="special-requests") Submit
         .button.back.next(data-tab="info")  Back
         
-  link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
-  script(src="https://unpkg.com/flatpickr")
   script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZSWvBF46Su4ueHW0SeDiflUvecxKBpU&libraries=places")
-  script(type="application/javascript", src="javascripts/_booker.js")

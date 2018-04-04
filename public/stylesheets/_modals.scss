@@ -76,6 +76,24 @@
       margin-top: 3rem;
     }
 
+    .dropdown {
+      padding: 5px 10px;
+
+      border: 2px solid $chefit-black;
+      border-radius: 5px;
+
+      span.arrow {
+        float: right;
+      }
+
+      .menu-items {
+        overflow: hidden;
+        height:0;
+
+        padding: 0px 5px;
+      }
+    }
+
     .menu-item {
       display: flex;
       align-items: baseline;
@@ -98,6 +116,11 @@
 
     .menu-errors {
       margin-top: 1rem;
+      color: $error-red;
+    }
+
+    .button {
+      margin-top: 3rem;
     }
   }
 }
