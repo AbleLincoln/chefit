@@ -18,10 +18,14 @@ block content
         a.button(data-scroll="#content") Learn More
         .button.button--boring(onclick="bookAnother()") Book another
     .learnmore 
-      p 
-        span.clickable(data-scroll="#content") Learn More 
-      p.chevron 
-        span.clickable(data-scroll="#content") &or;
+      //- p 
+      //-   span.clickable(data-scroll="#content") Learn More 
+      //- p.chevron 
+      //-   span.clickable(data-scroll="#content") &or;
+      .scroll-arrows.clickable(data-scroll="#content")
+        .scroll-arrow1
+        .scroll-arrow2
+        .scroll-arrow3
   #content
     #howitworks
       h2 How It Works
