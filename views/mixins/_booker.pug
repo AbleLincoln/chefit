@@ -27,67 +27,69 @@ mixin booker()
                 p.small.description A casual dining experience prepared by one of our certified chefs including a salad and appetizer of your choice and a main course. The total price includes grocery cost, the chef’s travelling fees, food preparation and execution, and kitchen clean-up.
 
                 h3 Appetizers
-                .dropdown
-                  p.small Choose one
-                    span.arrow &#9660;
-
-                  .menu-items
-                    .menu-item
-                      input(type="radio" name="appetizer" value="pizzetta squares with fresh mozzarella and sundried tomatoes" id="pizzetta")
-                      label(for="pizzetta") Pizzetta squares with fresh mozzarella and sundried tomatoes
-                    .menu-item
-                      input(type="radio" name="appetizer" value="bruschetta with tomato confit and fresh basi" id="bruschetta")
-                      label(for="bruschetta") Bruschetta with tomato confit and fresh basil
-                    .menu-item
-                      input(type="radio" name="appetizer" value="goat cheese and pistachio filled endive leaves" id="goat")
-                      label(for="goat") Goat cheese and pistachio filled endive leaves
-                    .menu-item
-                      input(type="radio" name="appetizer" value="baked artichoke dip with chips" id="crudite")
-                      label(for="crudite") Baked artichoke dip with chips
+                hr
+                p.small Choose one
+                .menu-items
+                  .menu-item
+                    input(type="radio" name="appetizer" value="Eggplant involtini, fresh mozzarella, marinara, basil oil" id="eggplant")
+                    label(for="eggplant") Eggplant involtini, fresh mozzarella, marinara, basil oil
+                  .menu-item
+                    input(type="radio" name="appetizer" value="Buffalo keftka spiced ground buffalo skewers, apricot chutney, feta cheese" id="buffalo")
+                    label(for="buffalo") Buffalo keftka spiced ground buffalo skewers, apricot chutney, feta cheese
+                  .menu-item
+                    input(type="radio" name="appetizer" value="Calamari & green bean anti-pasta lemon, chili, breadcrumbs, bagna cauda" id="calamari")
+                    label(for="calamari") Calamari & green bean anti-pasta lemon, chili, breadcrumbs, bagna cauda
+                  .menu-item
+                    input(type="radio" name="appetizer" value="Green hummus, fresh chickpeas, spinach, spiced ground lamb, grilled naan, pickles" id="hummus")
+                    label(for="hummus") Green hummus, fresh chickpeas, spinach, spiced ground lamb, grilled naan, pickles
                   
                 h3 Salads
-                .dropdown
-                  p.small Choose one:
-                    span.arrow &#9660;
+                hr
+                p.small Choose one:
 
-                  .menu-items
-                    .menu-item
-                      input(type="radio" name="salad" value="arugula and romaine salad with apple and radish with a citrus vinaigrette" id="arugula")
-                      label(for="arugula") Arugula and romaine salad with apple and radish with a citrus vinaigrette
-                    .menu-item
-                      input(type="radio" name="salad" value="spinach and butter lettuce salad with Italian dressing" id="spinach")
-                      label(for="spinach") Spinach and butter lettuce salad with Italian dressing
-                    .menu-item
-                      input(type="radio" name="salad" value="cucumber and tomato salad with fresh herbs" id="cucumber")
-                      label(for="cucumber") Cucumber and tomato salad with fresh herbs
-                    .menu-item
-                      input(type="radio" name="salad" value="mixed green salad with shaved fennel and pomegranate vinaigrette" id="mixedgreens")
-                      label(for="mixedgreens") Mixed green salad with shaved fennel and pomegranate vinaigrette
+                .menu-items
+                  .menu-item
+                    input(type="radio" name="salad" value="California roasted beets upland cress, peas, ginger, passionfruit sorbet" id="beets")
+                    label(for="beets") California roasted beets upland cress, peas, ginger, passionfruit sorbet
+                  .menu-item
+                    input(type="radio" name="salad" value="Creamy zuppa toscana white beans, italian sausage, kale, sourdough croutons" id="zuppa")
+                    label(for="zuppa") Creamy zuppa toscana white beans, italian sausage, kale, sourdough croutons
+                  .menu-item
+                    input(type="radio" name="salad" value="California ceasar grilled romaine, herbed croutons, parmesan dressing, radish, avocado" id="ceasar")
+                    label(for="ceasar") California ceasar grilled romaine, herbed croutons, parmesan dressing, radish, avocado
+                  .menu-item
+                    input(type="radio" name="salad" value="Smoked salmon salad, endive, citrus, avocado,chive cream cheese dressing, bagel chips" id="salmonsalad")
+                    label(for="salmonsalad") Smoked salmon salad, endive, citrus, avocado,chive cream cheese dressing, bagel chips
+                  .menu-item
+                    input(type="radio" name="salad" value="Asian crunch salad, napa cabbage, sesame crackers, red bell pepper, cashews, herbs, soy dressing" id="asiancrunch")
+                    label(for="asiancrunch") Asian crunch salad, napa cabbage, sesame crackers, red bell pepper, cashews, herbs, soy dressing
                 
                 h3 Main course
-                .dropdown
-                  p.small Choose one:
-                    span.arrow &#9660;
-                  
-                  .menu-items
-                    .menu-item
-                      input(type="radio" name="main" value="grilled skirt steak with roasted sweet potatoes and fresh cole slaw" id="skirt-steak")
-                      label(for="skirt-steak") Grilled skirt steak with roasted sweet potatoes and fresh cole slaw
-                    .menu-item
-                      input(type="radio" name="main" value="sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes" id="ribeye")
-                      label(for="ribeye") Sliced ribeye and fingerling potatoes with pan seared asparagus and tomatoes
-                    .menu-item
-                      input(type="radio" name="main" value="Chicken Picatta served with rice mixed with peas and wilted spinach" id="picatta")
-                      label(for="picatta") Chicken Picatta served with rice mixed with peas and wilted spinach
-                    .menu-item
-                      input(type="radio" name="main" value="Pasta fussili Alfredo traditional with shrimp scampi" id="fussili")
-                      label(for="fussili") Pasta fussili Alfredo traditional with shrimp scampi
-                    .menu-item
-                      input(type="radio" name="main" value="Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice" id="chipotle-chicken")
-                      label(for="chipotle-chicken") Slow roasted chipotle spiced chicken thigh with ratatouille and steamed brown rice
-                    .menu-item
-                      input(type="radio" name="main" value="Herb roasted salmon with sprouted lentils and a vegetable medley" id="herb-salmon")
-                      label(for="herb-salmon") Herb roasted salmon with sprouted lentils and a vegetable medley
+                hr
+                p.small Choose one:
+                
+                .menu-items
+                  .menu-item
+                    input(type="radio" name="main" value="Miso true cod & jumbo shrimp sweet potato, baby bok choy, chive oil" id="cod")
+                    label(for="cod") Miso true cod & jumbo shrimp sweet potato, baby bok choy, chive oil
+                  .menu-item
+                    input(type="radio" name="main" value="Slow roasted salmon, melted leeks, tomato confit, truffle brown butter" id="roasted-salmon")
+                    label(for="roasted-salmon") Slow roasted salmon, melted leeks, tomato confit, truffle brown butter
+                  .menu-item
+                    input(type="radio" name="main" value="Crispy skin salmon french beans, turnip soubise, charred tomato vinaigrette" id="skin-salmon")
+                    label(for="skin-salmon") Crispy skin salmon french beans, turnip soubise, charred tomato vinaigrette
+                  .menu-item
+                    input(type="radio" name="main" value="Spanish monkfish tail fingerling potatoes, olive, artichoke, arugula, roasted pepper vinaigrette" id="monkfish")
+                    label(for="monkfish") Spanish monkfish tail fingerling potatoes, olive, artichoke, arugula, roasted pepper vinaigrette
+                  .menu-item
+                    input(type="radio" name="main" value="Caramelized trenne with lamb bolognese, ricotta cheese, parmesan, bread crumbs" id="trenne")
+                    label(for="trenne") Caramelized trenne with lamb bolognese, ricotta cheese, parmesan, bread crumbs
+                  .menu-item
+                    input(type="radio" name="main" value="Grilled new york steak, shimegi mushrooms, roasted carrots, carrot top gremolata, red wine reduction." id="ny-steak")
+                    label(for="ny-steak") Grilled new york steak, shimegi mushrooms, roasted carrots, carrot top gremolata, red wine reduction.
+                  .menu-item
+                    input(type="radio" name="main" value="Mary’s organic chicken potato gnocchi, charred baby broccoli, roasted cherry tomatoes, lemon parmesan cream" id="gnocchi")
+                    label(for="gnocchi") Mary’s organic chicken potato gnocchi, charred baby broccoli, roasted cherry tomatoes, lemon parmesan cream
 
                 .button.next(data-tab="reservation") Next
                 .menu-errors

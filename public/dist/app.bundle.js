@@ -739,7 +739,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_style_scss__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylesheets_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__stylesheets_style_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_booker__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_smoothscroll__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_smoothscroll__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_smoothscroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__modules_smoothscroll__);
 
 
@@ -16389,18 +16389,10 @@ return jQuery;
 
 
 /***/ }),
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-const smoothScroll = __webpack_require__(96);
+const smoothScroll = __webpack_require__(89);
 
 const smoothScrollElements = document.querySelectorAll('[data-scroll]');
 
@@ -16419,7 +16411,7 @@ smoothScrollElements.forEach(element => element.addEventListener('click', scroll
 
 
 /***/ }),
-/* 96 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, smoothScroll) {
