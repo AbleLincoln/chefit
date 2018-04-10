@@ -439,6 +439,12 @@ h1, h2, h3, h4 {
   color: red;
   font-size: 1rem; }
 
+@keyframes arrow-bounce {
+  0%, 100%, 80% {
+    opacity: .2; }
+  40% {
+    opacity: 1; } }
+
 html, body {
   height: 100%;
   background-color: #F3F4F7; }
@@ -556,8 +562,6 @@ hr {
     @media screen and (max-width: 768px) {
       .hero .overlay {
         background: linear-gradient(#1F2746 35vh, #F3F4F7); } }
-  .hero > * {
-    z-index: 1; }
   .hero .title {
     max-width: 800px;
     position: relative;
@@ -615,6 +619,33 @@ hr {
       display: block;
       margin-top: -1rem;
       font-size: 3rem; }
+    .hero .learnmore .scroll-arrows > * {
+      position: relative;
+      height: 18px;
+      width: 19px;
+      margin: 0 auto;
+      animation: arrow-bounce 1.5s infinite ease-in-out both; }
+    .hero .learnmore .scroll-arrows .scroll-arrow1 {
+      animation-delay: -.32s; }
+    .hero .learnmore .scroll-arrows .scroll-arrow2 {
+      animation-delay: -.16s; }
+    .hero .learnmore .scroll-arrows .scroll-arrow3 {
+      animation-delay: 0s; }
+    .hero .learnmore .scroll-arrows > :before, .hero .learnmore .scroll-arrows > :after {
+      border-left: solid 4px #fff;
+      padding: 0;
+      position: absolute;
+      content: ""; }
+    .hero .learnmore .scroll-arrows > :before {
+      margin: 0;
+      height: 20px;
+      transform: rotate(-43deg);
+      left: 2px; }
+    .hero .learnmore .scroll-arrows > :after {
+      margin: 0;
+      height: 20px;
+      transform: rotate(43deg);
+      right: 2px; }
   .hero.submitted .title, .hero.submitted .booker {
     display: none; }
   .hero.submitted .success {
