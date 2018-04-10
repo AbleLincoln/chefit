@@ -45,9 +45,9 @@
     }
   }
 
-  >* {
-    z-index: 1; // to be on top of overlay
-  }
+  // >* {
+  //   // z-index: 1; // to be on top of overlay
+  // }
 
   .title {
     max-width: 800px;
@@ -125,6 +125,50 @@
       display: block;
       margin-top: -1rem;
       font-size: 3rem;
+    }
+
+    .scroll-arrows {
+      >* {
+        position: relative;
+        height: 18px;
+        width: 19px;
+        margin: 0 auto;
+
+        // cursor: pointer;
+
+        animation: arrow-bounce 1.5s infinite ease-in-out both;
+      }
+
+      .scroll-arrow1 {
+        animation-delay: -.32s;
+      }
+      .scroll-arrow2 {
+        animation-delay: -.16s;
+      }
+      .scroll-arrow3 {
+        animation-delay: 0s;
+      }
+
+      >:before, >:after {
+        border-left: solid 4px #fff;
+        padding: 0;
+        position: absolute;
+        content: "";
+      }
+
+      >:before {
+        margin: 0;
+        height: 20px;
+        transform: rotate(-43deg);
+        left: 2px;
+      }
+
+      >:after {
+        margin: 0;
+        height: 20px;
+        transform: rotate(43deg);
+        right: 2px;
+      }
     }
     
   }
